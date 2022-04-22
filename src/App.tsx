@@ -11,7 +11,7 @@ const navigation = {
   links: [
     { name: "Products", to: "/products" },
     { name: "Services", to: "/services" },
-    { name: "Blogs", to: "/blogs" },
+    { name: "Explore", to: "/explore" },
     { name: "Sign In", to: "/signin" },
   ]
 }
@@ -31,7 +31,7 @@ export default class App extends Component {
             {/* yet to be implemented */}
             <Route path="/products" element={<div>PRODUCTS</div>}/>
             <Route path="/services" element={<div>SERVICES</div>}/>
-            <Route path="/blogs" element={<div>BLOGS</div>}/>
+            <Route path="/explore" element={<div>EXPLORE</div>}/>
             <Route path="/signin" element={<div>SIGNIN</div>}/>
           </Routes>
         </BrowserRouter>

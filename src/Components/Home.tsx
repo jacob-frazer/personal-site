@@ -22,26 +22,68 @@ const slideInRight = keyframes`
   }
 `;
 
-const Animation1 = styled.div`
+const zoomInText = keyframes`
+  0% {
+    transform: scale(0.94);
+    opacity: 0;
+  }
+  80% {
+    transform: scale(0.94);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+`;
+
+const fadeInSpan = keyframes`
+  0% {
+    filter: blur(4px);
+  }
+  80% {
+    filter: blur(4px); 
+  }
+  100% {
+    filter: blur(0px);
+  }
+`;
+
+const Text1 = styled.div`
 font-style: italic;
 font-size: 50px;
-padding-top: 100px; 
+padding-top: 200px; 
 animation-name: ${slideInLeft};
 animation-duration: 2s;`;
 
-const Animation2 = styled.div`
+const Text2 = styled.div`
 font-weight: bold;
 font-size: 82px;
 animation-name: ${slideInRight};
 animation-duration: 2s;`;
 
+const Text3 = styled.div`
+padding-top: 30px;
+font-size: 60px;
+animation-name: ${zoomInText};
+animation-duration: 6s;`;
+
+const FadeInSpan = styled.span<{ fadeInTime: string }>`
+animation-name: ${fadeInSpan};
+animation-duration: ${p => (p.fadeInTime)};`;
+
 class HomePage extends React.Component{
     render(){
       return(
         <>
-          <Animation1>This is</Animation1>
-          <Animation2>Cob Technologies</Animation2>
+          <Text1>This is</Text1>
+          <Text2>Cob Technologies</Text2>
           <ImageContainer/>
+          <Text3>
+              <FadeInSpan fadeInTime='7s'>Greatness </FadeInSpan>
+              <FadeInSpan fadeInTime='7.4s'>Happens </FadeInSpan>
+              <FadeInSpan fadeInTime='7.8s'>Here</FadeInSpan>
+          </Text3>
         </>
       )
     }
