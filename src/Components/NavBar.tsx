@@ -1,4 +1,3 @@
-import React, {FC} from 'react';
 import styled from 'styled-components';
 
 const Theme = {
@@ -9,8 +8,8 @@ const Theme = {
       red: `#ff5851`,
     },
     fonts: {
-      body: `IBM Plex Sans, sans-serif`,
-      heading: `IBM Plex Sans, sans-serif`,
+      body: `Segoe UI Symbol, sans-serif`,
+      heading: `Segoe UI Symbol, sans-serif`,
     }
   }
   
@@ -19,21 +18,27 @@ const Theme = {
     font-family: ${Theme.fonts.heading};
     color: ${Theme.colors.light};
     display: flex;
+    width: 100%;
     align-items: center;
-    justify-content: space-between;
-    a { color: white; text-decoration: none; }`;
+    justify-content: centre;
+    a { text-decoration: none; transition: all 0.3s linear;}
+    a:hover { transform: scale(1.2); }`;
   
   const Brand = styled.a`
     font-weight: bold;
     font-style: italic;
-    font-size: 26px;
+    font-size: 38px;
+    color: white;
     margin-left: 1rem;
     padding-right: 1rem;`;
   
   const Ul = styled.ul`
+    color: white;
     display: flex;
     flex-wrap: nowrap;
     overflow-x: auto;
+    text-align: centre;
+    align-items: center;
     -webkit-overflow-scrolling: touch;`;
   
   const Li = styled.li`
@@ -42,23 +47,19 @@ const Theme = {
     -webkit-box-pack: center;
     -webkit-tap-highlight-color: transparent;
     align-items: center;
-    color: #999;
     height: 100%;
     justify-content: center;
     text-decoration: none;
-    -webkit-box-align: center;
-    -webkit-box-pack: center;
-    -webkit-tap-highlight-color: transparent;
-    align-items: center;
-    color: #999;
     display: flex;
-    font-size: 26px;
-    height: 50px;
+    font-size: 28px;
+    height: 70px;
     justify-content: center;
     line-height: 16px;
-    margin: 0 10px ;
+    margin: 0 20px ;
     text-decoration: none;
-    white-space: nowrap;`;
+    white-space: nowrap;
+    a { color: white; }
+    `;
 
 const NavbarScroller = (props: {
     brand: { name: string; to: string },

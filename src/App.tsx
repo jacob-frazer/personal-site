@@ -35,10 +35,6 @@ export default class App extends Component {
             <Route path="/signin" element={<div>SIGNIN</div>}/>
           </Routes>
         </BrowserRouter>
-        
-        <p>
-          The start of something great perhaps?
-        </p>
       </div>
     );
   }
