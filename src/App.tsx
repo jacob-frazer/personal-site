@@ -5,6 +5,9 @@ import './App.css';
 
 import HomePage from './Components/Home';
 import NavBar from './Components/NavBar';
+import ExplorePage from './Components/Explore';
+import PeoplePage from './Components/People';
+import PostsPage from './Components/Posts';
 
 const navigation = {
   brand: { name: "CobTech", to: "/" },
@@ -29,10 +32,13 @@ export default class App extends Component {
             <Route path="/" element={<HomePage />}/>
 
             {/* yet to be implemented */}
-            <Route path="/products" element={<div>PRODUCTS</div>}/>
+            <Route path="/products" element={<ExplorePage/>}/>
             <Route path="/services" element={<div>SERVICES</div>}/>
-            <Route path="/explore" element={<div>EXPLORE</div>}/>
+            <Route path="/explore" element={<ExplorePage/>}/>
             <Route path="/signin" element={<div>SIGNIN</div>}/>
+
+            <Route path="/explore/people" element={<PeoplePage/>}/>
+            <Route path="/explore/posts" element={<PostsPage/>}/>
           </Routes>
         </BrowserRouter>
       </div>
