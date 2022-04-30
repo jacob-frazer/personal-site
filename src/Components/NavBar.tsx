@@ -19,7 +19,8 @@ const Theme = {
     color: ${Theme.colors.light};
     display: flex;
     width: 100%;
-    position: fixed;
+    position: sticky;
+    top: 0;
     align-items: center;
     justify-content: centre;
     a { text-decoration: none; transition: all 0.3s linear;}

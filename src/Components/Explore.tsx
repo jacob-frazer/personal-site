@@ -37,8 +37,8 @@ class ExplorePage extends React.Component{
         <BackgroundDiv>
             This is the explore page, you can learn more about us and our people here.
 
-            <BlogsDiv><a href="/explore/posts">Read our stuff</a></BlogsDiv>
-            <PeopleDiv><a href="/explore/people">Meet our people</a></PeopleDiv>
+            <BlogsDiv><a href="/explore/posts">Read our stuff...</a></BlogsDiv>
+            <PeopleDiv><a href="/explore/people">Meet our people...</a></PeopleDiv>
         </BackgroundDiv>
       )
     }

@@ -1,0 +1,26 @@
+[
+    {
+        "name": "Proj 1",
+        "description": "First project",
+        "status": "Done",
+        "icon": "atom.png"
+    },
+    {
+        "name": "Proj 2",
+        "description": "Second project",
+        "status": "WIP",
+        "icon": "beer.png"
+    },
+    {
+        "name": "Proj 3",
+        "description": "Third project",
+        "status": "Scoping",
+        "icon": "earth.png"
+    },
+    {
+        "name": "Proj 4",
+        "description": "Fourth project",
+        "status": "Release",
+        "icon": "smartphone.png"
+    }
+]
