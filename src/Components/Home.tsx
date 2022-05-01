@@ -64,7 +64,7 @@ const InfoDiv = styled.div`
 padding-top: 10px;
 font-size: 60px;
 height: 300px;
-background-color: rgb(${colours.light});
+background-color: ${colours.light};
 color: black;
 `;
 

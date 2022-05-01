@@ -9,13 +9,13 @@ margin: 0;
 padding: 0;
 width: 100vw;
 height: 100vh;
-background-color: rgb(${colours.light});
+background-color: ${colours.light};
 color: white;
 display: flex;
 flex-direction: column;
 flex-wrap: wrap;
 text-decoration: none;
-a { text-decoration: none; color: white;}
+a { text-decoration: none; color: black;}
 `;
 
 const BlogsDiv = styled.div`

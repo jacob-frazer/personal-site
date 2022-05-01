@@ -32,7 +32,7 @@ const CentreIconDiv = styled.div`
     `;
 
 const IconCircle = styled.div`
-    background-color: rgb(${colours.light});
+    background-color: ${colours.light};
     padding: 40px;
     height: 75%;
     aspect-ratio: 1/1;
@@ -42,6 +42,7 @@ const IconCircle = styled.div`
     display: flex;
     animation-name: ${appearRotate};
     animation-duration: 1s;
+    animation-iteration-count: 1;
     `;
 
 const Image = styled.img`
@@ -57,13 +58,14 @@ const TextBox = styled.div`
     `;
 
 const Background = styled.div`
-    background-color: rgb(${colours.mid});
+    background-color: ${colours.dark};
     padding: 10px;
     border-radius: 5%;
     box-shadow: 7px 7px #888888;
     &:hover {
-        background: rgb(${colours.light});
-        transform: scale(1.02);       
+        background: ${colours.mid};
+        transform: scale(1.02);
+        transition: all .2s     
     }
     &:hover ${IconCircle} {
         animation-name: ${selectRotate};

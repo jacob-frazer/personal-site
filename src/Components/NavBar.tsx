@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import colours from '../utils/colours';
 
 const Theme = {
     colors: {
@@ -14,12 +15,13 @@ const Theme = {
   }
   
   const Navbar = styled.nav`
-    background: ${Theme.colors.dark};
+    background: ${colours.navbar};
     font-family: ${Theme.fonts.heading};
     color: ${Theme.colors.light};
     display: flex;
     width: 100%;
     position: sticky;
+    z-index: 100;
     top: 0;
     align-items: center;
     justify-content: centre;
