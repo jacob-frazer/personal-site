@@ -39,7 +39,7 @@ const fadeInSpan = keyframes`
 const Text1 = styled.div`
 font-style: italic;
 font-size: 50px;
-padding-top: 200px; 
+padding-top: 100px; 
 animation-name: ${slideInLeft};
 animation-duration: 2s;`;
 

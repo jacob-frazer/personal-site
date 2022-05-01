@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { useNavigate } from "react-router-dom";
+
 import styled from 'styled-components';
 import { keyframes } from 'styled-components';
 import colours from '../utils/colours';
@@ -74,11 +76,13 @@ const Background = styled.div`
     `;
 
 const ProjectBox = (props: {
-    proj: { name: string; description: string, status: string, icon: string },
+    proj: { name: string; description: string, status: string, icon: string, url: string },
     }) => {
+    // redirect function to the more info page for projects
+    let navigate = useNavigate();
     const { proj } = props;
     return (
-        <Background>
+        <Background onClick={() => navigate(`/products/${proj.url}`)}>
             <TextBox>{proj.name}: {proj.description}</TextBox>
             <CentreIconDiv>
                 <IconCircle>

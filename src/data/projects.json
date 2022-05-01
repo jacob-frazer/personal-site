@@ -3,36 +3,42 @@
         "name": "Proj 1",
         "description": "First project",
         "status": "Done",
-        "icon": "atom.png"
+        "icon": "atom.png",
+        "url": "proj1"
     },
     {
         "name": "Proj 2",
         "description": "Second project",
         "status": "WIP",
-        "icon": "beer.png"
+        "icon": "beer.png",
+        "url": "proj2"
     },
     {
         "name": "Proj 3",
         "description": "Third project",
         "status": "Scoping",
-        "icon": "earth.png"
+        "icon": "earth.png",
+        "url": "proj3"
     },
     {
         "name": "Proj 4",
         "description": "Fourth project",
         "status": "Release",
-        "icon": "smartphone.png"
+        "icon": "smartphone.png",
+        "url": "proj4"
     },
     {
         "name": "Proj 5",
         "description": "Fourth project",
         "status": "Release",
-        "icon": "beer.png"
+        "icon": "beer.png",
+        "url": "proj5"
     },
     {
         "name": "Proj 6",
         "description": "Fourth project",
         "status": "Release",
-        "icon": "atom.png"
+        "icon": "atom.png",
+        "url": "proj6"
     }
 ]
