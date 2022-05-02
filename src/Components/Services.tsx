@@ -9,103 +9,85 @@ import dataBackground from '../images/backgrounds/data.jpg'
 import sweBackground from '../images/backgrounds/software-engineering1.jpg'
 import webBackground from '../images/backgrounds/internet.jpg'
 
-const DataSolutions = styled.div`
-    background-color: ${colours.light};
-    height: 1000px;
+const Content = styled.div`
+    padding-top: 30px;
     `;
 
-const SoftwareEngineer = styled.div`
-    background-color: ${colours.dark};
-    height: 1000px;
+const ContentBox = styled.div<{ background: string }>`
+    background-color: ${props => props.background};
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 5px 5px #e3e3e3;
     `;
 
-const WebDevelopment = styled.div`
-    background-color: white;
-    height: 1000px;
+const Background = styled.div<{ backgroundCol: string, height: string }>`
+    background-color: ${props => props.backgroundCol};
+    height: ${props => props.height};
     `;
 
-const LeftText = styled.div`
+const ImageBox = styled.div<{ width: string, float:string, image:string, opacity:string}>`
+    height: 100%;
+    width: ${props => props.width};
+    float: ${props => props.float};
+    background-image: url(${props => props.image});
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: ${props => props.opacity};
+    `;
+
+const CentreText = styled.div<{ float:string, width:string, fontcol:string }>`
     font-size: 30px;
-    padding: 50px;
-    float: left;
+    color: ${props => props.fontcol};
+    padding: 30px;
+    float: ${props => props.float};
     height: 85%;
-    `;
-
-const RightText = styled.div`
-    font-size: 30px;
-    padding: 50px;
-    float: right;
-    height: 85%;
-    color: white;
-    `;
-
-const DataSolutionsImage = styled.div`
-    font-size: 30px;
-    height: 100%;
-    width: 1500px;
-    float: right;
-    background-image: url(${dataBackground});
-    background-repeat: no-repeat;
-    background-size: cover;
-    opacity: 85%;
-    `;
-
-const SWEImage = styled.div`
-    font-size: 30px;
-    height: 100%;
-    width: 1500px;
-    float: left;
-    background-image: url(${sweBackground});
-    background-repeat: no-repeat;
-    background-size: cover;
-    opacity: 85%;
-    `;
-
-const WebDevImage = styled.div`
-    font-size: 30px;
-    height: 100%;
-    width: 1500px;
-    float: right;
-    background-image: url(${webBackground});
-    background-repeat: no-repeat;
-    background-size: cover;
-    opacity: 100%;
-    `;
-
-const Container = styled.div`
-    
+    width: ${props => props.width};
+    display: flex;
+    align-items: center;
+    justify-content: center;
     `;
 
 const Services = () => {
     return (
         <>
-        <DataSolutions>
-            <LeftText>
-                <h1>Data Solutions</h1>
-                <div>content</div>
-                <div>some image maybe and spinning round/subtle animations</div>
-            </LeftText>
-            <DataSolutionsImage/>
-        </DataSolutions>
-        <SoftwareEngineer>
-            <RightText>
-                <h1>Software Engineering</h1>
-                <div>content</div>
-                <div>some image maybe and spinning round/subtle animations</div>
-                <div>same as above but inverted so like left image and right text instead</div>
-                <div>also white text</div>
-            </RightText>
-            <SWEImage/>
-        </SoftwareEngineer>
-        <WebDevelopment>
-            <LeftText>
-                <h1>Web Development</h1>
-                <div>content</div>
-                <div>some image maybe and spinning round/subtle animations</div>
-                <div>back to original</div>
-            </LeftText>
-            <WebDevImage/>
-        </WebDevelopment>
+        <Background backgroundCol={colours.lightgrey} height='1000px'>
+            <CentreText float="left" width="40%" fontcol="black">
+                <div>
+                <ContentBox background="white">
+                    <h1>Data Solutions</h1>
+                    <Content>Data professional with elite experience across the entire spectrum of data solutions</Content>
+                    <Content>Experience in Data Engineering, Cloud DevOps and Data Science</Content>
+                    <Content>Familiar with all common technologies and cloud providers in the domain</Content>
+                    <Content>Proven ability at all stages of the software lifecycle from problem to live solution to wind-down</Content>
+                </ContentBox>
+
+                </div>
+            </CentreText>
+            <ImageBox width="55%" float="right" image={dataBackground} opacity="85%"/>
+        </Background>
+        <Background backgroundCol="black" height='1000px'>
+            <CentreText float="right" width="40%" fontcol="white">
+                <div>
+                    <h1>Software Engineering</h1>
+                    <Content>Many years of experience building sophisticated solutions for businesses</Content>
+                    <Content>Fluent in many of the most common programming languages and can quickly learn others to adapt to your existing codebases</Content>
+                    <Content>Experience across many industries and domains</Content>
+                    <Content>Led teams of developers including education sessions on standard SDLC and version control systems</Content>
+                </div>
+            </CentreText>
+            <ImageBox width="55%" float="left" image={sweBackground} opacity="85%"/>
+        </Background>
+        <Background backgroundCol={colours.lightgrey} height='1000px'>
+            <CentreText float="left" width="40%" fontcol="black">
+                <ContentBox background="white">
+                    <h1>Web Development</h1>
+                    <Content>Full stack web developer</Content>
+                    <Content>Experience on web applications of all scales from simple to enterprise</Content>
+                    <Content>Fluent in TypeScript and modern JS frameworks as well as Web 3.0 technologies including Solidity</Content>
+                </ContentBox>
+            </CentreText>
+            <ImageBox width="55%" float="right" image={webBackground} opacity="85%"/>
+        </Background>
         </>
         )
     };

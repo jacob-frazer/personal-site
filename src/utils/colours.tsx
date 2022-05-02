@@ -3,7 +3,8 @@ const colours = {
     dark: "#545479",
     mid: "#94e5d1",
     light: "#edfdf8",
-    navbar: "#2f4858",
+    navbar: "black",
+    lightgrey: "#fafafa",
 };
 
 export default colours;
