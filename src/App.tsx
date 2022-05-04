@@ -33,8 +33,6 @@ export default class App extends Component {
           <Routes>
             <Route path="/" element={<HomePage />}/>
 
-            {/* yet to be implemented */}
-            
             <Route path="/services" element={<ServicesPage/>}/>
             
             <Route path="/signin" element={<div>SIGNIN</div>}/>
