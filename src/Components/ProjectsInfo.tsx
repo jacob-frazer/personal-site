@@ -7,15 +7,15 @@ import colours from '../utils/colours';
 
 const ContentBox = styled.div<{ background: string }>`
     background-color: ${props => props.background};
-    border-radius: 15px;
-    padding: 20px;
+    border-radius: 1rem;
+    padding: 1rem;
     box-shadow: 5px 5px #e3e3e3;
     `;
 
 const CentreText = styled.div<{ float:string, width:string, fontcol:string }>`
-    font-size: 30px;
+    font-size: 1.5rem;
     color: ${props => props.fontcol};
-    padding: 30px;
+    padding: 1rem;
     float: ${props => props.float};
     height: 85%;
     width: ${props => props.width};
@@ -30,34 +30,49 @@ const Background = styled.div<{ backgroundCol: string, height: string }>`
     `;
 
 const ExplanationText = styled.div<{  }>`
-    font-size: 20px;
-    column-count: 4;
-    column-gap: 100px;
-    column-width: 300px;
-    height: 850px;
+    font-size: 1rem;
+    column-count: 3;
+    column-gap: 4rem;
+    column-width: 19rem;
+    height: 42rem;
     column-fill: auto;
     float: left;
-    padding: 50px;
-    border-right: 5px solid grey;
+    padding: 3rem;
+    border-right: 2px solid ${colours.lightgrey};
+    font-size: 0.875rem;
+    line-height: 1.5;
+    margin-bottom: 1.25rem;
     `;
 
 const ExplanationHeader = styled.h1`
-    font-size: 40px;
     column-span: all;
+    font-size: 2rem;
+    font-weight: 350;
+    letter-spacing: 2px;
     `;
 
 const Outcomes = styled.div`
-    font-size: 40px;
+    font-size: 2rem;
     float: right;
     width: 35%;
-    padding: 50px;
+    padding: 3rem;
+    `;
+
+const OutcomesHeader = styled.div`
+    font-size: 2rem;
+    font-weight: 350;
+    letter-spacing: 2px;
+    padding: 1rem;
     `;
 
 const OutcomesList = styled.div`
     display: inline-block; 
     text-align: left; 
     width: 90%;
-    list-style: none;        
+    list-style: none;  
+    font-size: 1.25rem;
+    font-weight: 300;
+    letter-spacing: 2px;
     `;
 
 const OutcomesListItem = styled.li`
@@ -65,7 +80,7 @@ const OutcomesListItem = styled.li`
     padding-left: 1.5em;
 
     &:before {
-        content: '✅';
+        content: '✓';
         color: green;
         position: absolute;
         left: 0;
@@ -74,10 +89,22 @@ const OutcomesListItem = styled.li`
     }
     `;
 
+const TechnologiesHeader = styled.div`
+    padding: 0.5rem;
+    width: 100%;   
+    font-size: 1.3rem;
+    font-weight: 550;
+    letter-spacing: 2px;
+    `;
+
 const TechnologiesList = styled.div`
     text-align: right; 
-    padding: 80px;
-    width: 90%;     
+    padding: 1.5rem;
+    width: 100%;   
+    flex: 1 1 auto;
+    font-size: 1.5rem;
+    font-weight: 300;
+    letter-spacing: 2px;
     `;
 
 const TechnologiesListItem = styled.li`
@@ -91,9 +118,18 @@ const Headline = styled.h1`
     align-items: left;
     justify-content: left;
     text-align: left; 
-    padding: 10px;
+    padding: 1rem;
     width: 50%;
+    font-size: 3rem;
+    font-weight: 400;
+    letter-spacing: 2px;
     `;
+
+const Intro = styled.div`
+    font-size: 1.5rem;
+    font-weight: 300;
+    letter-spacing: 2px;
+`;
 
 const ProjectInfo = () => {
     // redirect function to the more info page for projects
@@ -134,23 +170,23 @@ const ProjectInfo = () => {
 
     return (
         <>
-        <Background backgroundCol='white' height='300px'>
+        <Background backgroundCol='white' height='17rem'>
             <CentreText float="left" width="70%" fontcol="black">
                 <Headline>{content.headline}</Headline>
-                <div>{content.intro}</div>    
+                <Intro>{content.intro}</Intro>
             </CentreText>
             
             <CentreText float="right" width="20%" fontcol="black">
-                <strong>Technologies </strong>
+                <TechnologiesHeader>Technologies</TechnologiesHeader>
                 <TechnologiesList>
                     {content.technologies.map((x:string) => <TechnologiesListItem>{x}</TechnologiesListItem>)}
                 </TechnologiesList>
             </CentreText>
         </Background>
 
-        <Background backgroundCol='grey' height='10px'/>
+        <Background backgroundCol={colours.lightgrey} height='0.25rem'/>
 
-        <Background backgroundCol={colours.mid} height='1000px'>
+        <Background backgroundCol={colours.mid} height='50rem'>
             <ExplanationText>
                 <ExplanationHeader>Deep Dive</ExplanationHeader>
                 {content.explanation}
@@ -158,7 +194,7 @@ const ProjectInfo = () => {
 
             <Outcomes>
                 <ContentBox background='white'>
-                    <h4>Successes & Outcomes</h4>
+                    <OutcomesHeader>Successes & Outcomes</OutcomesHeader>
                     <OutcomesList>
                         {content.outcomes.map((x:string) => <OutcomesListItem>{x}</OutcomesListItem>)}
                     </OutcomesList>

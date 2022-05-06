@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { useNavigate } from "react-router-dom";
 
 import styled from 'styled-components';
-
+import colours from '../utils/colours';
 
 const CardsItem = styled.li`
     display: flex;
@@ -77,12 +77,21 @@ const CardText = styled.p`
 
 const Button = styled.button`
     background-color: white;
-    border: 1px solid @gray-light;
+    border: 1px solid grey;
     //border-radius: 1rem;
-    color: @gray-dark;
+    color: black;
     padding: 0.5rem;
     display: block;
     width: 100%;
+    // Animate the size, inside
+    transition: 0.25s;
+    &:hover,
+    &:focus {
+        box-shadow: inset 0 0 0 2em var(--hover);
+        color: white;
+        background-color: ${colours.dark};
+        border: 1px solid ${colours.dark};
+    }
     `;
 
 const ProjectCard = (props: {
