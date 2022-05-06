@@ -11,7 +11,9 @@ const TextBox = styled.div`
     align: left;
     display: flex;
     padding: 30px;
-    font-size: 24px;
+    font-size: 22px;
+    font-weight: 300;
+    letter-spacing: 2px;
     `;
 
 const Background = styled.div`
@@ -38,7 +40,7 @@ export default class Projects extends Component {
       const ProjList: any = () => projects.map((proj) => <ProjectCard proj={proj}/>);
       return (
         <Background>
-            <TextBox>Content and projects that Cob Technologies have worked on, click on one to find out more!</TextBox>
+            <TextBox>Content and projects that I have worked on, click on one to find out more!</TextBox>
             <Cards>
                 <ProjList/>
             </Cards>
