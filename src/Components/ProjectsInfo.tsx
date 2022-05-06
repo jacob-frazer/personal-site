@@ -105,7 +105,7 @@ const ProjectInfo = () => {
     // get info on project from url and get data
     let { info } = useParams<{ info:string }>();
     let tempData: any = {
-        "proj1":{
+        "ukhsa":{
             "headline": "Fighting COVID with UKHSA",
             "intro": "Working as part of the UK Health Security Agency as part of the response to the coronavirus pandemic, I performed in a data specialist role encompassing analysis, data science, engineering and devops.",
             "technologies": ["AWS CDK", "AWS Glue", "AWS Lambda", "Python", "Jupyter"],

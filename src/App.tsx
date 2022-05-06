@@ -5,19 +5,19 @@ import './App.css';
 
 import HomePage from './Components/Home';
 import NavBar from './Components/NavBar';
-import ExplorePage from './Components/Explore';
 import PeoplePage from './Components/People';
 import PostsPage from './Components/Posts';
-import ProductsPage from './Components/Products';
+import ProjectsPage from './Components/Projects';
 import ProjectsInfo from './Components/ProjectsInfo';
 import ServicesPage from './Components/Services';
 
 const navigation = {
   brand: { name: "CobTech", to: "/" },
   links: [
-    { name: "Products", to: "/products" },
-    { name: "Services", to: "/services" },
-    { name: "Explore", to: "/explore" },
+    { name: "Projects", to: "/projects" },
+    { name: "Skills", to: "/skills" },
+    { name: "Blogs", to: "/blogs" },
+    { name: "About", to: "/about" },
     { name: "Sign In", to: "/signin" },
   ]
 }
@@ -33,16 +33,15 @@ export default class App extends Component {
           <Routes>
             <Route path="/" element={<HomePage />}/>
 
-            <Route path="/services" element={<ServicesPage/>}/>
+            <Route path="/skills" element={<ServicesPage/>}/>
             
             <Route path="/signin" element={<div>SIGNIN</div>}/>
 
-            <Route path="/explore" element={<ExplorePage/>}/>
-            <Route path="/explore/people" element={<PeoplePage/>}/>
-            <Route path="/explore/posts" element={<PostsPage/>}/>
+            <Route path="/about" element={<PeoplePage/>}/>
+            <Route path="/blogs" element={<PostsPage/>}/>
 
-            <Route path="/products" element={<ProductsPage/>}/>
-            <Route path="/products/:info" element={<ProjectsInfo/>}/>
+            <Route path="/projects" element={<ProjectsPage/>}/>
+            <Route path="/projects/:info" element={<ProjectsInfo/>}/>
           </Routes>
         </BrowserRouter>
       </div>
