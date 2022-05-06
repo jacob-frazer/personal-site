@@ -5,11 +5,11 @@ import './App.css';
 
 import HomePage from './Components/Home';
 import NavBar from './Components/NavBar';
-import PeoplePage from './Components/People';
+import AboutPage from './Components/About';
 import PostsPage from './Components/Posts';
 import ProjectsPage from './Components/Projects';
 import ProjectsInfo from './Components/ProjectsInfo';
-import ServicesPage from './Components/Services';
+import SkillsPage from './Components/Skills';
 
 const navigation = {
   brand: { name: "CobTech", to: "/" },
@@ -33,15 +33,15 @@ export default class App extends Component {
           <Routes>
             <Route path="/" element={<HomePage />}/>
 
-            <Route path="/skills" element={<ServicesPage/>}/>
-            
-            <Route path="/signin" element={<div>SIGNIN</div>}/>
-
-            <Route path="/about" element={<PeoplePage/>}/>
-            <Route path="/blogs" element={<PostsPage/>}/>
-
             <Route path="/projects" element={<ProjectsPage/>}/>
             <Route path="/projects/:info" element={<ProjectsInfo/>}/>
+
+            <Route path="/skills" element={<SkillsPage/>}/>
+            
+            <Route path="/blogs" element={<PostsPage/>}/>
+            <Route path="/about" element={<AboutPage/>}/>
+
+            <Route path="/signin" element={<div>SIGNIN</div>}/>
           </Routes>
         </BrowserRouter>
       </div>

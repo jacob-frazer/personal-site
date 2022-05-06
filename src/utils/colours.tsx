@@ -6,6 +6,8 @@ const colours = {
     light: "#edfdf8",
     navbar: "black",
     lightgrey: "#D2D2CF",
+    white: "#FFF",
+    black: "#000",
 };
 
 export default colours;
