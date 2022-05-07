@@ -42,6 +42,8 @@ const ContentBox = styled.div<{ background: string }>`
 const Background = styled.div<{ backgroundCol: string, height: string, backgroundGradient?:string }>`
     background-color: ${props => props.backgroundCol};
     height: ${props => props.height};
+    z-index: 10;
+    position: relative;
 
     ${props => props.backgroundGradient && `
         background:linear-gradient(${props.backgroundCol}, ${props.backgroundGradient})
@@ -115,7 +117,7 @@ class TypeWriter extends React.Component<{ strings: Array<string> }> {
     }
 }
 
-class Services extends React.Component {
+class Skills extends React.Component {
     render() {
         return (
                 <>
@@ -152,7 +154,7 @@ class Services extends React.Component {
                     </CentreText>
                     <ImageBox width="55%" float="right" image={dataBackground} opacity="85%"/>
                 </Background>
-                <Background backgroundCol="black" height='45rem'>
+                <Background backgroundCol="transparent" height='45rem'>
                     <CentreText float="right" width="40%" fontcol="white">
                         <div>
                             <Heading>Software Engineering</Heading>
@@ -164,7 +166,7 @@ class Services extends React.Component {
                     </CentreText>
                     <ImageBox width="55%" float="left" image={sweBackground} opacity="85%"/>
                 </Background>
-                <Background backgroundCol={colours.white} height='45rem' backgroundGradient={colours.mid}>
+                <Background backgroundCol="transparent" height='45rem' backgroundGradient={colours.mid}>
                     <CentreText float="left" width="40%" fontcol="black">
                         <ContentBox background="white">
                             <Heading>Web Development</Heading>
@@ -180,4 +182,4 @@ class Services extends React.Component {
     }
 }
 
-export default Services;
+export default Skills;

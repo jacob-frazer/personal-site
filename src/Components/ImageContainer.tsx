@@ -19,7 +19,7 @@ const fadeIn = keyframes`
 const ImageBox = styled.div`
   display: flex;
   width: 100%;
-  padding-top: 100px;
+  padding-top: 4.5rem;
   align-items: center;
   justify-content: centre;
 `;

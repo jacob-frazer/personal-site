@@ -12,13 +12,13 @@ import ProjectsInfo from './Components/ProjectsInfo';
 import SkillsPage from './Components/Skills';
 
 const navigation = {
-  brand: { name: "CobTech", to: "/" },
+  brand: { name: "Jacob", to: "/" },
   links: [
     { name: "Projects", to: "/projects" },
     { name: "Skills", to: "/skills" },
     { name: "Blogs", to: "/blogs" },
     { name: "About", to: "/about" },
-    { name: "Sign In", to: "/signin" },
+    /*{ name: "Sign In", to: "/signin" },*/
   ]
 }
 
@@ -28,7 +28,7 @@ export default class App extends Component {
 
     return (
       <div className="App">
-        <NavBar brand={brand} links={links} />        
+        <NavBar brand={brand} links={links} />    
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<HomePage />}/>
@@ -41,7 +41,9 @@ export default class App extends Component {
             <Route path="/blogs" element={<PostsPage/>}/>
             <Route path="/about" element={<AboutPage/>}/>
 
+            {/*
             <Route path="/signin" element={<div>SIGNIN</div>}/>
+            */}
           </Routes>
         </BrowserRouter>
       </div>
