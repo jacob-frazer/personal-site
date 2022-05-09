@@ -69,15 +69,13 @@ const TextContainer = styled.div`
   overflow: auto;
 `;
 
-const Text3 = styled.div`
+const Text3 = styled(motion.div)`
   padding-top: 1.8rem;
   padding-bottom: 3rem;
   font-size: 3rem;
-  animation-name: ${zoomInText};
-  animation-duration: 6s;
   color: white;
-  z-index: 10;
   position: relative;
+  z-index: 1000;
 `;
 
 const FadeInSpan = styled.span<{ fadeInTime: string }>`
@@ -93,6 +91,7 @@ const InfoDiv = styled.div`
   color: black;
   z-index: 10;
   position: relative;
+  opacity: 90%;
   `;
 
 const InfoHeading = styled(motion.div)`
@@ -111,21 +110,68 @@ const InfoBody = styled(motion.div)`
 
 const Photo = styled(motion.img)`
   position: relative;
-  z-index: 10;
+  z-index: 1000;
   width: 20rem;
-  aspect-ratio: 1/1;
+  aspect-ratio: 1/0.95;
   padding: 2rem;
+  `;
+
+const Footer = styled.div`
+  background-color: transparent;
+  width: 100%;
+  height: 5rem;
+  color: white;
+  position: relative;
+  z-index: 10;
+  padding: 2rem;
+  `;
+
+const ConnectionLinks = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 1rem;
+
+  img {
+    flex: 1;
+    max-width: 2rem;
+    height: auto;
+    max-height: 2rem;
+    padding: 2rem;
+  }
   `;
 
 // variant defines animations
 const infoHeaderVariant = {
-  visible: { opacity: 1, transition: {duration:3} },
+  visible: { opacity: 1, transition: {duration:2} },
   hidden: { opacity: 0 },
 }
 
 const infoBodyVariant = {
   visible: { opacity: 1, transition: {duration:3, delay:1} },
   hidden: { opacity: 0 },
+}
+
+const photoVariant = {
+  visible: { opacity: 1, transition: {duration:3, delay:1} },
+  hidden: { opacity: 0 },
+}
+
+const Connections = (props:{colour:string}) => {
+  let githubSrc = (props.colour === "dark" ? "GitHubDark.png" : "GitHubLight.png")
+  let linkedInSrc = (props.colour === "dark" ? "LinkedInDark.png" : "LinkedInLight.png")
+  let emailSrc = (props.colour === "dark" ? "emailDark.png" : "emailLight.png")
+  
+  let imageDir = "/images/connections_icons/"
+  return (
+    <ConnectionLinks>
+      <a href="https://github.com/jacob-frazer"><img src={imageDir + githubSrc} alt="githubLogo"/></a>
+      <a href="https://www.linkedin.com/in/jacob-frazer-99493b168/"><img src={imageDir + linkedInSrc} alt="linkedInLogo"/></a>
+      <a href="mailto:jacob.frazer@hotmail.com"><img src={imageDir + emailSrc} alt="emailLogo"/></a>
+    </ConnectionLinks>
+  )
 }
 
 const InfoText = () => {
@@ -152,6 +198,7 @@ const InfoText = () => {
     I created this portfolio as a place for me to detail the projects I have worked on, technologies I know, and articles I have written. 
     <div><br/></div>
     Let's connect 
+    <Connections colour="dark"/>
     </InfoBody>
     </>
   );
@@ -164,12 +211,28 @@ export default function HomePage() {
       <TextContainer>
         <Text1>This is</Text1>
         <Text2>Jacob Frazer</Text2>
-        <Photo src={mePhoto}/>
+        <Photo 
+          src={mePhoto}
+          variants={photoVariant}
+          className="photo"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        />
+        <Text3
+        animate={{ opacity: 1, transition: {duration:2, delay:2} }}
+        initial={{ opacity: 0 }}
+        >
+          Data Specialist and Software Developer
+        </Text3>
       </TextContainer>
       <InfoDiv> 
         <InfoText/>
       </InfoDiv>
       <SkillsPage/>
+      <Footer>
+        <Connections colour="light"/>
+      </Footer>
     </>
   )
 }

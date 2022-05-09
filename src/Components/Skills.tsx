@@ -11,11 +11,12 @@ import dataBackground from '../images/backgrounds/data.jpg'
 import sweBackground from '../images/backgrounds/software-engineering1.jpg'
 import webBackground from '../images/backgrounds/internet.jpg'
 
-const Experience = styled.div`
-    padding: 1rem;
+const Experience = styled.div<{ fontcol:string }>`
+    padding: 10rem;
     font-size: 1.5rem;
     font-weight: 300;
     letter-spacing: 2px;
+    color: ${props => props.fontcol};
     `;
 
 const Content = styled.div`
@@ -44,6 +45,7 @@ const Background = styled.div<{ backgroundCol: string, height: string, backgroun
     height: ${props => props.height};
     z-index: 10;
     position: relative;
+    opacity: 90%;
 
     ${props => props.backgroundGradient && `
         background:linear-gradient(${props.backgroundCol}, ${props.backgroundGradient})
@@ -121,9 +123,9 @@ class Skills extends React.Component {
     render() {
         return (
                 <>
-                <Background backgroundCol={colours.mid} height='200px' backgroundGradient={colours.white}>
-                    <Experience>Find out about my experience with
-                    <TypewriterText background="transparent" fontcol={colours.black} fontsize='2.5rem'>
+                <Background backgroundCol="transparent" height='200px' backgroundGradient={colours.black}>
+                    <Experience fontcol={colours.white}>Find out about my experience with
+                    <TypewriterText background="transparent" fontcol={colours.white} fontsize='2.5rem'>
                         <TypeWriter strings={[
                                 "Data Science",
                                 "Python",
@@ -139,10 +141,10 @@ class Skills extends React.Component {
                     </TypewriterText>
                     </Experience>
                 </Background>
-                <Background backgroundCol={colours.white} height='45rem'>
-                    <CentreText float="left" width="40%" fontcol="black">
+                <Background backgroundCol="transparent" height='45rem' backgroundGradient={colours.black}>
+                    <CentreText float="left" width="40%" fontcol={colours.white}>
                         <div>
-                        <ContentBox background="white">
+                        <ContentBox background="transparent">
                             <Heading>Data Solutions</Heading>
                             <Content>Data professional with elite experience across the entire spectrum of data solutions</Content>
                             <Content>Experience in Data Engineering, DevOps and Data Science</Content>
@@ -152,7 +154,7 @@ class Skills extends React.Component {
         
                         </div>
                     </CentreText>
-                    <ImageBox width="55%" float="right" image={dataBackground} opacity="85%"/>
+                    {/*<ImageBox width="55%" float="right" image={dataBackground} opacity="85%"/>*/}
                 </Background>
                 <Background backgroundCol="transparent" height='45rem'>
                     <CentreText float="right" width="40%" fontcol="white">
@@ -164,18 +166,18 @@ class Skills extends React.Component {
                             <Content>Led teams of developers including education sessions on standard SDLC and version control systems</Content>
                         </div>
                     </CentreText>
-                    <ImageBox width="55%" float="left" image={sweBackground} opacity="85%"/>
+                    {/*<ImageBox width="55%" float="left" image={sweBackground} opacity="85%"/>*/}
                 </Background>
-                <Background backgroundCol="transparent" height='45rem' backgroundGradient={colours.mid}>
-                    <CentreText float="left" width="40%" fontcol="black">
-                        <ContentBox background="white">
+                <Background backgroundCol="transparent" height='45rem'>
+                    <CentreText float="left" width="40%" fontcol={colours.white}>
+                        <ContentBox background="transparent">
                             <Heading>Web Development</Heading>
                             <Content>Full stack web developer</Content>
                             <Content>Experience on web applications of all scales from simple to enterprise</Content>
                             <Content>Fluent in TypeScript and modern JS frameworks as well as Web 3.0 technologies including Solidity</Content>
                         </ContentBox>
                     </CentreText>
-                    <ImageBox width="55%" float="right" image={webBackground} opacity="85%"/>
+                    {/*<ImageBox width="55%" float="right" image={webBackground} opacity="85%"/>*/}
                 </Background>
                 </>
         )

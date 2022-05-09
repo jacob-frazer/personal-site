@@ -9,13 +9,11 @@ import AboutPage from './Components/About';
 import PostsPage from './Components/Posts';
 import ProjectsPage from './Components/Projects';
 import ProjectsInfo from './Components/ProjectsInfo';
-import SkillsPage from './Components/Skills';
 
 const navigation = {
   brand: { name: "Jacob", to: "/" },
   links: [
     { name: "Projects", to: "/projects" },
-    { name: "Skills", to: "/skills" },
     { name: "Blogs", to: "/blogs" },
     { name: "About", to: "/about" },
     /*{ name: "Sign In", to: "/signin" },*/
@@ -35,8 +33,6 @@ export default class App extends Component {
 
             <Route path="/projects" element={<ProjectsPage/>}/>
             <Route path="/projects/:info" element={<ProjectsInfo/>}/>
-
-            <Route path="/skills" element={<SkillsPage/>}/>
             
             <Route path="/blogs" element={<PostsPage/>}/>
             <Route path="/about" element={<AboutPage/>}/>

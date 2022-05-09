@@ -40,7 +40,7 @@ export default class Projects extends Component {
       const ProjList: any = () => projects.map((proj) => <ProjectCard proj={proj}/>);
       return (
         <Background>
-            <TextBox>Content and projects that I have worked on, click on one to find out more!</TextBox>
+            <TextBox>Some of my favourite content and projects that I have worked on, click on one to find out more!</TextBox>
             <Cards>
                 <ProjList/>
             </Cards>
