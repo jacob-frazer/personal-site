@@ -14,7 +14,7 @@ const navigation = {
   brand: { name: "Jacob", to: "/" },
   links: [
     { name: "Projects", to: "/projects" },
-    { name: "Blogs", to: "/blogs" },
+    /*{ name: "Blogs", to: "/blogs" },*/
     { name: "About", to: "/about" },
     /*{ name: "Sign In", to: "/signin" },*/
   ]
@@ -27,20 +27,20 @@ export default class App extends Component {
     return (
       <div className='App'>
         <BrowserRouter>
-          <NavBar brand={brand} links={links} />
-          <Routes>
-            <Route path="/" element={<HomePage />}/>
+            <NavBar brand={brand} links={links} />
+            <Routes>
+              <Route path="/" element={<HomePage />}/>
 
-            <Route path="/projects" element={<ProjectsPage/>}/>
-            <Route path="/projects/:info" element={<ProjectsInfo/>}/>
-            
-            <Route path="/blogs" element={<PostsPage/>}/>
-            <Route path="/about" element={<AboutPage/>}/>
+              <Route path="/projects" element={<ProjectsPage/>}/>
+              <Route path="/projects/:info" element={<ProjectsInfo/>}/>
+              
+              <Route path="/about" element={<AboutPage/>}/>
 
-            {/*
-            <Route path="/signin" element={<div>SIGNIN</div>}/>
-            */}
-          </Routes>
+              {/*
+              <Route path="/blogs" element={<PostsPage/>}/>
+              <Route path="/signin" element={<div>SIGNIN</div>}/>
+              */}
+            </Routes>
         </BrowserRouter>
       </div>
     );
