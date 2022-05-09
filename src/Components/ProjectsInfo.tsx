@@ -9,7 +9,7 @@ const ContentBox = styled.div<{ background: string }>`
     background-color: ${props => props.background};
     border-radius: 1rem;
     padding: 1rem;
-    box-shadow: 5px 5px #e3e3e3;
+    box-shadow: 0.2rem 0.2rem white;
     `;
 
 const CentreText = styled.div<{ float:string, width:string, fontcol:string }>`
@@ -38,10 +38,11 @@ const ExplanationText = styled.div<{  }>`
     column-fill: auto;
     float: left;
     padding: 3rem;
-    border-right: 2px solid ${colours.lightgrey};
+    border-right: 2px solid ${colours.white};
     font-size: 0.875rem;
     line-height: 1.5;
     margin-bottom: 1.25rem;
+    color: ${colours.white};
     `;
 
 const ExplanationHeader = styled.h1`
@@ -170,13 +171,13 @@ const ProjectInfo = () => {
 
     return (
         <>
-        <Background backgroundCol='white' height='17rem'>
-            <CentreText float="left" width="70%" fontcol="black">
+        <Background backgroundCol={colours.black} height='17rem'>
+            <CentreText float="left" width="70%" fontcol={colours.white}>
                 <Headline>{content.headline}</Headline>
                 <Intro>{content.intro}</Intro>
             </CentreText>
             
-            <CentreText float="right" width="20%" fontcol="black">
+            <CentreText float="right" width="20%" fontcol={colours.white}>
                 <TechnologiesHeader>Technologies</TechnologiesHeader>
                 <TechnologiesList>
                     {content.technologies.map((x:string) => <TechnologiesListItem>{x}</TechnologiesListItem>)}
@@ -184,16 +185,16 @@ const ProjectInfo = () => {
             </CentreText>
         </Background>
 
-        <Background backgroundCol={colours.lightgrey} height='0.25rem'/>
+        <Background backgroundCol={colours.white} height='0.25rem'/>
 
-        <Background backgroundCol={colours.mid} height='50rem'>
+        <Background backgroundCol={colours.black} height='50rem'>
             <ExplanationText>
                 <ExplanationHeader>Deep Dive</ExplanationHeader>
                 {content.explanation}
             </ExplanationText>
 
             <Outcomes>
-                <ContentBox background='white'>
+                <ContentBox background={colours.mid}>
                     <OutcomesHeader>Successes & Outcomes</OutcomesHeader>
                     <OutcomesList>
                         {content.outcomes.map((x:string) => <OutcomesListItem>{x}</OutcomesListItem>)}

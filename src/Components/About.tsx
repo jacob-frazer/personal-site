@@ -26,8 +26,8 @@ const AboutHeader = styled.div`
   letter-spacing: 2px;
   `;
 
-const AboutBody = styled.div`
-  font-size: 2.5rem;
+const AboutText = styled.div`
+  font-size: 2rem;
   color: ${colours.white};
   width: 50%;
   padding: 2rem;
@@ -41,9 +41,12 @@ class AboutPage extends React.Component{
         <>
         <Background backgroundCol={colours.black} height="93vh">
           <AboutHeader>Who am I?</AboutHeader>
-          <AboutBody>
-            body in here
-          </AboutBody>
+          <AboutText>
+            Hey, I am Jacob, a software developer and data specialist
+          </AboutText>
+          <AboutText>
+            I love to code (I even do it on the weekends)
+          </AboutText>
         </Background>
         </>
       )
