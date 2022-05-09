@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Routes, Route, BrowserRouter } from 'react-router-dom';
 
-import './App.css';
+import './App.css'
 
 import HomePage from './Components/Home';
 import NavBar from './Components/NavBar';
@@ -25,9 +25,9 @@ export default class App extends Component {
     const { brand, links } = navigation;
 
     return (
-      <div className="App">
-        <NavBar brand={brand} links={links} />    
+      <div className='App'>
         <BrowserRouter>
+          <NavBar brand={brand} links={links} />
           <Routes>
             <Route path="/" element={<HomePage />}/>
 

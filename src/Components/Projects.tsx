@@ -7,7 +7,7 @@ import colours from '../utils/colours';
 import ProjectCard from './ProjectCard';
 
 const TextBox = styled.div`
-    color: black;
+    color: ${colours.white};
     align: left;
     display: flex;
     padding: 30px;
@@ -17,7 +17,7 @@ const TextBox = styled.div`
     `;
 
 const Background = styled.div`
-    background-color: white;
+    background-color: ${colours.black};
     `;
 
 

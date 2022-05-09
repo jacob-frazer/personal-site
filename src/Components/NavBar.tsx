@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import colours from '../utils/colours';
 
+import { Link } from 'react-router-dom';
+
 const Theme = {
     colors: {
       bg: `#fff`,
@@ -16,7 +18,7 @@ const Theme = {
 
   
   const Navbar = styled.nav`
-    background: ${colours.navbar};
+    background-color: ${colours.black};
     font-family: ${Theme.fonts.heading};
     color: ${Theme.colors.light};
     display: flex;
@@ -29,7 +31,7 @@ const Theme = {
     a { cursor:pointer;
       padding: 7px 14px;
       position:relative;
-      background:black;
+      background:${colours.black};
       text-decoration: none;
       border-top-right-radius:10px;
       border-bottom-left-radius:10px;
@@ -106,7 +108,7 @@ const NavbarScroller = (props: {
     links: Array<{ name: string, to: string }>
     }) => {
     const { brand, links } = props;
-    const NavLinks: any = () => links.map((link: { name: string, to: string }) => <Li key={link.name}><a href={link.to}>{link.name}</a></Li>);
+    const NavLinks: any = () => links.map((link: { name: string, to: string }) => <Li key={link.name}><Link to={link.to}>{link.name}</Link></Li>);
     return (
         <Navbar>
           <Brand href={brand.to}>{brand.name}</Brand>

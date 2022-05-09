@@ -40,7 +40,7 @@ const CardImage = styled.div<{backgroundImage:string}>`
     `;
 
 const Card = styled.div`
-    background-color: white;
+    background-color: ${colours.light};
     border-radius: 0.25rem;
     box-shadow: 0 20px 40px -14px rgba(0,0,0,0.25);
     display: flex;
@@ -76,7 +76,7 @@ const CardText = styled.p`
     `;
 
 const Button = styled.button`
-    background-color: white;
+    background-color: ${colours.light};
     border: 1px solid grey;
     //border-radius: 1rem;
     color: black;
