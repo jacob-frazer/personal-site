@@ -1,17 +1,29 @@
-import React, { Component } from 'react';
-import { useNavigate } from "react-router-dom";
+import React from 'react';
 
 import styled from 'styled-components';
-import { keyframes } from 'styled-components';
+import Typed from 'typed.js';
+import { motion, Variants } from "framer-motion";
+
 import colours from '../utils/colours';
 
-import Typed from 'typed.js';
 
-import dataBackground from '../images/backgrounds/data.jpg'
-import sweBackground from '../images/backgrounds/software-engineering1.jpg'
-import webBackground from '../images/backgrounds/internet.jpg'
+const BounceFromBelowVariants: Variants = {
+    offscreen: {
+        y: 150,
+        opacity: 0.2
+      },
+    onscreen: {
+        y: 0,
+        opacity: 1,
+        transition: {
+            type: "spring",
+            bounce: 0.3,
+            duration: 1
+        }
+    }
+};
 
-const Experience = styled.div<{ fontcol:string }>`
+const Experience = styled(motion.div)<{ fontcol:string }>`
     padding: 10rem;
     font-size: 1.5rem;
     font-weight: 300;
@@ -52,17 +64,7 @@ const Background = styled.div<{ backgroundCol: string, height: string, backgroun
     `}
     `;
 
-const ImageBox = styled.div<{ width: string, float:string, image:string, opacity:string}>`
-    height: 100%;
-    width: ${props => props.width};
-    float: ${props => props.float};
-    background-image: url(${props => props.image});
-    background-repeat: no-repeat;
-    background-size: cover;
-    opacity: ${props => props.opacity};
-    `;
-
-const CentreText = styled.div<{ float:string, width:string, fontcol:string }>`
+const CentreText = styled(motion.div)<{ float:string, width:string, fontcol:string }>`
     font-size: 1.5rem;
     color: ${props => props.fontcol};
     padding: 1.5rem;
@@ -89,12 +91,8 @@ interface TypeWriter {
     typed: Typed
 }
 class TypeWriter extends React.Component<{ strings: Array<string> }> {
-
     componentDidMount() {
-        // If you want to pass more options as props, simply add
-      // your desired props to this destructuring assignment.
       const { strings } = this.props;
-      // You can pass other options here, such as typing speed, back speed, etc.
       const options = {
           strings: strings,
           typeSpeed: 50,
@@ -124,26 +122,40 @@ class Skills extends React.Component {
         return (
                 <>
                 <Background backgroundCol="transparent" height='200px' backgroundGradient={colours.black}>
-                    <Experience fontcol={colours.white}>Find out about my experience with
-                    <TypewriterText background="transparent" fontcol={colours.white} fontsize='2.5rem'>
-                        <TypeWriter strings={[
-                                "Data Science",
-                                "Python",
-                                "Software Development",
-                                "Dev Ops",
-                                "Javascript",
-                                "Data Engineering",
-                                "Web Development",
-                                "Cloud Infrastructure",
-                                "Big Data",
-                                "Rust",
-                        ]}/>
-                    </TypewriterText>
+                    <Experience 
+                        fontcol={colours.white}
+                        initial="offscreen"
+                        whileInView="onscreen"
+                        viewport={{ once: true }}
+                        variants={BounceFromBelowVariants}
+                        >
+                        Find out about my experience with
+                        <TypewriterText background="transparent" fontcol={colours.white} fontsize='2.5rem'>
+                            <TypeWriter strings={[
+                                    "Data Science",
+                                    "Python",
+                                    "Software Development",
+                                    "Dev Ops",
+                                    "Javascript",
+                                    "Data Engineering",
+                                    "Web Development",
+                                    "Cloud Infrastructure",
+                                    "Big Data",
+                                    "Rust",
+                            ]}/>
+                        </TypewriterText>
                     </Experience>
                 </Background>
                 <Background backgroundCol="transparent" height='45rem' backgroundGradient={colours.black}>
-                    <CentreText float="left" width="40%" fontcol={colours.white}>
-                        <div>
+                    <CentreText 
+                        float="left" 
+                        width="40%" 
+                        fontcol={colours.white}
+                        initial="offscreen"
+                        whileInView="onscreen"
+                        viewport={{ once: true }}
+                        variants={BounceFromBelowVariants}
+                        >
                         <ContentBox background="transparent">
                             <Heading>Data Solutions</Heading>
                             <Content>Data professional with elite experience across the entire spectrum of data solutions</Content>
@@ -151,13 +163,18 @@ class Skills extends React.Component {
                             <Content>Familiar with all common technologies and cloud providers in the domain</Content>
                             <Content>Proven ability at all stages of the software lifecycle from problem to live solution to wind-down</Content>
                         </ContentBox>
-        
-                        </div>
                     </CentreText>
-                    {/*<ImageBox width="55%" float="right" image={dataBackground} opacity="85%"/>*/}
                 </Background>
                 <Background backgroundCol="transparent" height='45rem'>
-                    <CentreText float="right" width="40%" fontcol="white">
+                    <CentreText 
+                        float="right" 
+                        width="40%" 
+                        fontcol="white"
+                        initial="offscreen"
+                        whileInView="onscreen"
+                        viewport={{ once: true }}
+                        variants={BounceFromBelowVariants}
+                        >
                         <div>
                             <Heading>Software Engineering</Heading>
                             <Content>Many years of experience building sophisticated solutions for businesses</Content>
@@ -166,10 +183,17 @@ class Skills extends React.Component {
                             <Content>Led teams of developers including education sessions on standard SDLC and version control systems</Content>
                         </div>
                     </CentreText>
-                    {/*<ImageBox width="55%" float="left" image={sweBackground} opacity="85%"/>*/}
                 </Background>
                 <Background backgroundCol="transparent" height='45rem'>
-                    <CentreText float="left" width="40%" fontcol={colours.white}>
+                    <CentreText 
+                        float="left" 
+                        width="40%" 
+                        fontcol={colours.white}
+                        initial="offscreen"
+                        whileInView="onscreen"
+                        viewport={{ once: true }}
+                        variants={BounceFromBelowVariants}
+                        >
                         <ContentBox background="transparent">
                             <Heading>Web Development</Heading>
                             <Content>Full stack web developer</Content>
@@ -177,7 +201,6 @@ class Skills extends React.Component {
                             <Content>Fluent in TypeScript and modern JS frameworks as well as Web 3.0 technologies including Solidity</Content>
                         </ContentBox>
                     </CentreText>
-                    {/*<ImageBox width="55%" float="right" image={webBackground} opacity="85%"/>*/}
                 </Background>
                 </>
         )
