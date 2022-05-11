@@ -9,7 +9,6 @@ const ContentBox = styled.div<{ background: string }>`
     background-color: ${props => props.background};
     border-radius: 1rem;
     padding: 1rem;
-    box-shadow: 0.2rem 0.2rem white;
     `;
 
 const CentreText = styled.div<{ float:string, width:string, fontcol:string }>`
@@ -82,7 +81,7 @@ const OutcomesListItem = styled.li`
 
     &:before {
         content: '✓';
-        color: green;
+        color: ${colours.dark};
         position: absolute;
         left: 0;
         width: 1em;
@@ -194,7 +193,7 @@ const ProjectInfo = () => {
             </ExplanationText>
 
             <Outcomes>
-                <ContentBox background={colours.mid}>
+                <ContentBox background={colours.white}>
                     <OutcomesHeader>Successes & Outcomes</OutcomesHeader>
                     <OutcomesList>
                         {content.outcomes.map((x:string) => <OutcomesListItem>{x}</OutcomesListItem>)}

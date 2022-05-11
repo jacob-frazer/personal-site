@@ -10,7 +10,7 @@ import colours from '../utils/colours';
 const BounceFromBelowVariants: Variants = {
     offscreen: {
         y: 150,
-        opacity: 0.2
+        opacity: 0
       },
     onscreen: {
         y: 0,
@@ -126,7 +126,7 @@ class Skills extends React.Component {
                         fontcol={colours.white}
                         initial="offscreen"
                         whileInView="onscreen"
-                        viewport={{ once: true }}
+                        viewport={{ once: true, amount: 0.5 }}
                         variants={BounceFromBelowVariants}
                         >
                         Find out about my experience with
@@ -153,7 +153,7 @@ class Skills extends React.Component {
                         fontcol={colours.white}
                         initial="offscreen"
                         whileInView="onscreen"
-                        viewport={{ once: true }}
+                        viewport={{ once: true, amount: 0.8 }}
                         variants={BounceFromBelowVariants}
                         >
                         <ContentBox background="transparent">
@@ -172,7 +172,7 @@ class Skills extends React.Component {
                         fontcol="white"
                         initial="offscreen"
                         whileInView="onscreen"
-                        viewport={{ once: true }}
+                        viewport={{ once: true, amount: 0.5 }}
                         variants={BounceFromBelowVariants}
                         >
                         <div>
@@ -191,7 +191,7 @@ class Skills extends React.Component {
                         fontcol={colours.white}
                         initial="offscreen"
                         whileInView="onscreen"
-                        viewport={{ once: true }}
+                        viewport={{ once: true, amount: 0.5 }}
                         variants={BounceFromBelowVariants}
                         >
                         <ContentBox background="transparent">

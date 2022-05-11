@@ -22,21 +22,6 @@ const slideInRight = keyframes`
   100% {transform: translateX(0);}
 `;
 
-const zoomInText = keyframes`
-  0% {
-    transform: scale(0.94);
-    opacity: 0;
-  }
-  80% {
-    transform: scale(0.94);
-    opacity: 0;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-`;
-
 const fadeInSpan = keyframes`
   0% {filter: blur(4px);}
   80% {filter: blur(4px);}
@@ -78,11 +63,6 @@ const Text3 = styled(motion.div)`
   position: relative;
   z-index: 1000;
 `;
-
-const FadeInSpan = styled.span<{ fadeInTime: string }>`
-  animation-name: ${fadeInSpan};
-  animation-duration: ${p => (p.fadeInTime)};
-  `;
 
 const InfoDiv = styled.div`
   padding-top: 2rem;
