@@ -80,6 +80,7 @@ const OutcomesList = styled.div`
 const OutcomesListItem = styled.li`
     position: relative;
     padding-left: 1.5em;
+    padding-top: 1.5rem;
 
     &:before {
         content: '✓';
@@ -171,7 +172,13 @@ const ProjectInfo = () => {
                             Ut luctus ultricies sagittis. Nam tempus maximus tellus, ac bibendum ex egestas suscipit. Nam aliquam faucibus tristique. Suspendisse maximus, urna sit amet hendrerit vestibulum, elit velit luctus massa, vitae faucibus sapien est ac magna. Cras commodo fermentum ipsum, sit amet luctus lorem molestie non. Etiam sollicitudin tellus vitae elit laoreet, et tristique nisi ullamcorper. Fusce vel iaculis nibh. Duis vitae dignissim nunc. In ut lobortis tortor. Fusce ut leo quis nisi semper aliquet eu sit amet odio. Ut odio massa, placerat at lacus sit amet, varius placerat mauris.\
                             Praesent eu dolor in odio efficitur commodo. Nam porta interdum orci vitae tempus. Aenean scelerisque cursus vestibulum. Integer lacus ligula, consectetur sit amet faucibus ac, consectetur sit amet arcu. Phasellus porta tortor elit, at posuere turpis sollicitudin quis. Morbi vel venenatis ante. Duis ac lacinia tellus. Ut velit lacus, mattis at fringilla vitae, consectetur ut libero.\
                             Sed eleifend quam sed velit venenatis vestibulum eget a velit. Donec sit amet risus mi. Nullam sit amet nisl justo. Morbi aliquet velit at ante finibus tincidunt sed ut risus. Curabitur nec leo ullamcorper, eleifend orci a, consequat ipsum. Sed faucibus dapibus urna ut maximus. Cras vestibulum magna arcu, eget fermentum enim hendrerit sed. Nullam feugiat quam aliquam, rhoncus odio non, commodo mauris. Pellentesque ultricies nibh ac tellus malesuada ullamcorper nec sed felis. Etiam vitae est ultricies, vestibulum elit nec, aliquam risus. Sed vehicula urna ligula, vitae laoreet sem pretium eget.",
-            "outcomes": ["Saved hella lives", "thousands pounds in efficiency savings", "etc"],
+            "outcomes": [
+                "Improved health outcomes and provably saved lives by early and accurate detections", 
+                "Automation of reporting processes allowed for redistribution of work and generated tens of thousands pounds in efficiency savings", 
+                "Fully transformed the data engineering solution to infrastructure as code allowing for rapid deployment and scale ups",
+                "Development of sophisticated visualisations allowed for easier insight gathering from our dataset and improved information for policy makers",
+                "Built end-to-end data pipelines to ensure high quality, validated data sources in simple outputs for scientific analysis"
+            ],
         },
         "proj2":{
             "headline": "AI health insurance",
@@ -189,47 +196,53 @@ const ProjectInfo = () => {
 
     return (
         <>
-        <Background backgroundCol={colours.black} height='17rem'>
-            <CentreText float="left" width="70%" fontcol={colours.white}>
-                <Headline>{content.headline}</Headline>
-                <Intro>{content.intro}</Intro>
-            </CentreText>
-            
-            <CentreText float="right" width="20%" fontcol={colours.white}>
-                <TechnologiesHeader>Technologies</TechnologiesHeader>
-                <TechnologiesList>
-                    {content.technologies.map((x:string) => <TechnologiesListItem>{x}</TechnologiesListItem>)}
-                </TechnologiesList>
-            </CentreText>
-        </Background>
+        {
+            !content ? 
+            <div>No project with this name</div> : 
+            <>
+            <Background backgroundCol={colours.black} height='17rem'>
+                <CentreText float="left" width="70%" fontcol={colours.white}>
+                    <Headline>{content.headline}</Headline>
+                    <Intro>{content.intro}</Intro>
+                </CentreText>
+                
+                <CentreText float="right" width="20%" fontcol={colours.white}>
+                    <TechnologiesHeader>Technologies</TechnologiesHeader>
+                    <TechnologiesList>
+                        {content.technologies.map((x:string) => <TechnologiesListItem>{x}</TechnologiesListItem>)}
+                    </TechnologiesList>
+                </CentreText>
+            </Background>
 
-        <Background backgroundCol={colours.white} height='0.25rem'/>
+            <Background backgroundCol={colours.white} height='0.25rem'/>
 
-        <Background backgroundCol={colours.black} height='50rem'>
-            <ExplanationText>
-                <ExplanationHeader>Deep Dive</ExplanationHeader>
-                {content.explanation}
-            </ExplanationText>
+            <Background backgroundCol={colours.black} height='50rem'>
+                <ExplanationText>
+                    <ExplanationHeader>Deep Dive</ExplanationHeader>
+                    {content.explanation}
+                </ExplanationText>
 
-            <Outcomes>
-                <motion.div
-                    drag={true}
-                    dragConstraints={{ left: 0, right: 0, top: 25, bottom: 25 }}
-                    initial="offscreen"
-                    whileInView="onscreen"
-                    viewport={{ once: true, amount: 0.5 }}
-                    variants={BounceFromBelowVariants}
-                    >
-                    <ContentBox background={colours.white}>
-                        <OutcomesHeader>Successes & Outcomes</OutcomesHeader>
-                        <OutcomesList>
-                            {content.outcomes.map((x:string) => <OutcomesListItem>{x}</OutcomesListItem>)}
-                        </OutcomesList>
-                    </ContentBox>
-                </motion.div>
-            </Outcomes>
+                <Outcomes>
+                    <motion.div
+                        drag={true}
+                        dragConstraints={{ left: 0, right: 0, top: 25, bottom: 25 }}
+                        initial="offscreen"
+                        whileInView="onscreen"
+                        viewport={{ once: true, amount: 0.5 }}
+                        variants={BounceFromBelowVariants}
+                        >
+                        <ContentBox background={colours.white}>
+                            <OutcomesHeader>Successes & Outcomes</OutcomesHeader>
+                            <OutcomesList>
+                                {content.outcomes.map((x:string) => <OutcomesListItem>{x}</OutcomesListItem>)}
+                            </OutcomesList>
+                        </ContentBox>
+                    </motion.div>
+                </Outcomes>
 
-        </Background>
+            </Background>
+        </>
+        }
         </>
         )
     };

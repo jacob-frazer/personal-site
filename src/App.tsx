@@ -9,6 +9,7 @@ import AboutPage from './Components/About';
 import PostsPage from './Components/Posts';
 import ProjectsPage from './Components/Projects';
 import ProjectsInfo from './Components/ProjectsInfo';
+import NotFound from './Components/NotFound';
 
 const navigation = {
   brand: { name: "Jacob", to: "/" },
@@ -40,6 +41,7 @@ export default class App extends Component {
               <Route path="/blogs" element={<PostsPage/>}/>
               <Route path="/signin" element={<div>SIGNIN</div>}/>
               */}
+              <Route path="*" element={<NotFound/>} />
             </Routes>
         </BrowserRouter>
       </div>
