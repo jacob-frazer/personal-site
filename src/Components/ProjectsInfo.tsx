@@ -3,6 +3,8 @@ import { useNavigate, useParams } from "react-router-dom";
 
 import styled from 'styled-components';
 import { keyframes } from 'styled-components';
+import { motion, Variants } from 'framer-motion';
+
 import colours from '../utils/colours';
 
 const ContentBox = styled.div<{ background: string }>`
@@ -131,6 +133,23 @@ const Intro = styled.div`
     letter-spacing: 2px;
 `;
 
+const BounceFromBelowVariants: Variants = {
+    offscreen: {
+        y: 150,
+        opacity: 0
+      },
+    onscreen: {
+        y: 0,
+        opacity: 1,
+        transition: {
+            type: "spring",
+            bounce: 0.3,
+            duration: 1,
+            delay: 0.2
+        }
+    }
+  };
+
 const ProjectInfo = () => {
     // redirect function to the more info page for projects
     let navigate = useNavigate();
@@ -193,12 +212,21 @@ const ProjectInfo = () => {
             </ExplanationText>
 
             <Outcomes>
-                <ContentBox background={colours.white}>
-                    <OutcomesHeader>Successes & Outcomes</OutcomesHeader>
-                    <OutcomesList>
-                        {content.outcomes.map((x:string) => <OutcomesListItem>{x}</OutcomesListItem>)}
-                    </OutcomesList>
-                </ContentBox>
+                <motion.div
+                    drag={true}
+                    dragConstraints={{ left: 0, right: 0, top: 25, bottom: 25 }}
+                    initial="offscreen"
+                    whileInView="onscreen"
+                    viewport={{ once: true, amount: 0.5 }}
+                    variants={BounceFromBelowVariants}
+                    >
+                    <ContentBox background={colours.white}>
+                        <OutcomesHeader>Successes & Outcomes</OutcomesHeader>
+                        <OutcomesList>
+                            {content.outcomes.map((x:string) => <OutcomesListItem>{x}</OutcomesListItem>)}
+                        </OutcomesList>
+                    </ContentBox>
+                </motion.div>
             </Outcomes>
 
         </Background>

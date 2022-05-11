@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
-import projects from "../data/projects.json";
+
 import styled from 'styled-components';
+import { motion, Variants} from 'framer-motion';
 
 import colours from '../utils/colours';
+import projects from "../data/projects.json";
 
 import ProjectCard from './ProjectCard';
 
@@ -31,6 +33,22 @@ const Cards = styled.ul`
     width: 100%;
     `;
 
+const BounceFromBelowVariants: Variants = {
+    offscreen: {
+        y: 150,
+        opacity: 0
+        },
+    onscreen: {
+        y: 0,
+        opacity: 1,
+        transition: {
+            type: "spring",
+            bounce: 0.3,
+            duration: 1,
+            delay: 0.2
+        }
+    }
+    };
 
 export default class Projects extends Component {
     public render() {
@@ -41,9 +59,16 @@ export default class Projects extends Component {
       return (
         <Background>
             <TextBox>Some of my favourite content and projects that I have worked on, click on one to find out more!</TextBox>
-            <Cards>
-                <ProjList/>
-            </Cards>
+            <motion.div
+                    initial="offscreen"
+                    whileInView="onscreen"
+                    viewport={{ once: true, amount: 0.5 }}
+                    variants={BounceFromBelowVariants}
+                    >
+                <Cards>
+                    <ProjList/>
+                </Cards>
+            </motion.div>
         </Background>
       );
     }

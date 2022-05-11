@@ -153,7 +153,7 @@ class Skills extends React.Component {
                         fontcol={colours.white}
                         initial="offscreen"
                         whileInView="onscreen"
-                        viewport={{ once: true, amount: 0.8 }}
+                        viewport={{ once: true, amount: 0.5 }}
                         variants={BounceFromBelowVariants}
                         >
                         <ContentBox background="transparent">
