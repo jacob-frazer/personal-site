@@ -126,7 +126,6 @@ class Skills extends React.Component {
                         fontcol={colours.white}
                         initial="offscreen"
                         whileInView="onscreen"
-                        viewport={{ once: true, amount: 0.5 }}
                         variants={BounceFromBelowVariants}
                         >
                         Find out about my experience with

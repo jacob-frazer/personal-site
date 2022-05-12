@@ -6,6 +6,7 @@ import { keyframes } from 'styled-components';
 import { motion, Variants } from 'framer-motion';
 
 import colours from '../utils/colours';
+import NotFound from './NotFound';
 
 const ContentBox = styled.div<{ background: string }>`
     background-color: ${props => props.background};
@@ -198,7 +199,7 @@ const ProjectInfo = () => {
         <>
         {
             !content ? 
-            <div>No project with this name</div> : 
+            <NotFound projects={true}/> : 
             <>
             <Background backgroundCol={colours.black} height='17rem'>
                 <CentreText float="left" width="70%" fontcol={colours.white}>
