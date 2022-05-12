@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { motion, Variants} from 'framer-motion';
 
 import colours from '../utils/colours';
-import projects from "../data/projects.json";
+//import projects from "../data/projects.json";
 
 import ProjectCard from './ProjectCard';
 
@@ -33,6 +33,11 @@ const Cards = styled.ul`
     width: 100%;
     `;
 
+const LoadingPage = styled.div`
+    height: 1000px;
+    background-color: black;
+    `;
+
 const BounceFromBelowVariants: Variants = {
     offscreen: {
         y: 150,
@@ -51,13 +56,30 @@ const BounceFromBelowVariants: Variants = {
     };
 
 export default class Projects extends Component {
-    public render() {
-      // call to db (json) to get info about the various projects + picture
-  
-      // this will pass into project box item to display nicely but for now just info into div
-      const ProjList: any = () => projects.map((proj) => <ProjectCard proj={proj}/>);
+    state = {
+        projects: [],
+        loaded: false
+    }
+
+    componentDidMount() {
+        fetch("/data/projectsInfo.json")
+        .then(response => {
+            response.json().then(projInfo => {
+                this.setState({
+                    ...this.state,
+                    projects: projInfo,
+                    loaded: true
+                })
+            })
+        })
+    }
+
+    render() {
       return (
         <Background>
+            {!this.state.loaded ? 
+            <LoadingPage/> : 
+            <>
             <TextBox>Some of my favourite content and projects that I have worked on, click on one to find out more!</TextBox>
             <motion.div
                     initial="offscreen"
@@ -66,9 +88,12 @@ export default class Projects extends Component {
                     variants={BounceFromBelowVariants}
                     >
                 <Cards>
-                    <ProjList/>
+                    {this.state.projects.map((proj) => <ProjectCard proj={proj}/>)}
                 </Cards>
             </motion.div>
+            </>
+            }
+            
         </Background>
       );
     }
