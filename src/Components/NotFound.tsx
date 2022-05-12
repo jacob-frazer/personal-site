@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from "react-router-dom";
 
 import styled from 'styled-components';
 
@@ -33,18 +34,19 @@ const Header404 = styled.div`
 const Body404 = styled.div`
     color: ${colours.white};
     font-size: 1.5rem;
-    padding: 1rem;
+    padding: 5rem;
     font-weight: 400;
     letter-spacing: 2px;
     `;
 
-const Return404 = styled.div`
+const Return404 = styled(Link)`
     color: ${colours.white};
     font-size: 1.5rem;
-    padding: 1rem;
-    padding-top: 15rem;
+    padding: 0.5rem;
     font-weight: 400;
     letter-spacing: 2px;
+    text-decoration: none;
+    border: 1px solid white;
     `;
 
 class NotFound extends React.Component<{projects?:boolean}>{
@@ -59,7 +61,7 @@ class NotFound extends React.Component<{projects?:boolean}>{
                     <Body404>Sorry, I haven't worked on a project with that name. Maybe one day!</Body404> :
                     <Body404>Sorry, that page doesn't exist.</Body404>
                 }
-                <Return404>Take me back <strong>home</strong></Return404>
+                <Return404 to="/">Take me back <strong>home</strong></Return404>
                 
             </Background>
         </>
