@@ -34,7 +34,7 @@ const Cards = styled.ul`
     `;
 
 const LoadingPage = styled.div`
-    height: 1000px;
+    height: 100vh;
     background-color: black;
     `;
 

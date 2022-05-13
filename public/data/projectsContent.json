@@ -4,12 +4,13 @@
         "intro": "Working as part of the UK Health Security Agency as part of the response to the coronavirus pandemic, I performed in a data specialist role encompassing analysis, data science, engineering and devops.",
         "technologies": ["AWS CDK", "AWS Glue", "AWS Lambda", "Python", "Jupyter"],
         "explanation": [
-            "All the great work I did aaaaa",
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ultricies diam at magna volutpat, vitae pharetra nulla eleifend. Etiam aliquam ligula eget ex aliquam scelerisque. Nam pulvinar gravida dui in ornare. Praesent ipsum dolor, posuere vel sodales eu, eleifend in quam. Fusce malesuada ex venenatis nulla finibus, eget lacinia tellus dapibus. In metus turpis, mollis eu congue et, imperdiet et enim. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Vivamus sed convallis nunc. Sed eu viverra lectus, et molestie sapien. Mauris imperdiet ipsum a semper egestas. Quisque venenatis est ac sagittis dapibus.",
-            "Fusce non odio vel velit auctor fermentum ac a enim. Nulla imperdiet lacus elit, eget efficitur ipsum tempor nec. Aliquam erat volutpat. Donec egestas tempor purus id pellentesque. Sed non accumsan nisi. Curabitur at nibh tempor felis tristique consectetur vitae eu velit. Pellentesque nisi mauris, aliquet nec enim dapibus, dictum consectetur mi. Vestibulum lobortis leo nec purus molestie tincidunt. Donec malesuada interdum orci, pretium tristique orci commodo consequat. Etiam semper diam ut augue vehicula, ut rhoncus augue ultrices. Ut elementum nisl sed tortor placerat maximus. Vestibulum suscipit pulvinar est, at rutrum nibh gravida sed. Pellentesque lacinia id leo eget auctor. Etiam sagittis eros ac efficitur fringilla. Mauris eu vehicula urna, vel ultrices nisl.",
-            "Ut luctus ultricies sagittis. Nam tempus maximus tellus, ac bibendum ex egestas suscipit. Nam aliquam faucibus tristique. Suspendisse maximus, urna sit amet hendrerit vestibulum, elit velit luctus massa, vitae faucibus sapien est ac magna. Cras commodo fermentum ipsum, sit amet luctus lorem molestie non. Etiam sollicitudin tellus vitae elit laoreet, et tristique nisi ullamcorper. Fusce vel iaculis nibh. Duis vitae dignissim nunc. In ut lobortis tortor. Fusce ut leo quis nisi semper aliquet eu sit amet odio. Ut odio massa, placerat at lacus sit amet, varius placerat mauris.",
-            "Praesent eu dolor in odio efficitur commodo. Nam porta interdum orci vitae tempus. Aenean scelerisque cursus vestibulum. Integer lacus ligula, consectetur sit amet faucibus ac, consectetur sit amet arcu. Phasellus porta tortor elit, at posuere turpis sollicitudin quis. Morbi vel venenatis ante. Duis ac lacinia tellus. Ut velit lacus, mattis at fringilla vitae, consectetur ut libero.",
-            "Sed eleifend quam sed velit venenatis vestibulum eget a velit. Donec sit amet risus mi. Nullam sit amet nisl justo. Morbi aliquet velit at ante finibus tincidunt sed ut risus. Curabitur nec leo ullamcorper, eleifend orci a, consequat ipsum. Sed faucibus dapibus urna ut maximus. Cras vestibulum magna arcu, eget fermentum enim hendrerit sed. Nullam feugiat quam aliquam, rhoncus odio non, commodo mauris. Pellentesque ultricies nibh ac tellus malesuada ullamcorper nec sed felis. Etiam vitae est ultricies, vestibulum elit nec, aliquam risus. Sed vehicula urna ligula, vitae laoreet sem pretium eget."
+            "In November 2020, I joined the United Kingdom Health Security Agency (UKHSA), then known as the Joint Biosecurity Centre, as a contractor with the purpose to try and leverage data and data science to fight the coronavirus pandemic that was ravaging the country. I was assigned to a new team focused on using waste water (sewage) data to detect outbreaks and measure cases in an area. This was a cutting edge implementation of wastewater based epidemiology at a scale of which had never been seen before anywhere in the world.",
+            "First order, producing bespoke visualisations for this new data source to convey simple meanings of complex subject matter",
+            "Work on automation and further updates to fully interactive",
+            "Work producing risk scores",
+            "Work building new DE pipelines",
+            "Work fully iac DE solution",
+            "Running educational sessions on git and cloud practices for scientists."
         ],
         "outcomes": [
             "Improved health outcomes and provably saved lives by early and accurate detections", 
@@ -25,8 +26,11 @@
         "intro": "Built a sophisticated reasoning engine and utilised natural language processing to automate the role of underwriters to calculate health insurance policy pricing based on a customers medical history.",
         "technologies": ["Python", "IBM Watson", "NLP", "AWS"],
         "explanation": [
-            "This project was ",
-            "hard"
+            "This project was -- proj intro",
+            "project aims",
+            "project challenges",
+            "project solution design",
+            "project successful outcomes"
         ],
         "outcomes": [
             "Successful automation of simple cases allowed for reallocation of human resource to complex cases only", 
@@ -38,7 +42,13 @@
         "headline": "Highly Secure Software Validation",
         "intro": "Created a platform to validate and inspect all ingested software for any malicious behaviours before storing in an assured database for secure access.",
         "technologies": ["Javascript", "Ansible", "VMWare", "Apache NiFi"],
-        "explanation": ["FILL EXPLANATIONS"],
+        "explanation": [
+            "This project was -- proj intro",
+            "project aims",
+            "project challenges",
+            "project solution design",
+            "project successful outcomes"
+        ],
         "outcomes": [
             "Successfully built system on time and within budget, preventing costly delays in a £1.5bn project", 
             "System was profiled and redesigned for higher efficiency and utilising new hardware",
@@ -50,7 +60,13 @@
         "headline": "Machine Learning GUI",
         "intro": "Graphical user interface to facilitate simple building of machine learning models on a complex World Bank economic dataset as well as storing models and results in a database.",
         "technologies": ["Python", "ReactJS", "NodeJS", "MongoDB", "AWS EC2" ],
-        "explanation": ["FILL EXPLANATIONS"],
+        "explanation": [
+            "This project was -- proj intro",
+            "project aims",
+            "project challenges",
+            "project solution design",
+            "project successful outcomes"
+        ],
         "outcomes": [
             "Bespoke system allowing for user selection of any features across time ranges and differing countries as well as many different machine learning methods",
             "All results and models were saved to a NoSQL database allowing for faster recall in future if same parameters were entered again",
@@ -61,7 +77,13 @@
         "headline": "Social Media Community Connectedness",
         "intro": "Investigation into Reddit communities and application of several graph algorithms to determine interconnectedness.",
         "technologies": ["Python", "Apache Spark", "Graph Theory"],
-        "explanation": ["FILL EXPLANATIONS"],
+        "explanation": [
+            "This project was -- proj intro",
+            "project aims",
+            "project challenges",
+            "project solution design",
+            "project successful outcomes"
+        ],
         "outcomes": [
             "Implementation of many graphing algorithms including Karger's and in both python and apache spark", 
             "Investigation results successfully mirrored expected outputs indicating a high level of confidence in the implementations",
@@ -72,7 +94,13 @@
         "headline": "Recruitment Based on Job Simulation",
         "intro": "An ongoing project to build a system to run simulations of people in new jobs to determine best fit and shape recruitment.",
         "technologies": ["Python", "Typescript", "AWS Stack"],
-        "explanation": ["FILL EXPLANATIONS"],
+        "explanation": [
+            "This project was -- proj intro",
+            "project aims",
+            "project challenges",
+            "project solution design",
+            "project successful outcomes"
+        ],
         "outcomes": [
             "Prototype system built which simulates many potential outcomes from placement of an individual in a particular position and uses that to estimate a likelihood of good fit metric", 
             "Proprietary algorithm designed giving 50% better predictions in how someone will fare in a role compared to the average",

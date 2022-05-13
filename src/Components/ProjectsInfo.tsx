@@ -45,6 +45,7 @@ const ExplanationText = styled.div<{  }>`
     line-height: 1.5;
     margin-bottom: 1.25rem;
     color: ${colours.white};
+    text-align: left;
     `;
 
 const ExplanationHeader = styled.h1`
@@ -202,7 +203,7 @@ const ProjectInfo = () => {
             <Background backgroundCol={colours.black} height='50rem'>
                 <ExplanationText>
                     <ExplanationHeader>Deep Dive</ExplanationHeader>
-                    {state.explanation.join("\n")}
+                    {state.explanation.map((para:string) => <p>{para}</p>)}
                 </ExplanationText>
 
                 <Outcomes>
