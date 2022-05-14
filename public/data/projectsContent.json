@@ -25,16 +25,17 @@
         "intro": "Built a sophisticated reasoning engine and utilised natural language processing to automate the role of underwriters to calculate health insurance policy pricing based on a customers medical history.",
         "technologies": ["Python", "IBM Watson", "NLP", "AWS"],
         "explanation": [
-            "This project was -- proj intro",
-            "project aims",
-            "project challenges",
-            "project solution design",
-            "project successful outcomes"
+            "This project was a cutting edge use of natural language processing and cognitive reasoning, at the time it made Aviva the only insurance company in the UK to have this capability. It focussed on using a customer's medical history data (which they already provided) when they applied for health and life insurance products and passing it through our pipeline to remove any need for human underwriter involvement.",
+            "The aim was that by automating this process it would allow for a much faster throughput of cases as previously it could take as long as 6 weeks for a customer to recieve a quote from when they submit their initial request. Obviously, this was terrible for both the customer and the business and so this solution aimed to fix that. Furthermore, by handling the majority of the cases it would allow the underwriters just to focus their expertise and the few cases that were particularly complex or where the system had low confidence in its predictions. All in all these time and efficiency savings would be able to save the company over £10M in just a few years.",
+            "There were many large challenges to overcome whilst building the solution, not least of which being whether it was even possible. As this solution was world leading there was no guides we could follow or articles to read we had to break new ground. Additionally, utilising NLP heavily came with its own set of problems particularly when the medical records were often verbatim dictacted text or even shorthand.",
+            "Our solution was built mainly using two components, firstly a sophisticated NLP engine (IBM Watson), and secondly an entirely in-house built reasoning engine. The process would be that when a customer applies online, their medical history is downloaded and passed into the NLP engine from which many conditions, symptoms and other relevant health information would be extracted. Additionally, it would also extract the links between these conditions and a certainty in its estimates of the links. All of this infomation would then be passed into our reasoning engine which would take the statements extracted from the medical history and use them to build up a 'health profile' estimating the likelihood of many diseases and conditions the individual could have. It would also include other non-conditions but relevant information such as family history, height, weight, age, medications, etc and it would also adjust this by time as something a long time ago is obviously less relevant for pricing now. Once it had this it was able to calculate the expected price for insurance products based on the health of the patient.",
+            "The project was an unmitigated success with it successfully managing to price over 70% of the cases fed into it. This allowed all of the predicted business savings to be achieved as well as significantly decreasing the time taken for customers to receive their quotes. As far as I am aware the system is still live and running in production."
         ],
         "outcomes": [
             "Successful automation of simple cases allowed for reallocation of human resource to complex cases only", 
             "Fully automated pipeline decreased wait time for insurance quote from 6 weeks to minutes",
-            "Speed up and resource savings resulted in business savings in excess of £10M"
+            "Speed up and resource savings resulted in business savings in excess of £10M",
+            "Form based responses were also able to be priced and fully automated resulting in further business savings of ~£1M"
         ]
     },
     "softwarevalidation": {
