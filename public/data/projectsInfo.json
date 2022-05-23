@@ -30,9 +30,9 @@
         "url": "socialmediagraph"
     },
     {
-        "name": "Avatar Based Recruitment",
-        "description": "Innovative new approach to recruitment leveraging simulating candidates in prospective positions to find the perfect fit",
-        "image": "/images/projects/avatar.jpg",
-        "url": "avatarrecruitment"
+        "name": "Cyber Security Data Science",
+        "description": "Multiple projects in the BT Security Data Science Hub, leveraging data as a tool for cyber security across many varied use cases",
+        "image": "/images/projects/cyberSec.jpg",
+        "url": "cybersecurity"
     }
 ]

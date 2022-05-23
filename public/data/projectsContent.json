@@ -91,21 +91,23 @@
             "Allowed for deeper investigation of how some social media communities interact and build out visualisations of large graphs of connections between communities"
         ]
     },
-    "avatarrecruitment": {
-        "headline": "Recruitment Based on Job Simulation",
-        "intro": "An ongoing project to build a system to run simulations of people in new jobs to determine best fit and shape recruitment.",
-        "technologies": ["Python", "Typescript", "AWS Stack"],
+    "cybersecurity": {
+        "headline": "Cyber Security Data Science Hub",
+        "intro": "A collection of projects to build, explore and utilise data science in a cyber security context. Involved many different projects in a wide scope.",
+        "technologies": ["Python", "Apache Spark", "AWS"],
         "explanation": [
-            "This project was -- proj intro",
-            "project aims",
-            "project challenges",
-            "project solution design",
-            "project successful outcomes"
+            "Whilst at BT I worked as part of the cyber security data science hub (DSH), this was a team established to leverage data science for new applications in cyber security. This could entail anything from data science work to improve an exist project or product, to building new solutions, to exploring novel applications of data science to see if there was any viability to the ideas. During my time in this team I worked across several projects in some capacity and will explain a short amount about them here.",
+            "One project I worked on as part of the DSH was an investigation of a new software called Apache Metron. This was a highly scalable advanced security analytics framework, additionally as it was an Apache product it was open source and community driven. It was of interest to us in BT Security as if this was going to be the next big thing in the area of cyber security frameworks we would want to know about it, and so I lead a piece of work undertaking an evaluation of it.",
+            "This came with all the common problems you would expect from investigating an early stage software such as bugs, crashes and installation issues. However, once most of this was remedied I was able to start looking into it's capabilities and how easy it is to use and extend and such like. ",
+            "As I was feeding back information from my evaluation it was shared with other members of BT security team, particularly those who worked on a similar product that we offered. This knowledge allowed them to develop and incorporate some of the best features and designs from Metron into our offering. I also presented some of these findings to external customers as an example of the cutting edge investigations BT Security was undertaking.",
+            "Another project was working with terabytes of netflow traffic data, the aim was to see if there was any feasible way to analyse this and get useful insights from it or whether the data was just too large and too noisy to get anything useful from it.",
+            "My involvements in this was early on, I helped with the investigation design as well as early stage implementation. Using a collection of aws products we were able to firstly spoof large amounts of nonsense data to check if our solution would even be able to process it fast enough and then over time we were able to adapt our data generation to make accurately faked netflow data and see whether we could pull anything from it. It was found the system could handle processing the data and so finding insights would be possible.",
+            "Finally, I also took part in multiple courses whilst I was part of the DSH, the most significant of these was a week long course on ethical hacking. This was a practical course offered by EC-Council which covered many areas of cyber security and hacking including topics such as footprinting, vulnerability analysis and system hacking. Another course was multiple days on Apache Spark, this big data framework is very commonly used in the security space where the datasets are often very large and so this intensive course covered everything from basics to advanced algorithm implementations."
         ],
         "outcomes": [
-            "Prototype system built which simulates many potential outcomes from placement of an individual in a particular position and uses that to estimate a likelihood of good fit metric", 
-            "Proprietary algorithm designed giving 50% better predictions in how someone will fare in a role compared to the average",
-            "Do this project more --"
+            "Exploration of cutting edge data security platform, lead to features being adapted and incorporated into similar BT Security products", 
+            "Early stage work on terabytes of netflow data investigation allowed for a prototype to be made and thus feasibility of gathering insights was found to be possible",
+            "Completed multiple cyber security focused courses on a range of topics including ethical hacking, common attack vectors, and big data such as apache spark"
         ]
     }
 }
