@@ -3,8 +3,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import { motion, Variants} from 'framer-motion';
 
-import colours from '../utils/colours';
-//import projects from "../data/projects.json";
+import colours from '../../utils/colours';
 
 import ProjectCard from './ProjectCard';
 

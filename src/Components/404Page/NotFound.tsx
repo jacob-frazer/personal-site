@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import styled from 'styled-components';
 
-import colours from '../utils/colours';
+import colours from '../../utils/colours';
 
 const RobotImage = styled.img`
     filter: brightness(0) invert(1);

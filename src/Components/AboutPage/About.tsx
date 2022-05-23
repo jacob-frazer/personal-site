@@ -3,9 +3,9 @@ import React from 'react';
 
 import styled from 'styled-components';
 
-import colours from '../utils/colours';
+import colours from '../../utils/colours';
 
-import Connections from './Connections';
+import Connections from '../Generics/Connections';
 
 const Background = styled.div<{ backgroundCol: string, height: string, backgroundGradient?:string }>`
     background-color: ${props => props.backgroundCol};

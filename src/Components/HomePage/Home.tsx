@@ -1,16 +1,13 @@
-import React from 'react';
-import { useEffect } from "react";
-
 import styled from 'styled-components';
 import { keyframes } from 'styled-components';
 import { motion, useAnimation } from "framer-motion";
 
-import colours from '../utils/colours';
-import ParticlesBG from './ParticlesBackground';
+import colours from '../../utils/colours';
+import ParticlesBG from '../Generics/ParticlesBackground';
 
 import SkillsPage from './Skills';
-import mePhoto from '../images/me.png';
-import Connections from './Connections';
+import mePhoto from '../../images/me.png';
+import Connections from '../Generics/Connections';
 
 const slideInLeft = keyframes`
   0% {transform: translateX(-100%);}
@@ -20,12 +17,6 @@ const slideInLeft = keyframes`
 const slideInRight = keyframes`
   0% {transform: translateX(100%);}
   100% {transform: translateX(0);}
-`;
-
-const fadeInSpan = keyframes`
-  0% {filter: blur(4px);}
-  80% {filter: blur(4px);}
-  100% {filter: blur(0px);}
 `;
 
 const Text1 = styled.div`

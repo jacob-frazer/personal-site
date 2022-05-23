@@ -3,21 +3,18 @@ import { BrowserRouter as Router, Routes, Route, BrowserRouter } from 'react-rou
 
 import './App.css'
 
-import HomePage from './Components/Home';
-import NavBar from './Components/NavBar';
-import AboutPage from './Components/About';
-import PostsPage from './Components/Posts';
-import ProjectsPage from './Components/Projects';
-import ProjectsInfo from './Components/ProjectsInfo';
-import NotFound from './Components/NotFound';
+import HomePage from './Components/HomePage/Home';
+import NavBar from './Components/Generics/NavBar';
+import AboutPage from './Components/AboutPage/About';
+import ProjectsPage from './Components/ProjectsPage/Projects';
+import ProjectsInfo from './Components/ProjectsPage/ProjectsInfo';
+import NotFound from './Components/404Page/NotFound';
 
 const navigation = {
   brand: { name: "Jacob", to: "/" },
   links: [
     { name: "Projects", to: "/projects" },
-    /*{ name: "Blogs", to: "/blogs" },*/
     { name: "About", to: "/about" },
-    /*{ name: "Sign In", to: "/signin" },*/
   ]
 }
 
@@ -31,16 +28,9 @@ export default class App extends Component {
             <NavBar brand={brand} links={links} />
             <Routes>
               <Route path="/" element={<HomePage />}/>
-
               <Route path="/projects" element={<ProjectsPage/>}/>
               <Route path="/projects/:info" element={<ProjectsInfo/>}/>
-              
               <Route path="/about" element={<AboutPage/>}/>
-
-              {/*
-              <Route path="/blogs" element={<PostsPage/>}/>
-              <Route path="/signin" element={<div>SIGNIN</div>}/>
-              */}
               <Route path="*" element={<NotFound/>} />
             </Routes>
         </BrowserRouter>

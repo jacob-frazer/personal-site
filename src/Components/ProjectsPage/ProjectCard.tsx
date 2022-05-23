@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { useNavigate } from "react-router-dom";
 
 import styled from 'styled-components';
-import colours from '../utils/colours';
+import colours from '../../utils/colours';
 
 const CardsItem = styled.li`
     display: flex;
