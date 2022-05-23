@@ -95,7 +95,7 @@ const Button = styled.button`
     `;
 
 const ProjectCard = (props: {
-    proj: { name: string; description: string, status: string, image: string, url: string },
+    proj: { name: string; description: string, image: string, url: string },
     }) => {
     // redirect function to the more info page for projects
     let navigate = useNavigate();
