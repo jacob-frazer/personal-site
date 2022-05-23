@@ -1,0 +1,21 @@
+// colour codes imported and used all over app for styling
+export const SKILLS_TYPEWRITER_LIST = [
+    "Data Science",
+    "Python",
+    "Software Development",
+    "Dev Ops",
+    "Machine Learning",
+    "Javascript",
+    "Data Engineering",
+    "Web Development",
+    "Government",
+    "Cloud Infrastructure",
+    "Cyber Security",
+    "Big Data",
+    "Rust",
+    "Artificial Intelligence",
+    "Health",
+    "Blockchain",
+    "Data Engineering",
+    "Insurance",
+];

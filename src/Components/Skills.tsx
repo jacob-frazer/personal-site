@@ -5,7 +5,7 @@ import Typed from 'typed.js';
 import { motion, Variants } from "framer-motion";
 
 import colours from '../utils/colours';
-
+import { SKILLS_TYPEWRITER_LIST } from '../utils/constants';
 
 const BounceFromBelowVariants: Variants = {
     offscreen: {
@@ -99,6 +99,7 @@ class TypeWriter extends React.Component<{ strings: Array<string> }> {
           backSpeed: 50,
           loop: true,
           loopCount: Infinity,
+          shuffle: true,
       };
       // this.el refers to the <span> in the render() method
       this.typed = new Typed(this.el, options);
@@ -127,21 +128,11 @@ class Skills extends React.Component {
                         initial="offscreen"
                         whileInView="onscreen"
                         variants={BounceFromBelowVariants}
+                        viewport={{ once: true, amount: 0.5 }}
                         >
                         Find out about my experience with
                         <TypewriterText background="transparent" fontcol={colours.white} fontsize='2.5rem'>
-                            <TypeWriter strings={[
-                                    "Data Science",
-                                    "Python",
-                                    "Software Development",
-                                    "Dev Ops",
-                                    "Javascript",
-                                    "Data Engineering",
-                                    "Web Development",
-                                    "Cloud Infrastructure",
-                                    "Big Data",
-                                    "Rust",
-                            ]}/>
+                            <TypeWriter strings={SKILLS_TYPEWRITER_LIST}/>
                         </TypewriterText>
                     </Experience>
                 </Background>
@@ -159,7 +150,7 @@ class Skills extends React.Component {
                             <Heading>Data Solutions</Heading>
                             <Content>Data professional with elite experience across the entire spectrum of data solutions</Content>
                             <Content>Experience in Data Engineering, DevOps and Data Science</Content>
-                            <Content>Familiar with all common technologies and cloud providers in the domain</Content>
+                            <Content>Familiar with all common data speciality technologies and cloud providers</Content>
                             <Content>Proven ability at all stages of the software lifecycle from problem to live solution to wind-down</Content>
                         </ContentBox>
                     </CentreText>
@@ -177,9 +168,10 @@ class Skills extends React.Component {
                         <div>
                             <Heading>Software Engineering</Heading>
                             <Content>Many years of experience building sophisticated solutions for businesses</Content>
-                            <Content>Fluent in many of the most common programming languages and can quickly learn others to adapt to your existing codebases</Content>
+                            <Content>Fluent in many of the most common programming languages with an aptitude for learning others</Content>
                             <Content>Experience across many industries and domains</Content>
                             <Content>Led teams of developers including education sessions on standard SDLC and version control systems</Content>
+                            <Content>Just as capable starting a project from scratch or adapting to an existing codebase</Content>
                         </div>
                     </CentreText>
                 </Background>
@@ -195,9 +187,10 @@ class Skills extends React.Component {
                         >
                         <ContentBox background="transparent">
                             <Heading>Web Development</Heading>
-                            <Content>Full stack web developer</Content>
-                            <Content>Experience on web applications of all scales from simple to enterprise</Content>
-                            <Content>Fluent in TypeScript and modern JS frameworks as well as Web 3.0 technologies including Solidity</Content>
+                            <Content>Full stack web developer with experience using a wide range of softwares and languages</Content>
+                            <Content>Experience working on web applications of all scales from simple to enterprise</Content>
+                            <Content>Fluent in TypeScript and modern JS frameworks as well as traditional HTML/CSS/JS sites</Content>
+                            <Content>Familiarity with Web 3.0 technologies including Solidity & web3js</Content>
                         </ContentBox>
                     </CentreText>
                 </Background>
