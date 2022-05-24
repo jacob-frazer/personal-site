@@ -1,33 +1,17 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from "react-router-dom";
 
 import styled from 'styled-components';
 
 import colours from '@utils/colours';
 
-import { Background } from '@generics/SimpleStyledComponents';
+import { Background, BasicText } from '@generics/SimpleStyledComponents';
 
 const RobotImage = styled.img`
     filter: brightness(0) invert(1);
     display: flex;
     float: right;
     padding: 3rem;
-    `;
-
-const Header404 = styled.div`
-    color: ${colours.white};
-    font-size: 4rem;
-    padding: 4rem;
-    font-weight: 500;
-    letter-spacing: 2px;
-    `;
-
-const Body404 = styled.div`
-    color: ${colours.white};
-    font-size: 1.5rem;
-    padding: 5rem;
-    font-weight: 400;
-    letter-spacing: 2px;
     `;
 
 const Return404 = styled(Link)`
@@ -46,11 +30,16 @@ class NotFound extends React.Component<{projects?:boolean}>{
         <>
             <Background backgroundCol={colours.black} height="94vh">
                 <RobotImage src="/images/404/broken-robot.png"/>
-                <Header404>404.</Header404>
+                <BasicText fontCol={colours.white} fontSize='4rem' padding='4rem' fontWeight='500' letterSpacing='2px'>404.</BasicText>
                 {
                     this.props.projects ? 
-                    <Body404>Sorry, I haven't worked on a project with that name. Maybe one day!</Body404> :
-                    <Body404>Sorry, that page doesn't exist.</Body404>
+                    <BasicText fontCol={colours.white} fontSize='1.5rem' padding='5rem' fontWeight='400' letterSpacing='2px'>
+                        Sorry, I haven't worked on a project with that name. Maybe one day!
+                    </BasicText>
+                    :
+                    <BasicText fontCol={colours.white} fontSize='1.5rem' padding='5rem' fontWeight='400' letterSpacing='2px'>
+                        Sorry, that page doesn't exist.
+                    </BasicText>
                 }
                 <Return404 to="/">Take me back <strong>home</strong></Return404>
                 

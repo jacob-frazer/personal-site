@@ -1,25 +1,13 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
 
 import styled from 'styled-components';
 import { motion, Variants} from 'framer-motion';
 
+import ProjectCard from '@projects/ProjectCard';
+import { Background, BasicText, LoadingPage } from '@generics/SimpleStyledComponents';
+
 import colours from '@utils/colours';
 
-import ProjectCard from '@projects/ProjectCard';
-import { Background } from '@generics/SimpleStyledComponents';
-
-const TextBox = styled.div`
-    color: ${colours.white};
-    align: left;
-    display: flex;
-    padding: 30px;
-    font-size: 22px;
-    font-weight: 300;
-    letter-spacing: 2px;
-    `;
-
-
-// attempting to convert into TS
 const Cards = styled.ul`
     display: flex;
     flex-wrap: wrap;
@@ -27,11 +15,6 @@ const Cards = styled.ul`
     margin: 0;
     padding: 0;
     width: 100%;
-    `;
-
-const LoadingPage = styled.div`
-    height: 100vh;
-    background-color: black;
     `;
 
 const BounceFromBelowVariants: Variants = {
@@ -76,11 +59,13 @@ export default class Projects extends Component {
             {!this.state.loaded ? 
             <LoadingPage/> : 
             <>
-            <TextBox>Some of my favourite content and projects that I have worked on, click on one to find out more!</TextBox>
+            <BasicText fontCol={colours.white} fontSize='1.5rem' padding='2rem' fontWeight='300' letterSpacing='2px' display='flex'>
+                Some of my favourite content and projects that I have worked on, click on one to find out more!
+            </BasicText>
             <motion.div
                     initial="offscreen"
                     whileInView="onscreen"
-                    viewport={{ once: true, amount: 0.5 }}
+                    viewport={{ once: true, amount: 0.1 }}
                     variants={BounceFromBelowVariants}
                     >
                 <Cards>

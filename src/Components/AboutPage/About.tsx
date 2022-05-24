@@ -1,32 +1,10 @@
 import { motion, Variants } from 'framer-motion';
 import React from 'react';
 
-import styled from 'styled-components';
+import Connections from '@generics/Connections';
+import { Background, BasicText } from '@generics/SimpleStyledComponents';
 
 import colours from '@utils/colours';
-
-import Connections from '@generics/Connections';
-import { Background } from '@generics/SimpleStyledComponents';
-
-const AboutHeader = styled.div`
-  font-size: 5rem;
-  color: ${colours.white};
-  width: 75%;
-  display: float;
-  float: left;
-  padding: 2rem;
-  font-weight: 300;
-  letter-spacing: 2px;
-  `;
-
-const AboutText = styled.div`
-  font-size: 2rem;
-  color: ${colours.white};
-  width: 58%;
-  padding: 2rem;
-  font-weight: 300;
-  letter-spacing: 2px;
-  `;
 
 const BounceFromBelowVariants: Variants = {
   offscreen: {
@@ -58,16 +36,19 @@ class AboutPage extends React.Component{
             viewport={{ once: true, amount: 0.5 }}
             variants={BounceFromBelowVariants}
             >
-          <AboutHeader>Who am I?</AboutHeader>
-          <AboutText>
+          <BasicText fontCol={colours.white} fontSize='5rem' padding='2rem' fontWeight='300' letterSpacing='2px' width='75%' display='float' float='left'>
+            Who am I?
+          </BasicText>
+
+          <BasicText fontCol={colours.white} fontSize='2rem' padding='2rem' fontWeight='300' letterSpacing='2px' width='58%'>
             Hey, I am Jacob, a software developer and data specialist who enjoys solving interesting business problems
-          </AboutText>
-          <AboutText>
+          </BasicText>
+          <BasicText fontCol={colours.white} fontSize='2rem' padding='2rem' fontWeight='300' letterSpacing='2px' width='58%'>
             I live in London and I love to code (I even do it on the weekends)
-          </AboutText>
-          <AboutText>
+          </BasicText>
+          <BasicText fontCol={colours.white} fontSize='2rem' padding='2rem' fontWeight='300' letterSpacing='2px' width='58%'>
             In my free time I like to learn - doesn't matter what, as long as it's stimulating!
-          </AboutText>
+          </BasicText>
           </motion.div>
           <Connections colour='light' padding="10rem 0 0 0"/>
         </Background>
