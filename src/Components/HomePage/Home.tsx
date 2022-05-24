@@ -3,11 +3,13 @@ import { keyframes } from 'styled-components';
 import { motion, useAnimation } from "framer-motion";
 
 import colours from '../../utils/colours';
-import ParticlesBG from '../Generics/ParticlesBackground';
+
 
 import SkillsPage from './Skills';
 import mePhoto from '../../images/me.png';
-import Connections from '../Generics/Connections';
+
+import Connections from '@generics/Connections';
+import ParticlesBG from '@generics/ParticlesBackground';
 
 const slideInLeft = keyframes`
   0% {transform: translateX(-100%);}
