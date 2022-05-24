@@ -6,17 +6,7 @@ import styled from 'styled-components';
 import colours from '@utils/colours';
 
 import Connections from '@generics/Connections';
-
-const Background = styled.div<{ backgroundCol: string, height: string, backgroundGradient?:string }>`
-    background-color: ${props => props.backgroundCol};
-    height: ${props => props.height};
-    z-index: 10;
-    position: relative;
-
-    ${props => props.backgroundGradient && `
-        background:linear-gradient(${props.backgroundCol}, ${props.backgroundGradient})
-    `}
-    `;
+import { Background } from '@generics/SimpleStyledComponents';
 
 const AboutHeader = styled.div`
   font-size: 5rem;

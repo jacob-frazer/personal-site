@@ -6,6 +6,7 @@ import { motion, Variants} from 'framer-motion';
 import colours from '@utils/colours';
 
 import ProjectCard from '@projects/ProjectCard';
+import { Background } from '@generics/SimpleStyledComponents';
 
 const TextBox = styled.div`
     color: ${colours.white};
@@ -15,10 +16,6 @@ const TextBox = styled.div`
     font-size: 22px;
     font-weight: 300;
     letter-spacing: 2px;
-    `;
-
-const Background = styled.div`
-    background-color: ${colours.black};
     `;
 
 
@@ -75,7 +72,7 @@ export default class Projects extends Component {
 
     render() {
       return (
-        <Background>
+        <Background backgroundCol={colours.black}>
             {!this.state.loaded ? 
             <LoadingPage/> : 
             <>

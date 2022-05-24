@@ -2,11 +2,12 @@ import React, { Component, useState, useEffect } from 'react';
 import { useNavigate, useParams } from "react-router-dom";
 
 import styled from 'styled-components';
-import { keyframes } from 'styled-components';
 import { motion, Variants } from 'framer-motion';
 
 import colours from '@utils/colours';
 import NotFound from '@404/NotFound';
+
+import { Background } from '@generics/SimpleStyledComponents';
 
 const ContentBox = styled.div<{ background: string }>`
     background-color: ${props => props.background};
@@ -24,11 +25,6 @@ const CentreText = styled.div<{ float:string, width:string, fontcol:string }>`
     display: flex;
     align-items: center;
     justify-content: left;
-    `;
-
-const Background = styled.div<{ backgroundCol: string, height: string }>`
-    background-color: ${props => props.backgroundCol};
-    height: ${props => props.height};
     `;
 
 const ExplanationText = styled.div<{  }>`

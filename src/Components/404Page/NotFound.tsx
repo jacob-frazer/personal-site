@@ -5,22 +5,13 @@ import styled from 'styled-components';
 
 import colours from '@utils/colours';
 
+import { Background } from '@generics/SimpleStyledComponents';
+
 const RobotImage = styled.img`
     filter: brightness(0) invert(1);
     display: flex;
     float: right;
     padding: 3rem;
-    `;
-
-const Background = styled.div<{ backgroundCol: string, height: string, backgroundGradient?:string }>`
-    background-color: ${props => props.backgroundCol};
-    height: ${props => props.height};
-    z-index: 10;
-    position: relative;
-
-    ${props => props.backgroundGradient && `
-        background:linear-gradient(${props.backgroundCol}, ${props.backgroundGradient})
-    `}
     `;
 
 const Header404 = styled.div`

@@ -1,15 +1,14 @@
 import styled from 'styled-components';
 import { keyframes } from 'styled-components';
-import { motion, useAnimation } from "framer-motion";
-
-import colours from '@utils/colours';
-
+import { motion } from "framer-motion";
 
 import SkillsPage from '@home/Skills';
-import mePhoto from '@images/me.png';
-
 import Connections from '@generics/Connections';
 import ParticlesBG from '@generics/ParticlesBackground';
+
+import colours from '@utils/colours';
+import mePhoto from '@images/me.png';
+
 
 const slideInLeft = keyframes`
   0% {transform: translateX(-100%);}

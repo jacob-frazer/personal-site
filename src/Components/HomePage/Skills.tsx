@@ -1,8 +1,10 @@
 import React from 'react';
 
 import styled from 'styled-components';
-import Typed from 'typed.js';
 import { motion, Variants } from "framer-motion";
+
+import TypeWriter from '@generics/Typewriter';
+import { Background } from '@generics/SimpleStyledComponents';
 
 import colours from '@utils/colours';
 import { SKILLS_TYPEWRITER_LIST } from '@utils/constants';
@@ -52,18 +54,6 @@ const ContentBox = styled.div<{ background: string }>`
     box-shadow: 0 20px 40px -14px rgba(0,0,0,0.25);
     `;
 
-const Background = styled.div<{ backgroundCol: string, height: string, backgroundGradient?:string }>`
-    background-color: ${props => props.backgroundCol};
-    height: ${props => props.height};
-    z-index: 10;
-    position: relative;
-    opacity: 90%;
-
-    ${props => props.backgroundGradient && `
-        background:linear-gradient(${props.backgroundCol}, ${props.backgroundGradient})
-    `}
-    `;
-
 const CentreText = styled(motion.div)<{ float:string, width:string, fontcol:string }>`
     font-size: 1.5rem;
     color: ${props => props.fontcol};
@@ -86,37 +76,7 @@ const TypewriterText = styled.div<{ fontsize: string, fontcol:string, background
     justify-content: center;
     `;
     
-interface TypeWriter {
-    el: any,
-    typed: Typed
-}
-class TypeWriter extends React.Component<{ strings: Array<string> }> {
-    componentDidMount() {
-      const { strings } = this.props;
-      const options = {
-          strings: strings,
-          typeSpeed: 50,
-          backSpeed: 50,
-          loop: true,
-          loopCount: Infinity,
-          shuffle: true,
-      };
-      // this.el refers to the <span> in the render() method
-      this.typed = new Typed(this.el, options);
-    }
 
-    componentWillUnmount() {
-      // Make sure to destroy Typed instance on unmounting
-      // to prevent memory leaks
-      this.typed.destroy();
-    }
-
-    render() {
-        return (
-            <span ref={(el) => { this.el = el; }}/>
-        )
-    }
-}
 
 class Skills extends React.Component {
     render() {
