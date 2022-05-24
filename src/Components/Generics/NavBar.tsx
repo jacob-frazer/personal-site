@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import colours from '../../utils/colours';
+import colours from '@utils/colours';
 
 import { Link } from 'react-router-dom';
 

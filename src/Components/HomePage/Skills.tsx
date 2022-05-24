@@ -4,8 +4,8 @@ import styled from 'styled-components';
 import Typed from 'typed.js';
 import { motion, Variants } from "framer-motion";
 
-import colours from '../../utils/colours';
-import { SKILLS_TYPEWRITER_LIST } from '../../utils/constants';
+import colours from '@utils/colours';
+import { SKILLS_TYPEWRITER_LIST } from '@utils/constants';
 
 const BounceFromBelowVariants: Variants = {
     offscreen: {

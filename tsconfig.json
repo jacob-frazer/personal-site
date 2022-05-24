@@ -21,7 +21,13 @@
     "jsx": "react-jsx",
     "baseUrl": ".",
     "paths": {
-      "@generics/*": ["src/Components/Generics/*"]
+      "@utils/*": ["src/utils/*"],
+      "@images/*": ["src/images/*"],
+      "@home/*": ["src/Components/HomePage/*"],
+      "@projects/*": ["src/Components/ProjectsPage/*"],
+      "@about/*": ["src/Components/AboutPage/*"],
+      "@generics/*": ["src/Components/Generics/*"],
+      "@404/*": ["src/Components/404Page/*"],
     }
   },
   "include": [

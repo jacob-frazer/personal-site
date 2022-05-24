@@ -3,12 +3,12 @@ import { BrowserRouter as Router, Routes, Route, BrowserRouter } from 'react-rou
 
 import './App.css'
 
-import HomePage from './Components/HomePage/Home';
-import NavBar from './Components/Generics/NavBar';
-import AboutPage from './Components/AboutPage/About';
-import ProjectsPage from './Components/ProjectsPage/Projects';
-import ProjectsInfo from './Components/ProjectsPage/ProjectsInfo';
-import NotFound from './Components/404Page/NotFound';
+import HomePage from '@home/Home';
+import NavBar from '@generics/NavBar';
+import AboutPage from '@about/About';
+import ProjectsPage from '@projects/Projects';
+import ProjectsInfo from '@projects/ProjectsInfo';
+import NotFound from '@404/NotFound';
 
 const navigation = {
   brand: { name: "Jacob", to: "/" },

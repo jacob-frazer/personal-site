@@ -3,9 +3,9 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import { motion, Variants} from 'framer-motion';
 
-import colours from '../../utils/colours';
+import colours from '@utils/colours';
 
-import ProjectCard from './ProjectCard';
+import ProjectCard from '@projects/ProjectCard';
 
 const TextBox = styled.div`
     color: ${colours.white};

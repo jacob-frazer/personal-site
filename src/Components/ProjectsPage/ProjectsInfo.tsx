@@ -5,8 +5,8 @@ import styled from 'styled-components';
 import { keyframes } from 'styled-components';
 import { motion, Variants } from 'framer-motion';
 
-import colours from '../../utils/colours';
-import NotFound from '../404Page/NotFound';
+import colours from '@utils/colours';
+import NotFound from '@404/NotFound';
 
 const ContentBox = styled.div<{ background: string }>`
     background-color: ${props => props.background};

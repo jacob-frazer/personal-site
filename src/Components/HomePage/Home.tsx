@@ -2,11 +2,11 @@ import styled from 'styled-components';
 import { keyframes } from 'styled-components';
 import { motion, useAnimation } from "framer-motion";
 
-import colours from '../../utils/colours';
+import colours from '@utils/colours';
 
 
-import SkillsPage from './Skills';
-import mePhoto from '../../images/me.png';
+import SkillsPage from '@home/Skills';
+import mePhoto from '@images/me.png';
 
 import Connections from '@generics/Connections';
 import ParticlesBG from '@generics/ParticlesBackground';
