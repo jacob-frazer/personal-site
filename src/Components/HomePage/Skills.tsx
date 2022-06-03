@@ -7,7 +7,7 @@ import TypeWriter from '@generics/Typewriter';
 import { Background } from '@generics/SimpleStyledComponents';
 
 import colours from '@utils/colours';
-import { SKILLS_TYPEWRITER_LIST } from '@utils/constants';
+import { SKILLS_TYPEWRITER_LIST, DEVICE_WIDTHS } from '@utils/constants';
 
 const BounceFromBelowVariants: Variants = {
     offscreen: {
@@ -39,12 +39,35 @@ const Content = styled.div`
     font-size: 1.5rem;
     font-weight: 300;
     letter-spacing: 2px;
+
+    @media ${DEVICE_WIDTHS.tablet} {
+        padding-top: 1rem;
+        font-size: 0.75rem;
+      }
+    @media ${DEVICE_WIDTHS.laptop} {
+        padding-top: 1.5rem;
+        font-size: 1.2rem;
+      }
+    @media ${DEVICE_WIDTHS.desktop} {
+        padding-top: 2rem;
+        font-size: 1.5rem;
+      }
     `;
 
 const Heading = styled.div`
     font-size: 2.2rem;
     font-weight: 400;
     letter-spacing: 2px;
+
+    @media ${DEVICE_WIDTHS.tablet} {
+        font-size: 1.1rem;
+      }
+    @media ${DEVICE_WIDTHS.laptop} {
+        font-size: 1.65rem;
+      }
+    @media ${DEVICE_WIDTHS.desktop} {
+        font-size: 2.2rem;
+      }
     `;
 
 const ContentBox = styled.div<{ background: string }>`
@@ -75,9 +98,8 @@ const TypewriterText = styled.div<{ fontsize: string, fontcol:string, background
     align-items: center;
     justify-content: center;
     `;
+
     
-
-
 class Skills extends React.Component {
     render() {
         return (
@@ -96,7 +118,7 @@ class Skills extends React.Component {
                         </TypewriterText>
                     </Experience>
                 </Background>
-                <Background backgroundCol="transparent" height='45rem' backgroundGradient={colours.black}>
+                <Background backgroundCol="transparent" height='45rem'>
                     <CentreText 
                         float="left" 
                         width="40%" 

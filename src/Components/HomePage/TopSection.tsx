@@ -5,6 +5,7 @@ import { BasicText } from '@generics/SimpleStyledComponents';
 
 import mePhoto from '@images/me.png';
 import colours from '@utils/colours';
+import { DEVICE_WIDTHS } from '@utils/constants';
 
 const Text = styled(motion(BasicText))<{ fontStyle?: string, }>`
   z-index: 10000;
@@ -21,9 +22,22 @@ const TopSection = styled.div`
 const Photo = styled(motion.img)`
   position: relative;
   z-index: 1000;
-  width: 20rem;
   aspect-ratio: 1/0.95;
-  padding: 2rem;
+  padding: 0.5rem;
+  width: 5rem;
+
+  @media ${DEVICE_WIDTHS.tablet} {
+    padding: 1rem;
+    width: 10rem;
+  }
+  @media ${DEVICE_WIDTHS.laptop} {
+    padding: 2rem;
+    width: 15rem;
+  }
+  @media ${DEVICE_WIDTHS.desktop} {
+    padding: 2rem;
+    width: 20rem;
+  }
   `;
 
 export default function Top() {

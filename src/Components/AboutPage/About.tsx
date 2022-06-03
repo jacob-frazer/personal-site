@@ -35,7 +35,6 @@ const AboutText = styled(BasicText)`
     font-size: 1.5rem;
   }
   @media ${DEVICE_WIDTHS.laptop} {
-    font-size: 1.75rem;
     width: 58%;
   }
   @media ${DEVICE_WIDTHS.desktop} {
