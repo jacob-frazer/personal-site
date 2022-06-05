@@ -26,7 +26,7 @@ const BounceFromBelowVariants: Variants = {
 };
 
 const Experience = styled(motion.div)<{ fontcol:string }>`
-    padding: 10rem;
+    padding: 5rem 0.75rem 0.75rem 0.75rem;
     font-size: 1.5rem;
     font-weight: 300;
     letter-spacing: 2px;
@@ -34,15 +34,15 @@ const Experience = styled(motion.div)<{ fontcol:string }>`
     `;
 
 const Content = styled.div`
-    padding-top: 30px;
+    padding-top: 1rem;
     text-align: left;
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-weight: 300;
     letter-spacing: 2px;
 
     @media ${DEVICE_WIDTHS.tablet} {
-        padding-top: 1rem;
-        font-size: 0.75rem;
+        padding-top: 1.5rem;
+        font-size: 1.2rem;
       }
     @media ${DEVICE_WIDTHS.laptop} {
         padding-top: 1.5rem;
@@ -55,7 +55,7 @@ const Content = styled.div`
     `;
 
 const Heading = styled.div`
-    font-size: 2.2rem;
+    font-size: 1.1rem;
     font-weight: 400;
     letter-spacing: 2px;
 
@@ -77,26 +77,48 @@ const ContentBox = styled.div<{ background: string }>`
     box-shadow: 0 20px 40px -14px rgba(0,0,0,0.25);
     `;
 
-const CentreText = styled(motion.div)<{ float:string, width:string, fontcol:string }>`
+const CentreText = styled(motion.div)<{ float:string, fontcol:string }>`
     font-size: 1.5rem;
     color: ${props => props.fontcol};
-    padding: 1.5rem;
+    padding: 0.25rem;
     float: ${props => props.float};
     height: 85%;
-    width: ${props => props.width};
+    width: 95%;
     display: flex;
     align-items: center;
     justify-content: center;
+
+    @media ${DEVICE_WIDTHS.tablet} {
+        width:75%;
+      }
+    @media ${DEVICE_WIDTHS.laptop} {
+        width:50%;
+        padding: 1.2rem;
+      }
+    @media ${DEVICE_WIDTHS.desktop} {
+        width:40%;
+        padding: 1.5rem;
+      }
     `;
 
-const TypewriterText = styled.div<{ fontsize: string, fontcol:string, background:string }>`
-    font-size: ${props => props.fontsize};
+const TypewriterText = styled.div<{ fontcol:string, background:string }>`
     color: ${props => props.fontcol};
     background-color: ${props => props.background};
     padding: 2rem;
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 2rem;
+
+    @media ${DEVICE_WIDTHS.tablet} {
+        font-size: 2rem;
+      }
+    @media ${DEVICE_WIDTHS.laptop} {
+        font-size: 2.25rem;
+      }
+    @media ${DEVICE_WIDTHS.desktop} {
+        font-size: 2.5rem;
+      }
     `;
 
     
@@ -113,7 +135,7 @@ class Skills extends React.Component {
                         viewport={{ once: true, amount: 0.5 }}
                         >
                         Find out about my experience with
-                        <TypewriterText background="transparent" fontcol={colours.white} fontsize='2.5rem'>
+                        <TypewriterText background="transparent" fontcol={colours.white}>
                             <TypeWriter strings={SKILLS_TYPEWRITER_LIST}/>
                         </TypewriterText>
                     </Experience>
@@ -121,7 +143,6 @@ class Skills extends React.Component {
                 <Background backgroundCol="transparent" height='45rem'>
                     <CentreText 
                         float="left" 
-                        width="40%" 
                         fontcol={colours.white}
                         initial="offscreen"
                         whileInView="onscreen"
@@ -140,7 +161,6 @@ class Skills extends React.Component {
                 <Background backgroundCol="transparent" height='45rem'>
                     <CentreText 
                         float="right" 
-                        width="40%" 
                         fontcol="white"
                         initial="offscreen"
                         whileInView="onscreen"
@@ -160,7 +180,6 @@ class Skills extends React.Component {
                 <Background backgroundCol="transparent" height='45rem'>
                     <CentreText 
                         float="left" 
-                        width="40%" 
                         fontcol={colours.white}
                         initial="offscreen"
                         whileInView="onscreen"

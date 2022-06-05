@@ -17,14 +17,14 @@ opacity: 90%;
 `;
 
 const InfoHeading = styled(motion.div)`
-font-size: 2.2rem;
+font-size: 1.4rem;
 font-weight: 300;
 letter-spacing: 2px;
-padding: 2rem;
+padding: 1rem;
 
 @media ${DEVICE_WIDTHS.tablet} {
   padding: 1rem;
-  font-size: 1.1rem;
+  font-size: 1.4rem;
 }
 @media ${DEVICE_WIDTHS.laptop} {
   padding: 1.5rem;
@@ -37,14 +37,14 @@ padding: 2rem;
 `;
 
 const InfoBody = styled(motion.div)`
-font-size: 2rem;
+font-size: 1rem;
 font-weight: 300;
 letter-spacing: 2px;
 padding: 1rem;
 
 @media ${DEVICE_WIDTHS.tablet} {
   padding: 0.5rem;
-  font-size: 1rem;
+  font-size: 1.25rem;
 }
 @media ${DEVICE_WIDTHS.laptop} {
   padding: 0.75rem;
