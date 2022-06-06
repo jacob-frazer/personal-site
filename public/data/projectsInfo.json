@@ -1,0 +1,38 @@
+[
+    {
+        "name": "Fighting COVID-19",
+        "description": "Working as a data specialist across many different technical areas as part of the UK's response to the coronavirus pandemic",
+        "image": "/images/projects/covid.jpg",
+        "url": "ukhsa"
+    },
+    {
+        "name": "Artificial Intelligence Insurance Pricing",
+        "description": "Utilising cutting edge natural language processing and cognitive reasoning to deduce risk and pricing for life insurance products with Aviva",
+        "image": "/images/projects/aiBrain.jpg",
+        "url": "insuranceai"
+    },
+    {
+        "name": "Secure Software Validation",
+        "description": "Working under very high security constraints to validate and ensure ingested software is safe on a highly sensitive platform",
+        "image": "/images/projects/computerLock.png",
+        "url": "softwarevalidation"
+    },
+    {
+        "name": "Machine Learning Model Builder GUI",
+        "description": "Construction of end-to-end system to allow for building of machine learning models using a simple graphical user interface",
+        "image": "/images/projects/neuralNetwork.jpg",
+        "url": "mlgui"
+    },
+    {
+        "name": "Interconnection of Social Media Communities",
+        "description": "Exploration of various Reddit communities utilising graphing algorithms and big data frameworks",
+        "image": "/images/projects/connected.jpg",
+        "url": "socialmediagraph"
+    },
+    {
+        "name": "Cyber Security Data Science",
+        "description": "Multiple projects in the BT Security Data Science Hub, leveraging data as a tool for cyber security across many varied use cases",
+        "image": "/images/projects/cyberSec.jpg",
+        "url": "cybersecurity"
+    }
+]

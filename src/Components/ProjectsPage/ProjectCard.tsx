@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { useNavigate } from "react-router-dom";
 
 import styled from 'styled-components';
-import colours from '../utils/colours';
+import colours from '@utils/colours';
 
 const CardsItem = styled.li`
     display: flex;
@@ -95,7 +95,7 @@ const Button = styled.button`
     `;
 
 const ProjectCard = (props: {
-    proj: { name: string; description: string, status: string, image: string, url: string },
+    proj: { name: string; description: string, image: string, url: string },
     }) => {
     // redirect function to the more info page for projects
     let navigate = useNavigate();
