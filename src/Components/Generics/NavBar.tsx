@@ -83,7 +83,6 @@ const Li = styled.li`
   justify-content: center;
   line-height: 16px;
   margin: 0 20px ;
-  text-decoration: none;
   white-space: nowrap;
   a { color: white; }
   `;

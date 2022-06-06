@@ -4,11 +4,12 @@ import { BrowserRouter as Router, Routes, Route, BrowserRouter } from 'react-rou
 import './App.css'
 
 import HomePage from '@home/Home';
-import NavBar from '@generics/NavBar';
+
 import AboutPage from '@about/About';
 import ProjectsPage from '@projects/Projects';
 import ProjectsInfo from '@projects/ProjectsInfo';
 import NotFound from '@404/NotFound';
+import NavSelector from '@generics/NavSelector';
 
 const navigation = {
   brand: { name: "Jacob", to: "/" },
@@ -25,7 +26,7 @@ export default class App extends Component {
     return (
       <div className='App'>
         <BrowserRouter>
-            <NavBar brand={brand} links={links} />
+            <NavSelector brand={brand} links={links} />
             <Routes>
               <Route path="/" element={<HomePage />}/>
               <Route path="/projects" element={<ProjectsPage/>}/>
