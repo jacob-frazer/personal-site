@@ -40,18 +40,15 @@ const InfoBody = styled(motion.div)`
 font-size: 1rem;
 font-weight: 300;
 letter-spacing: 2px;
-padding: 1rem;
+padding: 2rem;
 
 @media ${DEVICE_WIDTHS.tablet} {
-  padding: 0.5rem;
   font-size: 1.25rem;
 }
 @media ${DEVICE_WIDTHS.laptop} {
-  padding: 0.75rem;
   font-size: 1.5rem;
 }
 @media ${DEVICE_WIDTHS.desktop} {
-  padding: 1rem;
   font-size: 2rem;
 }
 `;

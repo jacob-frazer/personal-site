@@ -67,8 +67,6 @@ class AboutPage extends React.Component{
         <>
         <Background backgroundCol={colours.black} height="100vh">
           <Div
-            drag={true}
-            dragConstraints={{ left: 0, right: 0, top: 25, bottom: 25 }}
             initial="offscreen"
             whileInView="onscreen"
             viewport={{ once: true, amount: 0.5 }}
