@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import styled from 'styled-components';
 
 import colours from '@utils/colours';
+import { DEVICE_WIDTHS } from '@utils/constants';
 
 import { Background, BasicText } from '@generics/SimpleStyledComponents';
 
@@ -12,6 +13,15 @@ const RobotImage = styled.img`
     display: flex;
     float: right;
     padding: 3rem;
+    width: 150px;
+
+    @media ${DEVICE_WIDTHS.tablet} {
+        width: 350px;
+      }
+
+    @media ${DEVICE_WIDTHS.laptop} {
+        width: auto;
+      }
     `;
 
 const Return404 = styled(Link)`
@@ -28,7 +38,7 @@ class NotFound extends React.Component<{projects?:boolean}>{
     render(){
       return(
         <>
-            <Background backgroundCol={colours.black} height="94vh">
+            <Background backgroundCol={colours.black} height="100vh">
                 <RobotImage src="/images/404/broken-robot.png"/>
                 <BasicText fontCol={colours.white} fontSize='4rem' padding='4rem' fontWeight='500' letterSpacing='2px'>404.</BasicText>
                 {
