@@ -57,12 +57,16 @@ const AboutHeader = styled(BasicText)`
   }
   `;
 
+const Div = styled(motion.div)`
+  padding-top: 4rem;
+  `;
+
 class AboutPage extends React.Component{
     render(){
       return(
         <>
-        <Background backgroundCol={colours.black} height="95vh">
-          <motion.div
+        <Background backgroundCol={colours.black} height="100vh">
+          <Div
             drag={true}
             dragConstraints={{ left: 0, right: 0, top: 25, bottom: 25 }}
             initial="offscreen"
@@ -83,7 +87,7 @@ class AboutPage extends React.Component{
           <AboutText fontCol={colours.white} fontSize='0.5rem' padding='2rem' fontWeight='300' letterSpacing='2px' width='58%'>
             In my free time I like to learn - doesn't matter what, as long as it's stimulating!
           </AboutText>
-          </motion.div>
+          </Div>
           <Connections colour='light' padding='0'/>
         </Background>
         </>

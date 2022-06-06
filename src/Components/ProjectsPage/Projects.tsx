@@ -59,7 +59,7 @@ export default class Projects extends Component {
             {!this.state.loaded ? 
             <LoadingPage/> : 
             <>
-            <BasicText fontCol={colours.white} fontSize='1.5rem' padding='2rem' fontWeight='300' letterSpacing='2px' display='flex'>
+            <BasicText fontCol={colours.white} fontSize='1.5rem' padding='4.5rem 2rem 2rem 2rem' fontWeight='300' letterSpacing='2px' display='flex'>
                 Some of my favourite content and projects that I have worked on, click on one to find out more!
             </BasicText>
             <motion.div
