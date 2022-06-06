@@ -139,11 +139,9 @@ const ProjectInfo = (props: {projectInfo: {headline: string, intro: string, tech
 
                 <Outcomes>
                     <motion.div
-                        drag={true}
-                        dragConstraints={{ left: 0, right: 0, top: 25, bottom: 25 }}
                         initial="offscreen"
                         whileInView="onscreen"
-                        viewport={{ once: true, amount: 0.5 }}
+                        viewport={{ once: true, amount: 0.1 }}
                         variants={BounceFromBelowVariants}
                         >
                         <ContentBox background={colours.white}>
