@@ -72,11 +72,10 @@ const OutcomesListItem = styled.li`
 
 const TechnologiesHeader = styled.div`
     padding: 3rem 0.5rem 0.5rem 0.5rem;
-    width: 100%;   
     font-size: 1.3rem;
     font-weight: 550;
     letter-spacing: 2px;
-    color: white;
+    color: ${colours.white};
     `;
 
 const TechnologiesList = styled.div`
@@ -85,15 +84,13 @@ const TechnologiesList = styled.div`
     font-size: 1.5rem;
     font-weight: 300;
     letter-spacing: 2px;
-    color: white;
+    color: ${colours.white};
     column-count: 2;
     text-align: center;
     `;
 
 const TechnologiesListItem = styled.li`
     list-style-type: none;
-    text-align: left;
-    justify-content: left;
     `;
 
 const Headline = styled.h1`
@@ -103,7 +100,7 @@ const Headline = styled.h1`
     font-size: 3rem;
     font-weight: 400;
     letter-spacing: 2px;
-    color: white;
+    color: ${colours.white};
     margin: 0;
     `;
 
@@ -111,7 +108,7 @@ const Intro = styled.div`
     font-size: 1.5rem;
     font-weight: 300;
     letter-spacing: 2px;
-    color: white;
+    color: ${colours.white};
     padding: 1.5rem;
 `;
 
