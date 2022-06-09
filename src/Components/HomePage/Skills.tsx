@@ -134,7 +134,7 @@ class Skills extends React.Component {
                         variants={BounceFromBelowVariants}
                         viewport={{ once: true, amount: 0.5 }}
                         >
-                        Find out about my experience with
+                        Read on to find out about my experience with
                         <TypewriterText background="transparent" fontcol={colours.white}>
                             <TypeWriter strings={SKILLS_TYPEWRITER_LIST}/>
                         </TypewriterText>

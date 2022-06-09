@@ -103,7 +103,7 @@ const ProjectCard = (props: {
     return (
                 <CardsItem>
                     <Card>
-                    <CardImage backgroundImage={proj.image}></CardImage>
+                    <CardImage backgroundImage={proj.image} title={proj.image}></CardImage>
                     <CardContent>
                         <CardTitle>{proj.name}</CardTitle>
                         <CardText>{proj.description}</CardText>

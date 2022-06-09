@@ -39,7 +39,7 @@ class NotFound extends React.Component<{projects?:boolean}>{
       return(
         <>
             <Background backgroundCol={colours.black} height="100vh">
-                <RobotImage src="/images/404/broken-robot.png"/>
+                <RobotImage src="/images/404/broken-robot.png" alt="broken robot image"/>
                 <BasicText fontCol={colours.white} fontSize='4rem' padding='4rem' fontWeight='500' letterSpacing='2px'>404.</BasicText>
                 {
                     this.props.projects ? 

@@ -63,6 +63,7 @@ export default function Top() {
             <Photo 
             src={mePhoto}
             className="photo"
+            alt="Headshot of Jacob"
             animate={{ opacity: 1, transition: {duration:2, delay:1} }}
             initial={{ opacity: 0 }}
             />
