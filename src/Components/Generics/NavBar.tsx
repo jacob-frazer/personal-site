@@ -9,6 +9,7 @@ const Navbar = styled.nav`
   color: ${colours.white};
   display: flex;
   width: 100%;
+  position: -webkit-sticky;
   position: sticky;
   z-index: 100;
   top: 0;

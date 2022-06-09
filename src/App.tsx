@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Routes, Route, BrowserRouter } from 'react-router-dom';
 
-import './App.css'
+import MediaQuery from 'react-responsive'
 
 import HomePage from '@home/Home';
-
 import AboutPage from '@about/About';
 import ProjectsPage from '@projects/Projects';
 import ProjectsInfo from '@projects/ProjectsInfo';
 import NotFound from '@404/NotFound';
-import NavSelector from '@generics/NavSelector';
+import NavBar from '@generics/NavBar';
+import Burger from '@generics/BurgerMenu';
+
+import './App.css'
 
 const navigation = {
   brand: { name: "Jacob", to: "/" },
@@ -26,7 +28,13 @@ export default class App extends Component {
     return (
       <div className='App'>
         <BrowserRouter>
-            <NavSelector brand={brand} links={links} />
+            {/* Conditionally render nav bar or burger menu based on media query of screen width */}
+            <MediaQuery minWidth={768}>
+                {(matches:boolean) => matches ?
+                    <NavBar brand={brand} links={links} />:
+                    <Burger links={[...[{name: "Home", to: "/"}], ...links]} />  // need to add home to links, but handled differently in NavBar 
+                }
+            </MediaQuery>
             <Routes>
               <Route path="/" element={<HomePage />}/>
               <Route path="/projects" element={<ProjectsPage/>}/>

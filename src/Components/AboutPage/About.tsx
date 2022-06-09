@@ -27,6 +27,8 @@ const BounceFromBelowVariants: Variants = {
 
 
 const AboutText = styled(BasicText)`
+  text-align: left;
+
   @media ${DEVICE_WIDTHS.mobileS} {
     font-size: 1rem;
     width: 75%;
@@ -60,6 +62,7 @@ const AboutHeader = styled(BasicText)`
 const Div = styled(motion.div)`
   padding-top: 4rem;
   `;
+
 
 class AboutPage extends React.Component{
     render(){
