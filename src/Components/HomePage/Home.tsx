@@ -22,7 +22,7 @@ export default function HomePage() {
       <IntroSection/>
       <SkillSection/>
       <Footer backgroundCol='transparent' height='5rem'>
-        <Connections colour="light"/>
+        <Connections/>
       </Footer>
     </>
   )

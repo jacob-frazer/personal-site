@@ -89,7 +89,7 @@ class AboutPage extends React.Component{
             In my free time I like to learn - doesn't matter what, as long as it's stimulating!
           </AboutText>
           </Div>
-          <Connections colour='light' padding='0'/>
+          <Connections padding='0'/>
         </Background>
         </>
       )

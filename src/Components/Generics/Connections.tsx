@@ -17,14 +17,19 @@ img {
 }
 `;
 
-const Connections = (props:{colour:string, padding?:string}) => {
-    let githubSrc = (props.colour === "dark" ? "GitHubDark.png" : "GitHubLight.png")
-    let linkedInSrc = (props.colour === "dark" ? "LinkedInDark.png" : "LinkedInLight.png")
-    let emailSrc = (props.colour === "dark" ? "emailDark.png" : "emailLight.png")
+interface ConnectionsProps {
+  darkMode?: boolean;
+  padding?: string;
+}
+
+const Connections = ({darkMode=false, padding=''}: ConnectionsProps) => {
+    let githubSrc = (darkMode ? "GitHubDark.png" : "GitHubLight.png")
+    let linkedInSrc = (darkMode ? "LinkedInDark.png" : "LinkedInLight.png")
+    let emailSrc = (darkMode ? "emailDark.png" : "emailLight.png")
     
     let imageDir = "/images/connections_icons/"
     return (
-      <ConnectionLinks padding={props.padding}>
+      <ConnectionLinks padding={padding}>
         <a href="https://github.com/jacob-frazer"><img src={imageDir + githubSrc} alt="githubLogo"/></a>
         <a href="https://www.linkedin.com/in/jacob-frazer-99493b168/"><img src={imageDir + linkedInSrc} alt="linkedInLogo"/></a>
         <a href="mailto:jacob.frazer@hotmail.com"><img src={imageDir + emailSrc} alt="emailLogo"/></a>

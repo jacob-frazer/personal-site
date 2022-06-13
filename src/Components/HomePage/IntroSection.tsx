@@ -55,12 +55,12 @@ padding: 2rem;
 
 // variant defines animations
 const infoHeaderVariant = {
-    visible: { opacity: 1, transition: {duration:2} },
+    visible: { opacity: 1, transition: {duration:1} },
     hidden: { opacity: 0 },
   }
   
 const infoBodyVariant = {
-    visible: { opacity: 1, transition: {duration:3, delay:1} },
+    visible: { opacity: 1, transition: {duration:1.5, delay:0.5} },
     hidden: { opacity: 0 },
   }
 
@@ -84,11 +84,11 @@ const IntroSection = () => {
         whileInView="visible"
         viewport={{ once: true }}
         >
-        I am Jacob, a technical professional based out of London with a passion for Data and Software Engineering. 
+        I am Jacob, a technical professional based out of London who specialises in Data and Software Engineering. 
         I created this portfolio as a place for me to detail the projects I have worked on, technologies I know, and articles I have written. 
         <div><br/></div>
         Let's connect 
-        <Connections colour="dark"/>
+        <Connections darkMode={true}/>
         </InfoBody>
       </InfoDiv>
     );
