@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 import { BasicText } from '@generics/SimpleStyledComponents';
 
-import mePhoto from '@images/me.png';
+import mePhoto from '@images/me_smaller.png';
 import colours from '@utils/colours';
 import { DEVICE_WIDTHS } from '@utils/constants';
 
