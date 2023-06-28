@@ -109,5 +109,23 @@
             "Early stage work on terabytes of netflow data investigation allowed for a prototype to be made and thus feasibility of gathering insights was found to be possible",
             "Completed multiple cyber security focused courses on a range of topics including ethical hacking, common attack vectors, and big data such as apache spark"
         ]
+    },
+    "llmcodegen": {
+        "headline": "Incorporating LLM Code Generating",
+        "intro": "Using cutting edge large language models and their code generating capabilities I built a colour picker web app using only generated code.",
+        "technologies": ["ChatGPT", "Typescript", "Stable Diffusion", "Heroku"],
+        "explanation": [
+            "This project was an exploration into the capabilities of language models, specifically OpenAI's GPT-3.5, to generate code for a web application. The goal was to leverage the power of code generation to improve personal workflows and learn about the potential of incorporating AI models into the development process. The focus was on building a color palette application, allowing users to generate and manipulate color schemes.",
+            "The process involved interacting with the AI model through a chat interface, providing prompts and receiving generated code snippets as responses. By iterating and refining the prompts, usable code was obtained, enabling the development of different features of the application. This iterative process helped in understanding the nuances of prompting the model effectively and utilizing its code generation capabilities.",
+            "The generated code covered various aspects of the application, including color manipulation, palette selection, dynamic rendering, transitions, and user interface elements. Through this experience, the development workflow was streamlined by leveraging the AI model's ability to generate boilerplate code and handle complex logic.",
+            "One of the notable challenges encountered was handling TypeScript integration and ensuring type safety. The generated code had to be adjusted and refined to align with TypeScript requirements and resolve type errors. This provided valuable insights into the integration of TypeScript with code generation and highlighted the importance of considering type safety in AI-assisted development workflows.",
+            "The resulting web application showcased the potential of AI-generated code in accelerating development processes and improving productivity. By automating repetitive tasks and providing a foundation for further customization, AI models can significantly enhance the development experience. Incorporating code generation capabilities from AI models like GPT-3.5 opens up new possibilities for developers to explore and innovate in their projects, pushing the boundaries of what is achievable in software development.",
+            "Overall, this project served as a valuable learning experience, demonstrating the potential of AI in generating code and the benefits it can bring to personal workflows. By combining human creativity and expertise with the power of AI models, developers can streamline their development process, unlock new ideas, and accelerate the pace of innovation in software development."
+        ],
+        "outcomes": [
+            "Learned current capabilities of top LLM code generating models", 
+            "Gained experience incorporating into my workflows to increase dev productivity",
+            "Link to app: https://colo-ur-0ba52ebedf03.herokuapp.com/"
+        ]
     }
 }

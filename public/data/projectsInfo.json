@@ -12,6 +12,12 @@
         "url": "insuranceai"
     },
     {
+        "name": "LLM Code Generation",
+        "description": "Learning and incorporating cutting edge LLM technology into my workflows to build basic web apps at remarkable speed",
+        "image": "/images/projects/chatgpt.jpg",
+        "url": "llmcodegen"
+    },
+    {
         "name": "Secure Software Validation",
         "description": "Working under very high security constraints to validate and ensure ingested software is safe on a highly sensitive platform",
         "image": "/images/projects/computerLock.png",
