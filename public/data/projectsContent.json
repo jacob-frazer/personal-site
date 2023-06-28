@@ -111,7 +111,7 @@
         ]
     },
     "llmcodegen": {
-        "headline": "Incorporating LLM Code Generating",
+        "headline": "Incorporating LLM Code Generation",
         "intro": "Using cutting edge large language models and their code generating capabilities I built a colour picker web app using only generated code.",
         "technologies": ["ChatGPT", "Typescript", "Stable Diffusion", "Heroku"],
         "explanation": [
