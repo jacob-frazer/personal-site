@@ -51,7 +51,7 @@ export default function Top() {
             animate={{ x:0, opacity:1, transition: {duration:1} }}
             initial={{ x: 1000, opacity:0.25 }}
             >
-            This is
+            Hi, I am
             </Text>
             <Text fontCol={colours.white} fontSize="2.8rem" fontWeight='bold' padding='' letterSpacing=''
             mediaStylesFontSize={['3.5rem', '5rem']}
@@ -73,7 +73,7 @@ export default function Top() {
             animate={{ opacity: 1, transition: {duration:2, delay:1} }}
             initial={{ opacity: 0 }}
             >
-            Data Specialist and Software Developer
+            Software Developer
             </Text>
         </TopSection>
     )

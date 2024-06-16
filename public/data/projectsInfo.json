@@ -1,9 +1,21 @@
 [
     {
+        "name": "Enabling and accelerating Quantitative Research",
+        "description": "Providing tooling to improve efficiency for quantative researchers by working within one of JPM's most successful internal technology product offerings",
+        "image": "/images/projects/jpmlogo.jpg",
+        "url": "jpm"
+    },
+    {
         "name": "Fighting COVID-19",
         "description": "Working as a data specialist across many different technical areas as part of the UK's response to the coronavirus pandemic",
         "image": "/images/projects/covid.jpg",
         "url": "ukhsa"
+    },
+    {
+        "name": "Magic Breakfast School Portal",
+        "description": "Building a transformational web portal for the charity Magic Breakfast as part of the JPM Force For Good program.",
+        "image": "/images/projects/MagicBreakfast.png",
+        "url": "magicbreakfast"
     },
     {
         "name": "Artificial Intelligence Insurance Pricing",

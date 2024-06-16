@@ -150,31 +150,30 @@ class Skills extends React.Component {
                         variants={BounceFromBelowVariants}
                         >
                         <ContentBox background="transparent">
-                            <Heading>Data Solutions</Heading>
-                            <Content>Data professional with elite experience across the entire spectrum of data solutions</Content>
-                            <Content>Experience in Data Engineering, DevOps and Data Science</Content>
-                            <Content>Familiar with all common data speciality technologies and cloud providers</Content>
-                            <Content>Proven ability at all stages of the software lifecycle from problem to live solution to wind-down</Content>
+                            <Heading>Software Engineering</Heading>
+                            <Content>Many years of experience building sophisticated solutions for businesses</Content>
+                            <Content>Fluent in many of the most common programming languages with an aptitude for learning others</Content>
+                            <Content>Experience across many industries and domains</Content>
+                            <Content>Proficient both leading and working in teams of developers</Content>
+                            <Content>Equally comfortable and experienced working on both greenfield and existing projects</Content>
                         </ContentBox>
                     </CentreText>
                 </Background>
                 <Background backgroundCol="transparent" height='45rem'>
                     <CentreText 
                         float="right" 
-                        fontcol="white"
+                        fontcol={colours.white}
                         initial="offscreen"
                         whileInView="onscreen"
                         viewport={{ once: true, amount: 0.5 }}
                         variants={BounceFromBelowVariants}
                         >
-                        <div>
-                            <Heading>Software Engineering</Heading>
-                            <Content>Many years of experience building sophisticated solutions for businesses</Content>
-                            <Content>Fluent in many of the most common programming languages with an aptitude for learning others</Content>
-                            <Content>Experience across many industries and domains</Content>
-                            <Content>Led teams of developers including education sessions on standard SDLC and version control systems</Content>
-                            <Content>Just as capable starting a project from scratch or adapting to an existing codebase</Content>
-                        </div>
+                        <ContentBox background="transparent">
+                            <Heading>Data Solutions</Heading>
+                            <Content>Experience in Data Engineering, DevOps and Data Science</Content>
+                            <Content>Familiar with many common data speciality technologies and cloud providers</Content>
+                            <Content>Proven ability at all stages of the software lifecycle from problem to production to deprecation</Content>
+                        </ContentBox>
                     </CentreText>
                 </Background>
                 <Background backgroundCol="transparent" height='45rem'>
@@ -188,7 +187,7 @@ class Skills extends React.Component {
                         >
                         <ContentBox background="transparent">
                             <Heading>Web Development</Heading>
-                            <Content>Full stack web developer with experience using a wide range of softwares and languages</Content>
+                            <Content>Full stack web developer with experience using a wide range of softwares and frameworks</Content>
                             <Content>Experience working on web applications of all scales from simple to enterprise</Content>
                             <Content>Fluent in TypeScript and modern JS frameworks as well as traditional HTML/CSS/JS sites</Content>
                             <Content>Familiarity with Web 3.0 technologies including Solidity & web3js</Content>

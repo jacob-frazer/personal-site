@@ -17,7 +17,7 @@ const navigation = {
   brand: { name: "Jacob", to: "/" },
   links: [
     { name: "Projects", to: "/projects" },
-    { name: "About", to: "/about" },
+    // { name: "About", to: "/about" },
   ]
 }
 
@@ -39,7 +39,7 @@ export default class App extends Component {
               <Route path="/" element={<HomePage />}/>
               <Route path="/projects" element={<ProjectsPage/>}/>
               <Route path="/projects/:info" element={<ProjectsInfo/>}/>
-              <Route path="/about" element={<AboutPage/>}/>
+              {/* <Route path="/about" element={<AboutPage/>}/> */}
               <Route path="*" element={<NotFound/>} />
             </Routes>
         </BrowserRouter>
