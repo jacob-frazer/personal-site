@@ -125,7 +125,36 @@
         "outcomes": [
             "Learned current capabilities of top LLM code generating models", 
             "Gained experience incorporating into my workflows to increase dev productivity",
-            "Link to app: https://colo-ur-0ba52ebedf03.herokuapp.com/"
+            "Link to app: https://colourpicker-073t.onrender.com/"
+        ]
+    },
+    "jpm": {
+        "headline": "JP Morgan Quant Enablement",
+        "intro": "Providing tooling to improve efficiency for quants by working within one of JPM's most successful internal technology product offerings",
+        "technologies": ["Python", "Typescript", "Jupyter Ecosystem", "AWS", "Linux"],
+        "explanation": [
+            "",
+            "",
+            ""
+        ],
+        "outcomes": [
+            "",
+            ""
+        ]
+    },
+    "magicbreakfast": {
+        "headline": "Magic Breakfast Schools Portal",
+        "intro": "Leveraging technology to drive efficiency at Magic Breakfast and get more hungry children breakfasts",
+        "technologies": ["Wordpress", "Microsoft Dynamics Business Central", "Salesforce"],
+        "explanation": [
+            "",
+            "",
+            ""
+        ],
+        "outcomes": [
+            "Delivered a schools portal complete with multiple key features to improve efficiency and communications",
+            "Estimated time savings of 100s of hours for staff over the portal lifetime",
+            "High quality analysis of the space and solutions allowing the Magic Breakfast team an excellent knowledge of "
         ]
     }
 }

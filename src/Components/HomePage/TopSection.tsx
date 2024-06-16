@@ -46,13 +46,6 @@ const Photo = styled(motion.img)`
 export default function Top() {
     return (
         <TopSection>
-            <Text fontCol={colours.white} fontSize="1.5rem" fontStyle="italic" fontWeight='300' padding="5rem 0 0 0" letterSpacing='2px'
-            mediaStylesFontSize={['2rem', '3rem']}
-            animate={{ x:0, opacity:1, transition: {duration:1} }}
-            initial={{ x: 1000, opacity:0.25 }}
-            >
-            This is
-            </Text>
             <Text fontCol={colours.white} fontSize="2.8rem" fontWeight='bold' padding='' letterSpacing=''
             mediaStylesFontSize={['3.5rem', '5rem']}
             animate={{ x:0, opacity:1, transition: {duration:1} }}
@@ -73,7 +66,7 @@ export default function Top() {
             animate={{ opacity: 1, transition: {duration:2, delay:1} }}
             initial={{ opacity: 0 }}
             >
-            Data Specialist and Software Developer
+            Software Developer
             </Text>
         </TopSection>
     )

@@ -84,8 +84,8 @@ const IntroSection = () => {
         whileInView="visible"
         viewport={{ once: true }}
         >
-        I am Jacob, a technical professional based out of London who specialises in Data and Software Engineering. 
-        I created this portfolio as a place for me to detail the projects I have worked on, technologies I know, and articles I have written. 
+        I am Jacob, a Software Engineer based out of London. 
+        I created this website as a portfolio for me to detail the projects I have worked on, technologies I know, and articles I have written. 
         <div><br/></div>
         Let's connect 
         <Connections darkMode={true}/>
