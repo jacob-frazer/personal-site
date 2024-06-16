@@ -130,16 +130,20 @@
     },
     "jpm": {
         "headline": "JP Morgan Quant Enablement",
-        "intro": "Providing tooling to improve efficiency for quants by working within one of JPM's most successful internal technology product offerings",
-        "technologies": ["Python", "Typescript", "Jupyter Ecosystem", "AWS", "Linux"],
+        "intro": "Providing tooling to improve efficiency for quantative researchers by working within one of JPM's most successful internal technology product offerings",
+        "technologies": ["Python", "Typescript", "Jupyter Ecosystem", "AWS", "Linux", "Kubernetes"],
         "explanation": [
-            "",
-            "",
-            ""
+            "At JP Morgan, I am part of a dedicated team working on an extensive internal platform aimed at quant enablement, specifically focusing on our internal Jupyter offering. This project is integral to empowering our quantitative researchers by providing them with seamless access to the Jupyter ecosystem and related technologies like Voila and nbconvert.",
+            "Our team is responsible for maintaining and continuously improving the internal Jupyter service, which serves thousands of users across the organization. These users consistently express high levels of satisfaction with the product, appreciating the robust and reliable environment we provide for their critical research and analysis tasks. The enhancements we've made include numerous internal extensions that integrate with other JP Morgan frameworks, ensuring a smooth and efficient workflow for our researchers.",
+            "Moreover, our contributions extend beyond our internal infrastructure. We actively engage with the wider open-source Jupyter community, making significant contributions such as Jupyter Filesystems, which benefit not only JP Morgan but also the broader ecosystem. ",
+            "Recently, we undertook a major initiative to rebuild our Jupyter offering to support both on-premises and cloud environments. This hybrid approach provides our users with greater flexibility and scalability, accommodating diverse computational needs and ensuring high availability. Our team's efforts in this area exemplify our strategic vision of integrating cutting-edge technology to drive efficiency and performance."
+
         ],
         "outcomes": [
-            "",
-            ""
+            "Consistent improvements and improved technological offering to our 1000s of quantitative researcher users",
+            "Easy and simple environment for rapid development and experimentation",
+            "Thousands of users consistently express high levels of satisfaction with the internal Jupyter service",
+            "Rebuilt the Jupyter offering to support both on-premises and cloud environments for greater flexibility and scalability"
         ]
     },
     "magicbreakfast": {
@@ -147,14 +151,16 @@
         "intro": "Leveraging technology to drive efficiency at Magic Breakfast and get more hungry children breakfasts",
         "technologies": ["Wordpress", "Microsoft Dynamics Business Central", "Salesforce"],
         "explanation": [
-            "",
-            "",
-            ""
+            "As part of the JP Morgan Force For Good program, I had the privilege of leading a transformative project for the charity Magic Breakfast. This initiative pairs JPM technologists with charities seeking to enhance their technological capabilities. Our mission was to develop a comprehensive school's portal that would streamline operations for Magic Breakfast and their partner schools.",
+            "The newly developed portal serves as a central hub where schools can easily access order information and important resources, significantly improving operational efficiency. By enabling schools to directly retrieve this information from the portal, we eliminated the need for them to contact the charity directly, thereby saving time and reducing administrative overhead. The web application includes all standard features expected of a modern web app, such as robust account management, and is built and hosted on the WordPress platform.",
+            "The project was a resounding success, completed on time and under budget. Our efforts were recognized internally at JP Morgan, earning the award for the most sustainable project. As the technical lead, I guided a dedicated team of six developers, ensuring that we met all project milestones and delivered a high-quality solution. The feedback from the Magic Breakfast team was overwhelmingly positive, with them highlighting the portal's transformational impact on their operations. Their satisfaction with our work was further underscored by their decision to participate in the Force For Good program again this year.",
+            "This project not only demonstrated the power of technology in driving social good but also showcased the collaborative spirit and technical expertise of our team. I am immensely proud of what we achieved and look forward to more opportunities to create meaningful change through technology."
         ],
         "outcomes": [
             "Delivered a schools portal complete with multiple key features to improve efficiency and communications",
             "Estimated time savings of 100s of hours for staff over the portal lifetime",
-            "High quality analysis of the space and solutions allowing the Magic Breakfast team an excellent knowledge of "
+            "Project delivered on schedule and within Magic Breakfast budget",
+            "High quality analysis of the space and solutions providing the Magic Breakfast team our research."
         ]
     }
 }

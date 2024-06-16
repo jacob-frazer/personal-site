@@ -154,7 +154,7 @@ class Skills extends React.Component {
                             <Content>Many years of experience building sophisticated solutions for businesses</Content>
                             <Content>Fluent in many of the most common programming languages with an aptitude for learning others</Content>
                             <Content>Experience across many industries and domains</Content>
-                            <Content>Led teams of developers</Content>
+                            <Content>Proficient both leading and working in teams of developers</Content>
                             <Content>Equally comfortable and experienced working on both greenfield and existing projects</Content>
                         </div>
                     </CentreText>

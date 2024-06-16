@@ -17,7 +17,7 @@ const navigation = {
   brand: { name: "Jacob", to: "/" },
   links: [
     { name: "Projects", to: "/projects" },
-    { name: "About", to: "/about" },
+    // { name: "About", to: "/about" },
   ]
 }
 
