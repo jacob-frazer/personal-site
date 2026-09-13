@@ -10,6 +10,7 @@ import ProjectsInfo from '@projects/ProjectsInfo';
 import NotFound from '@404/NotFound';
 import NavBar from '@generics/NavBar';
 import MobileNav from '@generics/MobileNav';
+import ScrollToTop from '@generics/ScrollToTop';
 
 import './App.css'
 
@@ -28,6 +29,7 @@ export default class App extends Component {
     return (
       <div className='App'>
         <BrowserRouter>
+            <ScrollToTop/>
             {/* Conditionally render nav bar or mobile menu based on media query of screen width */}
             <MediaQuery minWidth={768}>
                 {(matches:boolean) => matches ?

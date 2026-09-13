@@ -13,6 +13,15 @@ const mockFetchJson = (body: unknown, ok: boolean = true) => {
   }) as jest.Mock;
 };
 
+// responds per URL, for pages that load more than one data file
+const mockFetchByUrl = (responses: Record<string, unknown>) => {
+  global.fetch = jest.fn((url: string) => Promise.resolve({
+    ok: url in responses,
+    status: url in responses ? 200 : 404,
+    json: () => Promise.resolve(responses[url]),
+  })) as jest.Mock;
+};
+
 const renderAt = (path: string) => {
   window.history.pushState({}, '', path);
   return render(<App />);
@@ -82,6 +91,23 @@ test('renders a project deep dive', async () => {
   renderAt('/projects/test');
   expect(await screen.findByText('Test headline')).toBeInTheDocument();
   expect(screen.getByText('Test outcome')).toBeInTheDocument();
+});
+
+test('deep dive shows where the project was done, links URLs and links to the next project', async () => {
+  mockFetchByUrl({
+    '/data/projectsContent.json': {
+      ukhsa: { headline: 'Test headline', intro: 'Test intro', technologies: ['Python'], explanation: ['Test paragraph'], outcomes: ['Live at https://example.com/app'] },
+    },
+    '/data/projectsInfo.json': [
+      { name: 'UKHSA test', description: 'Test description', image: '/banner.webp', url: 'ukhsa' },
+      { name: 'Following project', description: 'Test description', image: '/next.webp', url: 'jpm' },
+    ],
+  });
+  renderAt('/projects/ukhsa');
+  expect(await screen.findByText('Test headline')).toBeInTheDocument();
+  expect(screen.getByText('UKHSA · 2020 – 2022')).toBeInTheDocument();
+  expect(screen.getByRole('link', { name: /Following project/ })).toHaveAttribute('href', '/projects/jpm');
+  expect(screen.getByRole('link', { name: 'https://example.com/app' })).toHaveAttribute('href', 'https://example.com/app');
 });
 
 test('shows the 404 page for an unknown project', async () => {

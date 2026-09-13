@@ -12,6 +12,9 @@ class MockIntersectionObserver {
   takeRecords() { return []; }
 }
 
+// jsdom doesn't implement scrolling, which the router's scroll to top on navigation calls
+window.scrollTo = (() => {}) as typeof window.scrollTo;
+
 Object.defineProperty(window, 'IntersectionObserver', {
   writable: true,
   configurable: true,

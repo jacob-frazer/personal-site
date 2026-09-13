@@ -5,10 +5,42 @@ import { motion } from 'framer-motion';
 
 import ProjectCard from '@projects/ProjectCard';
 import LoadError from '@generics/LoadError';
-import { Background, BasicText, LoadingPage } from '@generics/SimpleStyledComponents';
+import { Background, LoadingPage } from '@generics/SimpleStyledComponents';
 
 import colours from '@utils/colours';
+import { DEVICE_WIDTHS } from '@utils/constants';
 import { bounceFromBelowVariants } from '@utils/animations';
+
+const PageHeader = styled.header`
+    max-width: 60rem;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 1.5rem 1.5rem;
+    color: ${colours.white};
+    `;
+
+const PageTitle = styled.h1`
+    margin: 0;
+    font-size: 2.25rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+
+    @media ${DEVICE_WIDTHS.tablet} {
+        font-size: 3rem;
+    }
+    `;
+
+// softened from pure white, which reads heavy on the black background
+const PageIntro = styled.p`
+    max-width: 50ch;
+    margin: 0.75rem auto 0 auto;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.72);
+
+    @media ${DEVICE_WIDTHS.tablet} {
+        font-size: 1.2rem;
+    }
+    `;
 
 // rows wrap and centre, so a part filled last row sits in the middle rather than hanging left
 const Cards = styled.ul`
@@ -25,12 +57,13 @@ const SectionHeading = styled.h2`
     color: ${colours.white};
     font-size: 1.6rem;
     font-weight: 600;
+    letter-spacing: -0.01em;
     margin: 0;
     padding: 3rem 1rem 0.5rem 1rem;
     `;
 
 const SectionSubheading = styled.p`
-    color: ${colours.lightgrey};
+    color: rgba(255, 255, 255, 0.72);
     font-size: 1rem;
     margin: 0;
     padding: 0 1rem 1rem 1rem;
@@ -96,9 +129,12 @@ export default class Projects extends Component<{}, ProjectsState> {
 
         return (
             <ProjectsWrapper>
-            <BasicText fontCol={colours.white} fontSize='1.5rem' padding='4.5rem 2rem 2rem 2rem' fontWeight='400' letterSpacing='normal' display='flex'>
-                Some of my favourite content and projects that I have worked on, click on one to find out more!
-            </BasicText>
+            <PageHeader>
+                <PageTitle>Projects</PageTitle>
+                <PageIntro>
+                    A selection of the work I'm most proud of, from AI research infrastructure to the UK's COVID-19 response. Choose a project for the full deep dive.
+                </PageIntro>
+            </PageHeader>
             <motion.div
                     initial="offscreen"
                     whileInView="onscreen"
