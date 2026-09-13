@@ -23,6 +23,23 @@ test('renders the home page', () => {
   expect(screen.getByText('Jacob Frazer')).toBeInTheDocument();
 });
 
+test('renders the experience timeline with links to project deep dives', () => {
+  renderAt('/');
+  expect(screen.getByRole('heading', { name: 'Experience' })).toBeInTheDocument();
+  expect(screen.getByText('Contracting through Ascent')).toBeInTheDocument();
+  expect(screen.getByRole('link', { name: 'Fighting COVID-19' })).toHaveAttribute('href', '/projects/ukhsa');
+});
+
+test('groups earlier projects under their own heading', async () => {
+  mockFetchJson([
+    { name: 'Current project', description: 'Test description', image: '/test.webp', url: 'current' },
+    { name: 'Old project', description: 'Test description', image: '/test.webp', url: 'old', earlier: true },
+  ]);
+  renderAt('/projects');
+  expect(await screen.findByText('Earlier work')).toBeInTheDocument();
+  expect(screen.getByText('Old project')).toBeInTheDocument();
+});
+
 test('lists projects once they have loaded', async () => {
   mockFetchJson([{ name: 'Test project', description: 'Test description', image: '/test.webp', url: 'test' }]);
   renderAt('/projects');

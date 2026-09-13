@@ -46,7 +46,7 @@ const Photo = styled(motion.img)`
 export default function Top() {
     return (
         <TopSection>
-            <Text fontCol={colours.white} fontSize="1.5rem" fontStyle="italic" fontWeight='300' padding="5rem 0 0 0" letterSpacing='2px'
+            <Text fontCol={colours.white} fontSize="1.5rem" fontStyle="italic" fontWeight='400' padding="5rem 0 0 0" letterSpacing='normal'
             mediaStylesFontSize={['2rem', '3rem']}
             animate={{ x:0, opacity:1, transition: {duration:1} }}
             initial={{ x: 1000, opacity:0.25 }}

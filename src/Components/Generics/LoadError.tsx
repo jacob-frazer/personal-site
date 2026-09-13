@@ -6,7 +6,7 @@ import colours from '@utils/colours';
 const LoadError = (props: { message: string }) => {
     return (
         <LoadingPage>
-            <BasicText fontCol={colours.white} fontSize='1.5rem' padding='5rem 2rem 2rem 2rem' fontWeight='300' letterSpacing='2px'>
+            <BasicText fontCol={colours.white} fontSize='1.5rem' padding='5rem 2rem 2rem 2rem' fontWeight='400' letterSpacing='normal'>
                 {props.message}
             </BasicText>
         </LoadingPage>

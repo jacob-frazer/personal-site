@@ -1,20 +1,47 @@
 import styled from "styled-components";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
 
-const ConnectionLinks = styled.div<{ padding?:string }>`
+import colours from "@utils/colours";
+
+const ConnectionLinks = styled.div<{ padding?: string, iconColour: string }>`
 display: flex;
 flex-direction: row;
 flex-wrap: nowrap;
-align-items: flex-start;
+align-items: center;
 justify-content: center;
-padding:${props => props.padding || "1rem"};
+gap: 2rem;
+padding: ${props => props.padding || "1rem"};
 
-img {
-  flex: 1;
-  max-width: 2rem;
-  height: auto;
-  max-height: 2rem;
-  padding: 2rem;
+a {
+  display: flex;
+  padding: 1rem;
+  color: ${props => props.iconColour};
+  transition: opacity 0.2s;
 }
+
+a:hover,
+a:focus {
+  opacity: 0.7;
+}
+
+svg {
+  width: 2rem;
+  height: 2rem;
+}
+`;
+
+// link text for screen readers, hidden visually as the icons speak for themselves
+const VisuallyHidden = styled.span`
+position: absolute;
+width: 1px;
+height: 1px;
+margin: -1px;
+padding: 0;
+overflow: hidden;
+clip: rect(0, 0, 0, 0);
+white-space: nowrap;
+border: 0;
 `;
 
 interface ConnectionsProps {
@@ -22,17 +49,13 @@ interface ConnectionsProps {
   padding?: string;
 }
 
+// the same icon set everywhere, darkMode draws them dark for use on light backgrounds
 const Connections = ({darkMode=false, padding=''}: ConnectionsProps) => {
-    let githubSrc = (darkMode ? "GitHubDark.png" : "GitHubLight.png")
-    let linkedInSrc = (darkMode ? "LinkedInDark.png" : "LinkedInLight.png")
-    let emailSrc = (darkMode ? "emailDark.png" : "emailLight.png")
-    
-    let imageDir = "/images/connections_icons/"
     return (
-      <ConnectionLinks padding={padding}>
-        <a href="https://github.com/jacob-frazer"><img src={imageDir + githubSrc} alt="githubLogo"/></a>
-        <a href="https://www.linkedin.com/in/jacob-frazer-99493b168/"><img src={imageDir + linkedInSrc} alt="linkedInLogo"/></a>
-        <a href="mailto:jacob.frazer@hotmail.com"><img src={imageDir + emailSrc} alt="emailLogo"/></a>
+      <ConnectionLinks padding={padding} iconColour={darkMode ? colours.black : colours.white}>
+        <a href="https://github.com/jacob-frazer"><FaGithub aria-hidden="true"/><VisuallyHidden>GitHub</VisuallyHidden></a>
+        <a href="https://www.linkedin.com/in/jacob-frazer-99493b168/"><FaLinkedin aria-hidden="true"/><VisuallyHidden>LinkedIn</VisuallyHidden></a>
+        <a href="mailto:jacob.frazer@hotmail.com"><MdEmail aria-hidden="true"/><VisuallyHidden>Email</VisuallyHidden></a>
       </ConnectionLinks>
     )
   }

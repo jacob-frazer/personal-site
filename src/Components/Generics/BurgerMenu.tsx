@@ -5,17 +5,24 @@ import { Link } from 'react-router-dom';
 
 import colours from '@utils/colours';
 
+// a solid sticky bar holds the burger button, so the button never sits on top of page content
 const StyledBurgerMenu = styled.div`
-  position: absolute;
+  position: sticky;
+  top: 0;
   z-index: 1000000;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: ${colours.black};
 
   /* Position and sizing of burger button */
   .bm-burger-button {
-    position: fixed;
-    width: 36px;
-    height: 30px;
-    left: 36px;
-    top: 36px;
+    position: absolute;
+    width: 32px;
+    height: 26px;
+    left: 1.25rem;
+    top: 1.2rem;
   }
 
   /* Color/shape of burger icon bars */
@@ -43,8 +50,7 @@ const StyledBurgerMenu = styled.div`
         text-decoration: none;
         color: ${colours.black};
         font-size: 1.5rem;
-        font-weight: 300;
-        letter-spacing: 2px;
+        font-weight: 400;
     }
   }
 
@@ -70,6 +76,14 @@ const StyledBurgerMenu = styled.div`
   }
 `;
 
+const Brand = styled(Link)`
+  color: ${colours.white};
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-style: italic;
+  text-decoration: none;
+  `;
+
 const Li = styled.li`
   flex: 0 0 auto;
   -webkit-box-align: center;
@@ -91,8 +105,11 @@ const NavLinks = (props: { links: Array<{ name: string, to: string }>, onLinkCli
     </>
 );
 
-const BurgerMenuComponent = (props: {links: Array<{ name: string, to: string }>}) => {
-    const { links } = props;
+const BurgerMenuComponent = (props: {
+    brand: { name: string, to: string },
+    links: Array<{ name: string, to: string }>
+    }) => {
+    const { brand, links } = props;
     const [menuOpenState, setMenuOpenState] = useState(false)
 
     const closeMenu = () => {
@@ -104,6 +121,7 @@ const BurgerMenuComponent = (props: {links: Array<{ name: string, to: string }>}
         <BurgerMenu isOpen={menuOpenState} onStateChange={(state) => setMenuOpenState(state.isOpen)}>
           <NavLinks links={links} onLinkClick={closeMenu} />
         </BurgerMenu>
+        <Brand to={brand.to}>{brand.name}</Brand>
       </StyledBurgerMenu>
       )
     };

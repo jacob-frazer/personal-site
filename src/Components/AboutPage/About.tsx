@@ -61,17 +61,17 @@ class AboutPage extends React.Component{
             viewport={{ once: true, amount: 0.5 }}
             variants={BounceFromBelowVariants}
             >
-          <AboutHeader fontCol={colours.white} fontSize='1rem' padding='2rem' fontWeight='300' letterSpacing='2px' width='75%' display='float' float='left'>
+          <AboutHeader fontCol={colours.white} fontSize='1rem' padding='2rem' fontWeight='400' letterSpacing='normal' width='75%' display='float' float='left'>
             Who am I?
           </AboutHeader>
 
-          <AboutText fontCol={colours.white} fontSize='0.5rem' padding='2rem' fontWeight='300' letterSpacing='2px' width='58%'>
+          <AboutText fontCol={colours.white} fontSize='0.5rem' padding='2rem' fontWeight='400' letterSpacing='normal' width='58%'>
             Hey, I am Jacob, a software developer and data specialist who enjoys solving interesting business problems
           </AboutText>
-          <AboutText fontCol={colours.white} fontSize='0.5rem' padding='2rem' fontWeight='300' letterSpacing='2px' width='58%'>
+          <AboutText fontCol={colours.white} fontSize='0.5rem' padding='2rem' fontWeight='400' letterSpacing='normal' width='58%'>
             I live in London and I love to code (I even do it on the weekends)
           </AboutText>
-          <AboutText fontCol={colours.white} fontSize='0.5rem' padding='2rem' fontWeight='300' letterSpacing='2px' width='58%'>
+          <AboutText fontCol={colours.white} fontSize='0.5rem' padding='2rem' fontWeight='400' letterSpacing='normal' width='58%'>
             In my free time I like to learn - doesn't matter what, as long as it's stimulating!
           </AboutText>
           </Div>

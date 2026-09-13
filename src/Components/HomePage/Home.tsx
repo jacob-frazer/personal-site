@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import IntroSection from '@home/IntroSection';
 import SkillSection from '@home/Skills';
 import TopSection from '@home/TopSection';
+import Timeline from '@home/Timeline';
 import Connections from '@generics/Connections';
 import ParticlesBG from '@generics/ParticlesBackground';
 import { Background } from '@generics/SimpleStyledComponents';
@@ -20,6 +21,7 @@ export default function HomePage() {
       <ParticlesBG/>
       <TopSection/>
       <IntroSection/>
+      <Timeline/>
       <SkillSection/>
       <Footer backgroundCol='transparent' height='5rem'>
         <Connections/>

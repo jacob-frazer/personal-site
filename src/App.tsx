@@ -32,7 +32,7 @@ export default class App extends Component {
             <MediaQuery minWidth={768}>
                 {(matches:boolean) => matches ?
                     <NavBar brand={brand} links={links} />:
-                    <Burger links={[...[{name: "Home", to: "/"}], ...links]} />  // need to add home to links, but handled differently in NavBar 
+                    <Burger brand={brand} links={[...[{name: "Home", to: "/"}], ...links]} />  // need to add home to links, but handled differently in NavBar 
                 }
             </MediaQuery>
             <Routes>

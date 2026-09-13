@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 
 const Navbar = styled.nav`
   background-color: ${colours.black};
-  font-family: Segoe UI Symbol, sans-serif;
   color: ${colours.white};
   display: flex;
   width: 100%;

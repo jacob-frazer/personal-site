@@ -6,57 +6,59 @@
         "url": "aicontainers"
     },
     {
-        "name": "Enabling and accelerating Quantitative Research",
-        "description": "Providing tooling to improve efficiency for quantative researchers by working within one of JPM's most successful internal technology product offerings",
-        "image": "/images/projects/jpmlogo.webp",
+        "name": "Enabling and Accelerating Quantitative Research",
+        "description": "Building tooling that makes thousands of quantitative researchers more productive, as part of one of JPM's most successful internal technology products",
+        "image": "/images/projects/jpmQuant.webp",
         "url": "jpm"
     },
     {
         "name": "Fighting COVID-19",
-        "description": "Working as a data specialist across many different technical areas as part of the UK's response to the coronavirus pandemic",
-        "image": "/images/projects/covid.webp",
+        "description": "Award winning data work across analysis, data science and engineering as part of the UK's response to the coronavirus pandemic",
+        "image": "/images/projects/covidData.webp",
         "url": "ukhsa"
     },
     {
-        "name": "Magic Breakfast School Portal",
-        "description": "Building a transformational web portal for the charity Magic Breakfast as part of the JPM Force For Good program.",
-        "image": "/images/projects/MagicBreakfast.webp",
+        "name": "Magic Breakfast Schools Portal",
+        "description": "Leading six developers to build an award winning schools portal for the charity Magic Breakfast through the JPM Force for Good programme",
+        "image": "/images/projects/schoolsPortal.webp",
         "url": "magicbreakfast"
     },
     {
         "name": "Artificial Intelligence Insurance Pricing",
-        "description": "Utilising cutting edge natural language processing and cognitive reasoning to deduce risk and pricing for life insurance products with Aviva",
-        "image": "/images/projects/aiBrain.webp",
+        "description": "Using natural language processing and cognitive reasoning to price health and life insurance with Aviva, saving over £10M",
+        "image": "/images/projects/insuranceAi.webp",
         "url": "insuranceai"
     },
     {
-        "name": "LLM Code Generation",
-        "description": "Learning and incorporating cutting edge LLM technology into my workflows to build basic web apps at remarkable speed",
-        "image": "/images/projects/chatgpt.webp",
+        "name": "AI-Assisted Development",
+        "description": "Using AI tools since their inception, from an app built entirely by early LLMs to shipping software with today's AI coding agents",
+        "image": "/images/projects/aiCoding.webp",
         "url": "llmcodegen"
     },
     {
         "name": "Secure Software Validation",
-        "description": "Working under very high security constraints to validate and ensure ingested software is safe on a highly sensitive platform",
-        "image": "/images/projects/computerLock.webp",
+        "description": "Working under very high security constraints to ensure ingested software is safe on a highly sensitive platform",
+        "image": "/images/projects/secureSoftware.webp",
         "url": "softwarevalidation"
     },
     {
+        "name": "Cyber Security Data Science",
+        "description": "Multiple projects in the BT Security Data Science Hub, using data as a tool for cyber security across many use cases",
+        "image": "/images/projects/securityData.webp",
+        "url": "cybersecurity"
+    },
+    {
         "name": "Machine Learning Model Builder GUI",
-        "description": "Construction of end-to-end system to allow for building of machine learning models using a simple graphical user interface",
-        "image": "/images/projects/neuralNetwork.webp",
-        "url": "mlgui"
+        "description": "An end-to-end system for building machine learning models through a simple graphical user interface",
+        "image": "/images/projects/mlBuilder.webp",
+        "url": "mlgui",
+        "earlier": true
     },
     {
         "name": "Interconnection of Social Media Communities",
-        "description": "Exploration of various Reddit communities utilising graphing algorithms and big data frameworks",
-        "image": "/images/projects/connected.webp",
-        "url": "socialmediagraph"
-    },
-    {
-        "name": "Cyber Security Data Science",
-        "description": "Multiple projects in the BT Security Data Science Hub, leveraging data as a tool for cyber security across many varied use cases",
-        "image": "/images/projects/cyberSec.webp",
-        "url": "cybersecurity"
+        "description": "Exploring how Reddit communities connect using graph algorithms and big data frameworks",
+        "image": "/images/projects/communityGraph.webp",
+        "url": "socialmediagraph",
+        "earlier": true
     }
 ]
