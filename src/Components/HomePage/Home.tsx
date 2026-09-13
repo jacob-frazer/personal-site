@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 
-import IntroSection from '@home/IntroSection';
 import SkillSection from '@home/Skills';
 import TopSection from '@home/TopSection';
 import Timeline from '@home/Timeline';
@@ -20,7 +19,6 @@ export default function HomePage() {
     <>
       <ParticlesBG/>
       <TopSection/>
-      <IntroSection/>
       <Timeline/>
       <SkillSection/>
       <Footer backgroundCol='transparent' height='5rem'>

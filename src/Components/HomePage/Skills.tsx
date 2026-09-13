@@ -3,11 +3,10 @@ import React from 'react';
 import styled from 'styled-components';
 import { motion } from "framer-motion";
 
-import TypeWriter from '@generics/Typewriter';
 import { Background } from '@generics/SimpleStyledComponents';
 
 import colours from '@utils/colours';
-import { SKILLS_TYPEWRITER_LIST, DEVICE_WIDTHS } from '@utils/constants';
+import { DEVICE_WIDTHS } from '@utils/constants';
 import { bounceFromBelowVariants } from '@utils/animations';
 
 const BounceFromBelowVariants = bounceFromBelowVariants();
@@ -46,34 +45,6 @@ const SKILL_SECTIONS = [
         ]
     },
 ];
-
-const Experience = styled(motion.div)<{ fontcol:string }>`
-    padding: 5rem 0.75rem 0.75rem 0.75rem;
-    font-size: 1.5rem;
-    font-weight: 400;
-    color: ${props => props.fontcol};
-    `;
-
-const TypewriterText = styled.div<{ fontcol:string, background:string }>`
-    color: ${props => props.fontcol};
-    background-color: ${props => props.background};
-    padding: 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2rem;
-    font-weight: 600;
-
-    @media ${DEVICE_WIDTHS.tablet} {
-        font-size: 2rem;
-      }
-    @media ${DEVICE_WIDTHS.laptop} {
-        font-size: 2.25rem;
-      }
-    @media ${DEVICE_WIDTHS.desktop} {
-        font-size: 2.5rem;
-      }
-    `;
 
 // compact grid of cards: one column on phones, two from tablet width upwards
 const SkillGrid = styled.div`
@@ -142,21 +113,6 @@ const SkillPoint = styled.li`
 class Skills extends React.Component {
     render() {
         return (
-                <>
-                <Background backgroundCol="transparent" height='200px' backgroundGradient={colours.black}>
-                    <Experience
-                        fontcol={colours.white}
-                        initial="offscreen"
-                        whileInView="onscreen"
-                        variants={BounceFromBelowVariants}
-                        viewport={{ once: true, amount: 0.5 }}
-                        >
-                        Read on to find out about my experience with
-                        <TypewriterText background="transparent" fontcol={colours.white}>
-                            <TypeWriter strings={SKILLS_TYPEWRITER_LIST}/>
-                        </TypewriterText>
-                    </Experience>
-                </Background>
                 <Background backgroundCol="transparent">
                     <SkillGrid>
                         {SKILL_SECTIONS.map((section) => (
@@ -175,7 +131,6 @@ class Skills extends React.Component {
                         ))}
                     </SkillGrid>
                 </Background>
-                </>
         )
     }
 }

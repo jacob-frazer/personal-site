@@ -11,24 +11,16 @@ import { bounceFromBelowVariants } from '@utils/animations';
 
 const BounceFromBelowVariants = bounceFromBelowVariants();
 
+// scroll-margin keeps the first entry clear of the sticky nav when jumped to from the splash
 const Section = styled.section`
     max-width: 900px;
     margin: 0 auto;
-    padding: 4rem 1rem 1rem 1rem;
+    padding: 3rem 1rem 1rem 1rem;
+    scroll-margin-top: 4.5rem;
     color: ${colours.white};
 
     @media ${DEVICE_WIDTHS.desktop} {
         max-width: 1400px;
-      }
-    `;
-
-const Heading = styled.h2`
-    font-size: 1.75rem;
-    font-weight: 600;
-    margin: 0 0 2rem 0;
-
-    @media ${DEVICE_WIDTHS.laptop} {
-        font-size: 2.25rem;
       }
     `;
 
@@ -127,8 +119,7 @@ const ProjectLink = styled(Link)`
 const Timeline = () => {
     return (
         <Background backgroundCol="transparent">
-            <Section>
-                <Heading>Experience</Heading>
+            <Section id="experience" aria-label="Experience">
                 <Entries>
                     {EXPERIENCE.map((role) => (
                         <Entry

@@ -10,7 +10,7 @@ const Navbar = styled.nav`
   width: 100%;
   position: -webkit-sticky;
   position: sticky;
-  z-index: 100;
+  z-index: 1000;
   top: 0;
   align-items: center;
   justify-content: center;

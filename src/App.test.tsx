@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import App from './App';
 
 // the canvas particle background can't run in jsdom
@@ -21,13 +21,35 @@ const renderAt = (path: string) => {
 test('renders the home page', () => {
   renderAt('/');
   expect(screen.getByText('Jacob Frazer')).toBeInTheDocument();
+  expect(screen.getByRole('link', { name: 'View my projects' })).toHaveAttribute('href', '/projects');
 });
 
 test('renders the experience timeline with links to project deep dives', () => {
   renderAt('/');
-  expect(screen.getByRole('heading', { name: 'Experience' })).toBeInTheDocument();
+  expect(screen.getByRole('region', { name: 'Experience' })).toBeInTheDocument();
+  expect(screen.queryByRole('heading', { name: 'Experience' })).not.toBeInTheDocument();
   expect(screen.getByText('Contracting through Ascent')).toBeInTheDocument();
   expect(screen.getByRole('link', { name: 'Fighting COVID-19' })).toHaveAttribute('href', '/projects/ukhsa');
+});
+
+test('mobile menu opens, and closes when a link is followed', () => {
+  mockFetchJson([]);
+  renderAt('/');
+  const menuButton = screen.getByRole('button', { name: 'Open menu' });
+  expect(menuButton).toHaveAttribute('aria-expanded', 'false');
+
+  fireEvent.click(menuButton);
+  expect(screen.getByRole('button', { name: 'Close menu' })).toHaveAttribute('aria-expanded', 'true');
+
+  fireEvent.click(screen.getByRole('link', { name: 'Projects' }));
+  expect(screen.getByRole('button', { name: 'Open menu' })).toHaveAttribute('aria-expanded', 'false');
+});
+
+test('mobile menu closes with the Escape key', () => {
+  renderAt('/');
+  fireEvent.click(screen.getByRole('button', { name: 'Open menu' }));
+  fireEvent.keyDown(window, { key: 'Escape' });
+  expect(screen.getByRole('button', { name: 'Open menu' })).toHaveAttribute('aria-expanded', 'false');
 });
 
 test('groups earlier projects under their own heading', async () => {

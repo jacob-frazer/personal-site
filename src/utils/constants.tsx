@@ -1,28 +1,12 @@
 // colour codes imported and used all over app for styling
-export const SKILLS_TYPEWRITER_LIST = [
-    "AI Infrastructure",
-    "LLM Applications",
-    "AI Agents",
-    "GPU Computing",
-    "Kubernetes",
-    "Data Science",
-    "Python",
-    "Software Development",
-    "Dev Ops",
-    "Machine Learning",
-    "Finance",
-    "Typescript",
-    "Data Engineering",
-    "Web Development",
-    "Government",
-    "Cloud Infrastructure",
-    "Jupyter Ecosystem",
-    "Cyber Security",
-    "Big Data",
-    "Rust",
-    "Artificial Intelligence",
-    "Health",
-    "Insurance",
+// typed in order after "I build" on the home page splash
+export const HERO_TYPEWRITER_LIST = [
+    "platforms for AI research",
+    "LLM powered applications",
+    "GPU workloads on Kubernetes",
+    "tools for quant researchers",
+    "cloud data pipelines",
+    "production NLP systems",
 ];
 
 const size = {
