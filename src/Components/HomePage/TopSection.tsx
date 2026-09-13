@@ -73,7 +73,7 @@ export default function Top() {
             animate={{ opacity: 1, transition: {duration:2, delay:1} }}
             initial={{ opacity: 0 }}
             >
-            Software Developer
+            AI & Software Engineer
             </Text>
         </TopSection>
     )

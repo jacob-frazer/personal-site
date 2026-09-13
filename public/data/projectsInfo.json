@@ -1,5 +1,11 @@
 [
     {
+        "name": "AI Research Container Platform",
+        "description": "Designing and building an entire container framework at JPM that lets several research teams run cutting edge AI research containers on GPUs",
+        "image": "/images/projects/aiContainers.webp",
+        "url": "aicontainers"
+    },
+    {
         "name": "Enabling and accelerating Quantitative Research",
         "description": "Providing tooling to improve efficiency for quantative researchers by working within one of JPM's most successful internal technology product offerings",
         "image": "/images/projects/jpmlogo.webp",

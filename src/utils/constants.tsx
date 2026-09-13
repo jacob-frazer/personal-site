@@ -1,9 +1,13 @@
 // colour codes imported and used all over app for styling
 export const SKILLS_TYPEWRITER_LIST = [
+    "AI Infrastructure",
+    "LLM Applications",
+    "AI Agents",
+    "GPU Computing",
+    "Kubernetes",
     "Data Science",
     "Python",
     "Software Development",
-    "LLMs",
     "Dev Ops",
     "Machine Learning",
     "Finance",
@@ -18,8 +22,6 @@ export const SKILLS_TYPEWRITER_LIST = [
     "Rust",
     "Artificial Intelligence",
     "Health",
-    "Blockchain",
-    "Data Engineering",
     "Insurance",
 ];
 

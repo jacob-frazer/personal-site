@@ -84,8 +84,8 @@ const IntroSection = () => {
         whileInView="visible"
         viewport={{ once: true }}
         >
-        I am Jacob, a Software Engineer based out of London. 
-        I created this website as a portfolio for me to detail the projects I have worked on, technologies I know, and articles I have written. 
+        I am Jacob, a London based Software Engineer at JP Morgan, where I build the platforms researchers rely on for quantitative and AI research.
+        I also build LLM powered applications and use AI coding agents every day to ship faster. This site showcases some of the projects I am most proud of.
         <div><br/></div>
         Let's connect 
         <Connections darkMode={true}/>

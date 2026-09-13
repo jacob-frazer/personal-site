@@ -1,4 +1,21 @@
 {
+    "aicontainers": {
+        "headline": "AI Research Container Platform",
+        "intro": "Designed and built an entire container framework at JP Morgan for running cutting edge research containers, giving several research teams a fast, reliable way to run their AI research.",
+        "technologies": ["Python", "Docker / OCI", "Kubernetes", "NVIDIA GPUs", "CUDA"],
+        "explanation": [
+            "Alongside my work on JP Morgan's internal Jupyter platform, I designed and built an entire container framework for running cutting edge research containers. AI research moves incredibly quickly and researchers need to be able to try new models, libraries and toolchains as soon as they are released. The aim of the framework was to make that possible inside the bank, without every research team having to become infrastructure experts.",
+            "AI workloads come with a very particular set of challenges. Research images are large and tied to specific CUDA and driver versions, experiments need access to scarce and expensive GPU resources, and everything has to run safely within the controls of a highly regulated organisation. On top of this, every research team has its own preferred tools, so the framework needed to be flexible enough to support all of them whilst still being a consistent and supportable platform.",
+            "The framework is built on standard container technology. Research environments are packaged as Docker / OCI images and run on Kubernetes, which schedules the workloads onto NVIDIA GPUs. The framework's tooling is written in Python, giving researchers a simple way to define, launch and manage their research containers.",
+            "The platform is now used by several research teams across JP Morgan to run their AI research, letting them spend their time on the research itself rather than on the infrastructure underneath it."
+        ],
+        "outcomes": [
+            "Designed and built an entire container framework for running cutting edge AI research containers",
+            "Adopted by several research teams across JP Morgan to run their AI research",
+            "GPU accelerated research workloads packaged as containers and scheduled on Kubernetes",
+            "Researchers can pick up the latest models and tooling quickly without managing infrastructure themselves"
+        ]
+    },
     "ukhsa": {
         "headline": "Fighting COVID with UKHSA",
         "intro": "Working as part of the UK Health Security Agency as part of the response to the coronavirus pandemic, I performed in a data specialist role encompassing analysis, data science, engineering and devops.",

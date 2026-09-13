@@ -12,6 +12,44 @@ import { bounceFromBelowVariants } from '@utils/animations';
 
 const BounceFromBelowVariants = bounceFromBelowVariants();
 
+// each section is shown in its own panel, alternating left and right down the page
+const SKILL_SECTIONS = [
+    {
+        heading: "AI Engineering",
+        points: [
+            "Built the container platform several JP Morgan research teams use to run cutting edge AI research on GPUs",
+            "Experienced building LLM powered applications, from prompt engineering and retrieval to agents and tool use",
+            "Use AI coding agents every day to design, build and ship production software faster",
+        ]
+    },
+    {
+        heading: "Software Engineering",
+        points: [
+            "Many years of experience building sophisticated solutions for businesses",
+            "Fluent in many of the most common programming languages with an aptitude for learning others",
+            "Experience across many industries and domains",
+            "Proficient both leading and working in teams of developers",
+            "Equally comfortable and experienced working on both greenfield and existing projects",
+        ]
+    },
+    {
+        heading: "Data Solutions",
+        points: [
+            "Experience in Data Engineering, DevOps and Data Science",
+            "Familiar with many common data speciality technologies and cloud providers",
+            "Proven ability at all stages of the software lifecycle from problem to production to deprecation",
+        ]
+    },
+    {
+        heading: "Web Development",
+        points: [
+            "Full stack web developer with experience using a wide range of softwares and frameworks",
+            "Experience working on web applications of all scales from simple to enterprise",
+            "Fluent in TypeScript and modern JS frameworks as well as traditional HTML/CSS/JS sites",
+        ]
+    },
+];
+
 const Experience = styled(motion.div)<{ fontcol:string }>`
     padding: 5rem 0.75rem 0.75rem 0.75rem;
     font-size: 1.5rem;
@@ -108,13 +146,13 @@ const TypewriterText = styled.div<{ fontcol:string, background:string }>`
       }
     `;
 
-    
+
 class Skills extends React.Component {
     render() {
         return (
                 <>
                 <Background backgroundCol="transparent" height='200px' backgroundGradient={colours.black}>
-                    <Experience 
+                    <Experience
                         fontcol={colours.white}
                         initial="offscreen"
                         whileInView="onscreen"
@@ -127,60 +165,23 @@ class Skills extends React.Component {
                         </TypewriterText>
                     </Experience>
                 </Background>
-                <Background backgroundCol="transparent" height='45rem'>
-                    <CentreText 
-                        float="left" 
-                        fontcol={colours.white}
-                        initial="offscreen"
-                        whileInView="onscreen"
-                        viewport={{ once: true, amount: 0.5 }}
-                        variants={BounceFromBelowVariants}
-                        >
-                        <ContentBox background="transparent">
-                            <Heading>Software Engineering</Heading>
-                            <Content>Many years of experience building sophisticated solutions for businesses</Content>
-                            <Content>Fluent in many of the most common programming languages with an aptitude for learning others</Content>
-                            <Content>Experience across many industries and domains</Content>
-                            <Content>Proficient both leading and working in teams of developers</Content>
-                            <Content>Equally comfortable and experienced working on both greenfield and existing projects</Content>
-                        </ContentBox>
-                    </CentreText>
-                </Background>
-                <Background backgroundCol="transparent" height='45rem'>
-                    <CentreText 
-                        float="right" 
-                        fontcol={colours.white}
-                        initial="offscreen"
-                        whileInView="onscreen"
-                        viewport={{ once: true, amount: 0.5 }}
-                        variants={BounceFromBelowVariants}
-                        >
-                        <ContentBox background="transparent">
-                            <Heading>Data Solutions</Heading>
-                            <Content>Experience in Data Engineering, DevOps and Data Science</Content>
-                            <Content>Familiar with many common data speciality technologies and cloud providers</Content>
-                            <Content>Proven ability at all stages of the software lifecycle from problem to production to deprecation</Content>
-                        </ContentBox>
-                    </CentreText>
-                </Background>
-                <Background backgroundCol="transparent" height='45rem'>
-                    <CentreText 
-                        float="left" 
-                        fontcol={colours.white}
-                        initial="offscreen"
-                        whileInView="onscreen"
-                        viewport={{ once: true, amount: 0.5 }}
-                        variants={BounceFromBelowVariants}
-                        >
-                        <ContentBox background="transparent">
-                            <Heading>Web Development</Heading>
-                            <Content>Full stack web developer with experience using a wide range of softwares and frameworks</Content>
-                            <Content>Experience working on web applications of all scales from simple to enterprise</Content>
-                            <Content>Fluent in TypeScript and modern JS frameworks as well as traditional HTML/CSS/JS sites</Content>
-                            <Content>Familiarity with Web 3.0 technologies including Solidity & web3js</Content>
-                        </ContentBox>
-                    </CentreText>
-                </Background>
+                {SKILL_SECTIONS.map((section, i) => (
+                    <Background key={section.heading} backgroundCol="transparent" height='45rem'>
+                        <CentreText
+                            float={i % 2 === 0 ? "left" : "right"}
+                            fontcol={colours.white}
+                            initial="offscreen"
+                            whileInView="onscreen"
+                            viewport={{ once: true, amount: 0.5 }}
+                            variants={BounceFromBelowVariants}
+                            >
+                            <ContentBox background="transparent">
+                                <Heading>{section.heading}</Heading>
+                                {section.points.map((point) => <Content key={point}>{point}</Content>)}
+                            </ContentBox>
+                        </CentreText>
+                    </Background>
+                ))}
                 </>
         )
     }
