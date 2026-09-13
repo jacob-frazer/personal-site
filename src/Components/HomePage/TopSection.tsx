@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 import { BasicText } from '@generics/SimpleStyledComponents';
 
-import mePhoto from '@images/me_smaller.png';
+import mePhoto from '@images/me_smaller.webp';
 import colours from '@utils/colours';
 import { DEVICE_WIDTHS } from '@utils/constants';
 
@@ -39,7 +39,7 @@ const Photo = styled(motion.img)`
   }
   @media ${DEVICE_WIDTHS.laptop} {
     padding: 2rem;
-    width 25%;
+    width: 25%;
   }
   `;
 

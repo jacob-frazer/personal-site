@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { useNavigate } from "react-router-dom";
 
 import styled from 'styled-components';
@@ -13,7 +13,7 @@ const CardsItem = styled.li`
     @media(min-width: 56rem) {
         width: 30%;
     }
-    `; 
+    `;
 
 const CardImage = styled.div<{backgroundImage:string}>`
     background-image: url(${props => props.backgroundImage});
@@ -26,7 +26,7 @@ const CardImage = styled.div<{backgroundImage:string}>`
     //filter: saturate(180%);
     overflow: hidden;
     position: relative;
-    transition: filter 0.5s cubic-bezier(.43,.41,.22,.91);;
+    transition: filter 0.5s cubic-bezier(.43,.41,.22,.91);
     &::before {
         content: "";
         display: block;
@@ -61,7 +61,6 @@ const CardContent = styled.div`
     `;
 
 const CardTitle = styled.div`
-    color: @gray-dark;
     font-size: 1.25rem;
     font-weight: 300;
     letter-spacing: 2px;
@@ -83,11 +82,9 @@ const Button = styled.button`
     padding: 0.5rem;
     display: block;
     width: 100%;
-    // Animate the size, inside
     transition: 0.25s;
     &:hover,
     &:focus {
-        box-shadow: inset 0 0 0 2em var(--hover);
         color: white;
         background-color: ${colours.dark};
         border: 1px solid ${colours.dark};

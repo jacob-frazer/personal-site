@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import colours from '@utils/colours';
 
 import { Link } from 'react-router-dom';
-  
+
 const Navbar = styled.nav`
   background-color: ${colours.black};
   font-family: Segoe UI Symbol, sans-serif;
@@ -14,7 +14,7 @@ const Navbar = styled.nav`
   z-index: 100;
   top: 0;
   align-items: center;
-  justify-content: centre;
+  justify-content: center;
   a { cursor:pointer;
     padding: 7px 14px;
     position:relative;
@@ -49,7 +49,7 @@ const Navbar = styled.nav`
       &:before,&:after{
         width:100%;
         height:100%;
-      }}    
+      }}
   `;
 
 const Brand = styled(Link)`
@@ -65,7 +65,7 @@ const Ul = styled.ul`
   display: flex;
   flex-wrap: nowrap;
   overflow-x: auto;
-  text-align: centre;
+  text-align: center;
   align-items: center;
   -webkit-overflow-scrolling: touch;`;
 
@@ -94,14 +94,13 @@ const NavbarScroller = (props: {
     links: Array<{ name: string, to: string }>
     }) => {
     const { brand, links } = props;
-    const NavLinks: any = () => links.map((link: { name: string, to: string }) => <Li key={link.name}><Link to={link.to}>{link.name}</Link></Li>);
     return (
         <Navbar>
           <Brand to={brand.to}>{brand.name}</Brand>
           <Ul>
-            <NavLinks />
+            {links.map((link) => <Li key={link.name}><Link to={link.to}>{link.name}</Link></Li>)}
           </Ul>
-        </Navbar >
+        </Navbar>
       )
     };
 

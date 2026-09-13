@@ -1,9 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import styled from 'styled-components';
-import { motion, Variants } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 import colours from '@utils/colours';
+import { bounceFromBelowVariants } from '@utils/animations';
 import { Background } from '@generics/SimpleStyledComponents';
 
 
@@ -45,11 +46,13 @@ const OutcomesHeader = styled.div`
     padding: 1rem;
     `;
 
-const OutcomesList = styled.div`
-    display: inline-block; 
-    text-align: left; 
+const OutcomesList = styled.ul`
+    display: inline-block;
+    text-align: left;
     width: 90%;
-    list-style: none;  
+    list-style: none;
+    margin: 0;
+    padding: 0;
     font-size: 1.25rem;
     font-weight: 300;
     letter-spacing: 2px;
@@ -78,7 +81,8 @@ const TechnologiesHeader = styled.div`
     color: ${colours.white};
     `;
 
-const TechnologiesList = styled.div`
+const TechnologiesList = styled.ul`
+    margin: 0;
     padding: 1.5rem;
     flex: 1 1 auto;
     font-size: 1.5rem;
@@ -94,8 +98,8 @@ const TechnologiesListItem = styled.li`
     `;
 
 const Headline = styled.h1`
-    justify-content: centre;
-    text-align: centre; 
+    justify-content: center;
+    text-align: center;
     padding: 5rem 1rem 1rem 1rem;
     font-size: 3rem;
     font-weight: 400;
@@ -112,22 +116,7 @@ const Intro = styled.div`
     padding: 1.5rem;
 `;
 
-const BounceFromBelowVariants: Variants = {
-    offscreen: {
-        y: 150,
-        opacity: 0
-      },
-    onscreen: {
-        y: 0,
-        opacity: 1,
-        transition: {
-            type: "spring",
-            bounce: 0.3,
-            duration: 1,
-            delay: 0.2
-        }
-    }
-  };
+const BounceFromBelowVariants = bounceFromBelowVariants(0.2);
 
 
 const ProjectInfo = (props: {projectInfo: {headline: string, intro: string, technologies: string[], explanation: string[], outcomes: string[]}}) => {
@@ -147,7 +136,7 @@ const ProjectInfo = (props: {projectInfo: {headline: string, intro: string, tech
                         <ContentBox background={colours.white}>
                             <OutcomesHeader>Successes & Outcomes</OutcomesHeader>
                             <OutcomesList>
-                                {outcomes.map((x:string) => <OutcomesListItem>{x}</OutcomesListItem>)}
+                                {outcomes.map((x:string, i:number) => <OutcomesListItem key={i}>{x}</OutcomesListItem>)}
                             </OutcomesList>
                         </ContentBox>
                     </motion.div>
@@ -155,12 +144,12 @@ const ProjectInfo = (props: {projectInfo: {headline: string, intro: string, tech
 
                 <TechnologiesHeader>Technologies</TechnologiesHeader>
                 <TechnologiesList>
-                    {technologies.map((x:string) => <TechnologiesListItem>{x}</TechnologiesListItem>)}
+                    {technologies.map((x:string, i:number) => <TechnologiesListItem key={i}>{x}</TechnologiesListItem>)}
                 </TechnologiesList>
-            
+
                 <ExplanationText>
                     <ExplanationHeader>Deep Dive</ExplanationHeader>
-                    {explanation.map((para:string) => <p>{para}</p>)}
+                    {explanation.map((para:string, i:number) => <p key={i}>{para}</p>)}
                 </ExplanationText>
 
             </Background>

@@ -1,29 +1,16 @@
 import React from 'react';
 
 import styled from 'styled-components';
-import { motion, Variants } from "framer-motion";
+import { motion } from "framer-motion";
 
 import TypeWriter from '@generics/Typewriter';
 import { Background } from '@generics/SimpleStyledComponents';
 
 import colours from '@utils/colours';
 import { SKILLS_TYPEWRITER_LIST, DEVICE_WIDTHS } from '@utils/constants';
+import { bounceFromBelowVariants } from '@utils/animations';
 
-const BounceFromBelowVariants: Variants = {
-    offscreen: {
-        y: 150,
-        opacity: 0
-      },
-    onscreen: {
-        y: 0,
-        opacity: 1,
-        transition: {
-            type: "spring",
-            bounce: 0.3,
-            duration: 1
-        }
-    }
-};
+const BounceFromBelowVariants = bounceFromBelowVariants();
 
 const Experience = styled(motion.div)<{ fontcol:string }>`
     padding: 5rem 0.75rem 0.75rem 0.75rem;

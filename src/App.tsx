@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Routes, Route, BrowserRouter } from 'react-router-dom';
+import { Routes, Route, BrowserRouter } from 'react-router-dom';
 
 import MediaQuery from 'react-responsive'
 
 import HomePage from '@home/Home';
-import AboutPage from '@about/About';
+// import AboutPage from '@about/About';
 import ProjectsPage from '@projects/Projects';
 import ProjectsInfo from '@projects/ProjectsInfo';
 import NotFound from '@404/NotFound';

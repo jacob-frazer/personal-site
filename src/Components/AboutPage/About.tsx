@@ -1,4 +1,4 @@
-import { motion, Variants } from 'framer-motion';
+import { motion } from 'framer-motion';
 import React from 'react';
 import styled from 'styled-components';
 
@@ -7,23 +7,9 @@ import { Background, BasicText } from '@generics/SimpleStyledComponents';
 
 import colours from '@utils/colours';
 import { DEVICE_WIDTHS } from '@utils/constants';
+import { bounceFromBelowVariants } from '@utils/animations';
 
-const BounceFromBelowVariants: Variants = {
-  offscreen: {
-      y: 150,
-      opacity: 0
-    },
-  onscreen: {
-      y: 0,
-      opacity: 1,
-      transition: {
-          type: "spring",
-          bounce: 0.3,
-          duration: 1,
-          delay: 0.2
-      }
-  }
-};
+const BounceFromBelowVariants = bounceFromBelowVariants(0.2);
 
 
 const AboutText = styled(BasicText)`

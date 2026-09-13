@@ -37,7 +37,6 @@ const StyledBurgerMenu = styled.div`
   /* General sidebar styles */
   .bm-menu {
     background: linear-gradient(180deg, ${colours.mid}, ${colours.white});
-    background-gradient: transparent;
     padding: 2.5em 1.5em 0;
     font-size: 1.15em;
     a {
@@ -85,12 +84,12 @@ const Li = styled.li`
   white-space: nowrap;
   `;
 
-const Backing = styled.div`
-    display: flex;
-    width: 100%;
-    position: sticky;
-  `;
-
+// defined outside the menu component so the links aren't remounted on every render
+const NavLinks = (props: { links: Array<{ name: string, to: string }>, onLinkClick: () => void }) => (
+    <>
+      {props.links.map((link) => <Li key={link.name} onClick={props.onLinkClick}><Link to={link.to}>{link.name}</Link></Li>)}
+    </>
+);
 
 const BurgerMenuComponent = (props: {links: Array<{ name: string, to: string }>}) => {
     const { links } = props;
@@ -100,11 +99,10 @@ const BurgerMenuComponent = (props: {links: Array<{ name: string, to: string }>}
         setMenuOpenState(false)
     }
 
-    const NavLinks: any = () => links.map((link: { name: string, to: string }) => <Li key={link.name} onClick={closeMenu}><Link to={link.to}>{link.name}</Link></Li>);
     return (
       <StyledBurgerMenu>
         <BurgerMenu isOpen={menuOpenState} onStateChange={(state) => setMenuOpenState(state.isOpen)}>
-          <NavLinks />
+          <NavLinks links={links} onLinkClick={closeMenu} />
         </BurgerMenu>
       </StyledBurgerMenu>
       )
