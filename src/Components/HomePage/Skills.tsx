@@ -1,200 +1,136 @@
 import React from 'react';
 
 import styled from 'styled-components';
-import { motion, Variants } from "framer-motion";
+import { motion } from "framer-motion";
 
-import TypeWriter from '@generics/Typewriter';
 import { Background } from '@generics/SimpleStyledComponents';
 
 import colours from '@utils/colours';
-import { SKILLS_TYPEWRITER_LIST, DEVICE_WIDTHS } from '@utils/constants';
+import { DEVICE_WIDTHS } from '@utils/constants';
+import { bounceFromBelowVariants } from '@utils/animations';
 
-const BounceFromBelowVariants: Variants = {
-    offscreen: {
-        y: 150,
-        opacity: 0
-      },
-    onscreen: {
-        y: 0,
-        opacity: 1,
-        transition: {
-            type: "spring",
-            bounce: 0.3,
-            duration: 1
-        }
-    }
-};
+const BounceFromBelowVariants = bounceFromBelowVariants();
 
-const Experience = styled(motion.div)<{ fontcol:string }>`
-    padding: 5rem 0.75rem 0.75rem 0.75rem;
-    font-size: 1.5rem;
-    font-weight: 300;
-    letter-spacing: 2px;
-    color: ${props => props.fontcol};
-    `;
+const SKILL_SECTIONS = [
+    {
+        heading: "AI Engineering",
+        points: [
+            "Built the container platform several JP Morgan research teams use to run cutting edge AI research on GPUs",
+            "Experienced building LLM powered applications, from prompt engineering and retrieval to agents and tool use",
+            "Using AI tools since their inception, always working with the latest models and coding agents to ship software faster",
+        ]
+    },
+    {
+        heading: "Software Engineering",
+        points: [
+            "Production experience in Python and TypeScript / JavaScript across finance, government, insurance and telecoms",
+            "Led a team of six developers to deliver the Magic Breakfast schools portal on time and under budget",
+            "Take systems from greenfield design through to production, operation and eventual deprecation",
+        ]
+    },
+    {
+        heading: "Data Solutions",
+        points: [
+            "Built end-to-end data pipelines and infrastructure as code on AWS for the UK's COVID-19 response",
+            "Put NLP and reasoning systems into production, automating insurance pricing and saving over £10M",
+            "Big data and security analytics with Apache Spark in BT's cyber security Data Science Hub",
+        ]
+    },
+    {
+        heading: "Web Development",
+        points: [
+            "Full stack development with React, TypeScript and Node.js",
+            "Delivered web applications from a charity schools portal to a secure enterprise file platform",
+            "Worked on extensions for JP Morgan's internal Jupyter platform, used by thousands of researchers",
+        ]
+    },
+];
 
-const Content = styled.div`
-    padding-top: 1rem;
-    text-align: left;
-    font-size: 1rem;
-    font-weight: 300;
-    letter-spacing: 2px;
+// compact grid of cards: one column on phones, two from tablet width upwards
+const SkillGrid = styled.div`
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem 4rem 1rem;
 
     @media ${DEVICE_WIDTHS.tablet} {
-        padding-top: 1.5rem;
-        font-size: 1.2rem;
-      }
-    @media ${DEVICE_WIDTHS.laptop} {
-        padding-top: 1.5rem;
-        font-size: 1.2rem;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        padding: 3rem 2rem 5rem 2rem;
       }
     @media ${DEVICE_WIDTHS.desktop} {
-        padding-top: 2rem;
+        max-width: 1800px;
+      }
+    `;
+
+const SkillCard = styled(motion.div)`
+    background-color: rgba(8, 14, 20, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    text-align: left;
+    color: ${colours.white};
+
+    @media ${DEVICE_WIDTHS.laptop} {
+        padding: 2rem;
+      }
+    `;
+
+const SkillHeading = styled.h3`
+    margin: 0 0 0.5rem 0;
+    font-size: 1.3rem;
+    font-weight: 600;
+
+    @media ${DEVICE_WIDTHS.laptop} {
+        font-size: 1.5rem;
+      }
+    @media ${DEVICE_WIDTHS.desktop} {
+        font-size: 2rem;
+      }
+    `;
+
+const SkillList = styled.ul`
+    margin: 0;
+    padding-left: 1.2rem;
+    `;
+
+const SkillPoint = styled.li`
+    font-size: 1rem;
+    line-height: 1.6;
+    padding-top: 0.5rem;
+
+    @media ${DEVICE_WIDTHS.laptop} {
+        font-size: 1.1rem;
+      }
+    @media ${DEVICE_WIDTHS.desktop} {
         font-size: 1.5rem;
       }
     `;
 
-const Heading = styled.div`
-    font-size: 1.1rem;
-    font-weight: 400;
-    letter-spacing: 2px;
 
-    @media ${DEVICE_WIDTHS.tablet} {
-        font-size: 1.1rem;
-      }
-    @media ${DEVICE_WIDTHS.laptop} {
-        font-size: 1.65rem;
-      }
-    @media ${DEVICE_WIDTHS.desktop} {
-        font-size: 2.2rem;
-      }
-    `;
-
-const ContentBox = styled.div<{ background: string }>`
-    background-color: ${props => props.background};
-    padding: 1rem;
-    border-radius: 0.25rem;
-    box-shadow: 0 20px 40px -14px rgba(0,0,0,0.25);
-    `;
-
-const CentreText = styled(motion.div)<{ float:string, fontcol:string }>`
-    font-size: 1.5rem;
-    color: ${props => props.fontcol};
-    padding: 0.25rem;
-    float: ${props => props.float};
-    height: 85%;
-    width: 95%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    @media ${DEVICE_WIDTHS.tablet} {
-        width:75%;
-      }
-    @media ${DEVICE_WIDTHS.laptop} {
-        width:50%;
-        padding: 1.2rem;
-      }
-    @media ${DEVICE_WIDTHS.desktop} {
-        width:40%;
-        padding: 1.5rem;
-      }
-    `;
-
-const TypewriterText = styled.div<{ fontcol:string, background:string }>`
-    color: ${props => props.fontcol};
-    background-color: ${props => props.background};
-    padding: 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2rem;
-
-    @media ${DEVICE_WIDTHS.tablet} {
-        font-size: 2rem;
-      }
-    @media ${DEVICE_WIDTHS.laptop} {
-        font-size: 2.25rem;
-      }
-    @media ${DEVICE_WIDTHS.desktop} {
-        font-size: 2.5rem;
-      }
-    `;
-
-    
 class Skills extends React.Component {
     render() {
         return (
-                <>
-                <Background backgroundCol="transparent" height='200px' backgroundGradient={colours.black}>
-                    <Experience 
-                        fontcol={colours.white}
-                        initial="offscreen"
-                        whileInView="onscreen"
-                        variants={BounceFromBelowVariants}
-                        viewport={{ once: true, amount: 0.5 }}
-                        >
-                        Read on to find out about my experience with
-                        <TypewriterText background="transparent" fontcol={colours.white}>
-                            <TypeWriter strings={SKILLS_TYPEWRITER_LIST}/>
-                        </TypewriterText>
-                    </Experience>
+                <Background backgroundCol="transparent">
+                    <SkillGrid>
+                        {SKILL_SECTIONS.map((section) => (
+                            <SkillCard
+                                key={section.heading}
+                                initial="offscreen"
+                                whileInView="onscreen"
+                                viewport={{ once: true, amount: 0.3 }}
+                                variants={BounceFromBelowVariants}
+                                >
+                                <SkillHeading>{section.heading}</SkillHeading>
+                                <SkillList>
+                                    {section.points.map((point) => <SkillPoint key={point}>{point}</SkillPoint>)}
+                                </SkillList>
+                            </SkillCard>
+                        ))}
+                    </SkillGrid>
                 </Background>
-                <Background backgroundCol="transparent" height='45rem'>
-                    <CentreText 
-                        float="left" 
-                        fontcol={colours.white}
-                        initial="offscreen"
-                        whileInView="onscreen"
-                        viewport={{ once: true, amount: 0.5 }}
-                        variants={BounceFromBelowVariants}
-                        >
-                        <ContentBox background="transparent">
-                            <Heading>Software Engineering</Heading>
-                            <Content>Many years of experience building sophisticated solutions for businesses</Content>
-                            <Content>Fluent in many of the most common programming languages with an aptitude for learning others</Content>
-                            <Content>Experience across many industries and domains</Content>
-                            <Content>Proficient both leading and working in teams of developers</Content>
-                            <Content>Equally comfortable and experienced working on both greenfield and existing projects</Content>
-                        </ContentBox>
-                    </CentreText>
-                </Background>
-                <Background backgroundCol="transparent" height='45rem'>
-                    <CentreText 
-                        float="right" 
-                        fontcol={colours.white}
-                        initial="offscreen"
-                        whileInView="onscreen"
-                        viewport={{ once: true, amount: 0.5 }}
-                        variants={BounceFromBelowVariants}
-                        >
-                        <ContentBox background="transparent">
-                            <Heading>Data Solutions</Heading>
-                            <Content>Experience in Data Engineering, DevOps and Data Science</Content>
-                            <Content>Familiar with many common data speciality technologies and cloud providers</Content>
-                            <Content>Proven ability at all stages of the software lifecycle from problem to production to deprecation</Content>
-                        </ContentBox>
-                    </CentreText>
-                </Background>
-                <Background backgroundCol="transparent" height='45rem'>
-                    <CentreText 
-                        float="left" 
-                        fontcol={colours.white}
-                        initial="offscreen"
-                        whileInView="onscreen"
-                        viewport={{ once: true, amount: 0.5 }}
-                        variants={BounceFromBelowVariants}
-                        >
-                        <ContentBox background="transparent">
-                            <Heading>Web Development</Heading>
-                            <Content>Full stack web developer with experience using a wide range of softwares and frameworks</Content>
-                            <Content>Experience working on web applications of all scales from simple to enterprise</Content>
-                            <Content>Fluent in TypeScript and modern JS frameworks as well as traditional HTML/CSS/JS sites</Content>
-                            <Content>Familiarity with Web 3.0 technologies including Solidity & web3js</Content>
-                        </ContentBox>
-                    </CentreText>
-                </Background>
-                </>
         )
     }
 }

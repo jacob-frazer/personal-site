@@ -1,4 +1,4 @@
-import { motion, Variants } from 'framer-motion';
+import { motion } from 'framer-motion';
 import React from 'react';
 import styled from 'styled-components';
 
@@ -7,23 +7,9 @@ import { Background, BasicText } from '@generics/SimpleStyledComponents';
 
 import colours from '@utils/colours';
 import { DEVICE_WIDTHS } from '@utils/constants';
+import { bounceFromBelowVariants } from '@utils/animations';
 
-const BounceFromBelowVariants: Variants = {
-  offscreen: {
-      y: 150,
-      opacity: 0
-    },
-  onscreen: {
-      y: 0,
-      opacity: 1,
-      transition: {
-          type: "spring",
-          bounce: 0.3,
-          duration: 1,
-          delay: 0.2
-      }
-  }
-};
+const BounceFromBelowVariants = bounceFromBelowVariants(0.2);
 
 
 const AboutText = styled(BasicText)`
@@ -75,17 +61,17 @@ class AboutPage extends React.Component{
             viewport={{ once: true, amount: 0.5 }}
             variants={BounceFromBelowVariants}
             >
-          <AboutHeader fontCol={colours.white} fontSize='1rem' padding='2rem' fontWeight='300' letterSpacing='2px' width='75%' display='float' float='left'>
+          <AboutHeader fontCol={colours.white} fontSize='1rem' padding='2rem' fontWeight='400' letterSpacing='normal' width='75%' display='float' float='left'>
             Who am I?
           </AboutHeader>
 
-          <AboutText fontCol={colours.white} fontSize='0.5rem' padding='2rem' fontWeight='300' letterSpacing='2px' width='58%'>
+          <AboutText fontCol={colours.white} fontSize='0.5rem' padding='2rem' fontWeight='400' letterSpacing='normal' width='58%'>
             Hey, I am Jacob, a software developer and data specialist who enjoys solving interesting business problems
           </AboutText>
-          <AboutText fontCol={colours.white} fontSize='0.5rem' padding='2rem' fontWeight='300' letterSpacing='2px' width='58%'>
+          <AboutText fontCol={colours.white} fontSize='0.5rem' padding='2rem' fontWeight='400' letterSpacing='normal' width='58%'>
             I live in London and I love to code (I even do it on the weekends)
           </AboutText>
-          <AboutText fontCol={colours.white} fontSize='0.5rem' padding='2rem' fontWeight='300' letterSpacing='2px' width='58%'>
+          <AboutText fontCol={colours.white} fontSize='0.5rem' padding='2rem' fontWeight='400' letterSpacing='normal' width='58%'>
             In my free time I like to learn - doesn't matter what, as long as it's stimulating!
           </AboutText>
           </Div>

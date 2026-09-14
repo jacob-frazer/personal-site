@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Routes, Route, BrowserRouter } from 'react-router-dom';
+import { Routes, Route, BrowserRouter } from 'react-router-dom';
 
 import MediaQuery from 'react-responsive'
 
 import HomePage from '@home/Home';
-import AboutPage from '@about/About';
+// import AboutPage from '@about/About';
 import ProjectsPage from '@projects/Projects';
 import ProjectsInfo from '@projects/ProjectsInfo';
 import NotFound from '@404/NotFound';
 import NavBar from '@generics/NavBar';
-import Burger from '@generics/BurgerMenu';
+import MobileNav from '@generics/MobileNav';
+import ScrollToTop from '@generics/ScrollToTop';
 
 import './App.css'
 
@@ -28,11 +29,12 @@ export default class App extends Component {
     return (
       <div className='App'>
         <BrowserRouter>
-            {/* Conditionally render nav bar or burger menu based on media query of screen width */}
+            <ScrollToTop/>
+            {/* Conditionally render nav bar or mobile menu based on media query of screen width */}
             <MediaQuery minWidth={768}>
                 {(matches:boolean) => matches ?
                     <NavBar brand={brand} links={links} />:
-                    <Burger links={[...[{name: "Home", to: "/"}], ...links]} />  // need to add home to links, but handled differently in NavBar 
+                    <MobileNav brand={brand} links={[{name: "Home", to: "/"}, ...links]} />  // mobile menu lists home explicitly, the desktop bar uses the brand link instead
                 }
             </MediaQuery>
             <Routes>

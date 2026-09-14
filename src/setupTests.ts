@@ -3,3 +3,20 @@
 // expect(element).toHaveTextContent(/react/i)
 // learn more: https://github.com/testing-library/jest-dom
 import '@testing-library/jest-dom';
+
+// jsdom doesn't implement IntersectionObserver, which framer-motion's whileInView animations rely on
+class MockIntersectionObserver {
+  observe() {}
+  unobserve() {}
+  disconnect() {}
+  takeRecords() { return []; }
+}
+
+// jsdom doesn't implement scrolling, which the router's scroll to top on navigation calls
+window.scrollTo = (() => {}) as typeof window.scrollTo;
+
+Object.defineProperty(window, 'IntersectionObserver', {
+  writable: true,
+  configurable: true,
+  value: MockIntersectionObserver,
+});

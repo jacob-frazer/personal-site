@@ -37,3 +37,15 @@ export const LoadingPage = styled.div`
     height: 100vh;
     background-color: ${colours.black};
     `;
+
+// faint line that fades out at both ends, separating sections without boxing them in
+export const SectionDivider = styled.hr`
+    position: relative;
+    z-index: 10;
+    width: 80%;
+    max-width: 900px;
+    height: 1px;
+    margin: 0 auto;
+    border: 0;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    `;

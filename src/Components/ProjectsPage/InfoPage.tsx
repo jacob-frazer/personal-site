@@ -1,170 +1,367 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 import styled from 'styled-components';
 import { motion, Variants } from 'framer-motion';
+import { FaCheckCircle } from 'react-icons/fa';
 
 import colours from '@utils/colours';
+import { DEVICE_WIDTHS } from '@utils/constants';
 import { Background } from '@generics/SimpleStyledComponents';
 
+// body copy is softened from pure white, which reads heavy on a black background
+const BODY_TEXT = 'rgba(255, 255, 255, 0.78)';
 
-const ContentBox = styled.div<{ background: string }>`
-    background-color: ${props => props.background};
-    border-radius: 1rem;
-    padding: 1rem;
-    max-width: 1200px
-    `;
-
-const ExplanationText = styled.div<{  }>`
-    font-size: 1rem;
-    padding: 3rem;
-    line-height: 1.5;
-    font-weight: 300;
-    letter-spacing: 1.3px;
-    color: ${colours.white};
+const Page = styled.article`
+    box-sizing: border-box;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem 1.25rem 4rem 1.25rem;
     text-align: left;
-    `;
+    color: ${colours.white};
 
-const ExplanationHeader = styled.h1`
-    font-size: 2rem;
-    font-weight: 350;
-    letter-spacing: 2px;
-    `;
-
-const Outcomes = styled.div`
-    font-size: 2rem;
-    padding: 3rem 1rem 1rem 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    `;
-
-const OutcomesHeader = styled.div`
-    font-size: 2rem;
-    font-weight: 350;
-    letter-spacing: 2px;
-    padding: 1rem;
-    `;
-
-const OutcomesList = styled.div`
-    display: inline-block; 
-    text-align: left; 
-    width: 90%;
-    list-style: none;  
-    font-size: 1.25rem;
-    font-weight: 300;
-    letter-spacing: 2px;
-    `;
-
-const OutcomesListItem = styled.li`
-    position: relative;
-    padding-left: 1.5em;
-    padding-top: 1.5rem;
-
-    &:before {
-        content: '✓';
-        color: ${colours.dark};
-        position: absolute;
-        left: 0;
-        width: 1em;
-        height: 1em;
+    @media ${DEVICE_WIDTHS.tablet} {
+        padding: 2.5rem 2rem 5rem 2rem;
+    }
+    @media ${DEVICE_WIDTHS.desktop} {
+        max-width: 1500px;
     }
     `;
 
-const TechnologiesHeader = styled.div`
-    padding: 3rem 0.5rem 0.5rem 0.5rem;
-    font-size: 1.3rem;
-    font-weight: 550;
-    letter-spacing: 2px;
-    color: ${colours.white};
+const BackLink = styled(Link)`
+    display: inline-block;
+    margin-bottom: 2rem;
+    color: ${BODY_TEXT};
+    font-size: 0.95rem;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+        color: ${colours.white};
+        text-decoration: underline;
+    }
     `;
 
-const TechnologiesList = styled.div`
-    padding: 1.5rem;
-    flex: 1 1 auto;
-    font-size: 1.5rem;
-    font-weight: 300;
-    letter-spacing: 2px;
-    color: ${colours.white};
-    column-count: 2;
-    text-align: center;
+// on wide screens the image sits beside the title at its natural shape, rather than as a cropped banner
+const HeaderGrid = styled.div`
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2rem;
+    align-items: center;
+
+    @media ${DEVICE_WIDTHS.laptop} {
+        grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+        gap: 3.5rem;
+    }
     `;
 
-const TechnologiesListItem = styled.li`
-    list-style-type: none;
+const Eyebrow = styled.p`
+    margin: 0 0 0.75rem 0;
+    color: ${colours.mid};
+    font-size: 0.95rem;
+    font-weight: 600;
+
+    @media ${DEVICE_WIDTHS.desktop} {
+        font-size: 1.2rem;
+    }
     `;
 
 const Headline = styled.h1`
-    justify-content: centre;
-    text-align: centre; 
-    padding: 5rem 1rem 1rem 1rem;
-    font-size: 3rem;
-    font-weight: 400;
-    letter-spacing: 2px;
-    color: ${colours.white};
     margin: 0;
+    font-size: 2.1rem;
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+
+    @media ${DEVICE_WIDTHS.tablet} {
+        font-size: 2.75rem;
+    }
+    @media ${DEVICE_WIDTHS.laptop} {
+        font-size: 3.25rem;
+    }
+    @media ${DEVICE_WIDTHS.desktop} {
+        font-size: 4rem;
+    }
     `;
 
-const Intro = styled.div`
-    font-size: 1.5rem;
-    font-weight: 300;
-    letter-spacing: 2px;
-    color: ${colours.white};
-    padding: 1.5rem;
-`;
+const Intro = styled.p`
+    max-width: 60ch;
+    margin: 1rem 0 0 0;
+    font-size: 1.1rem;
+    line-height: 1.65;
+    color: ${BODY_TEXT};
 
-const BounceFromBelowVariants: Variants = {
-    offscreen: {
-        y: 150,
-        opacity: 0
-      },
-    onscreen: {
-        y: 0,
-        opacity: 1,
-        transition: {
-            type: "spring",
-            bounce: 0.3,
-            duration: 1,
-            delay: 0.2
+    @media ${DEVICE_WIDTHS.tablet} {
+        font-size: 1.25rem;
+    }
+    @media ${DEVICE_WIDTHS.desktop} {
+        font-size: 1.5rem;
+    }
+    `;
+
+const ProjectImage = styled.img`
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 1rem;
+    `;
+
+const SectionHeading = styled.h2`
+    margin: 3rem 0 1.25rem 0;
+    font-size: 1.4rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+
+    @media ${DEVICE_WIDTHS.desktop} {
+        font-size: 1.8rem;
+    }
+    `;
+
+const Outcomes = styled(motion.ul)`
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.75rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    @media ${DEVICE_WIDTHS.tablet} {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1rem;
+    }
+    `;
+
+const Outcome = styled(motion.li)`
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 1rem 1.25rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0.75rem;
+    background-color: rgba(255, 255, 255, 0.04);
+    font-size: 1rem;
+    line-height: 1.55;
+    color: ${BODY_TEXT};
+
+    svg {
+        flex: 0 0 auto;
+        width: 1rem;
+        height: 1rem;
+        margin-top: 0.25rem;
+        color: ${colours.mid};
+    }
+
+    a {
+        color: ${colours.mid};
+        word-break: break-all;
+    }
+
+    @media ${DEVICE_WIDTHS.desktop} {
+        font-size: 1.25rem;
+    }
+    `;
+
+// technologies sit beside the write-up on wide screens and above it on phones
+const Body = styled.div`
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2.5rem;
+    margin-top: 3rem;
+
+    @media ${DEVICE_WIDTHS.laptop} {
+        grid-template-columns: minmax(0, 1fr) 18rem;
+        gap: 4rem;
+        align-items: start;
+    }
+    @media ${DEVICE_WIDTHS.desktop} {
+        grid-template-columns: minmax(0, 1fr) 24rem;
+    }
+    `;
+
+const Aside = styled.aside`
+    @media ${DEVICE_WIDTHS.laptop} {
+        grid-column: 2;
+        grid-row: 1;
+        position: sticky;
+        top: 6rem;
+    }
+    `;
+
+const AsideCard = styled.div`
+    padding: 1.25rem;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 0.75rem;
+    background-color: rgba(255, 255, 255, 0.03);
+    `;
+
+const AsideHeading = styled.h2`
+    margin: 0 0 0.75rem 0;
+    font-size: 1rem;
+    font-weight: 600;
+    color: ${colours.lightgrey};
+    `;
+
+const TechnologiesList = styled.ul`
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    `;
+
+const TechnologiesListItem = styled.li`
+    padding: 0.3rem 0.75rem;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 999px;
+    font-size: 0.9rem;
+    color: ${BODY_TEXT};
+    `;
+
+// capped at a comfortable reading width
+const Prose = styled.div`
+    max-width: 70ch;
+
+    h2 {
+        margin-top: 0;
+    }
+
+    p {
+        margin: 0 0 1.25rem 0;
+        font-size: 1.05rem;
+        line-height: 1.8;
+        color: ${BODY_TEXT};
+    }
+
+    @media ${DEVICE_WIDTHS.laptop} {
+        grid-column: 1;
+        grid-row: 1;
+    }
+    @media ${DEVICE_WIDTHS.desktop} {
+        p {
+            font-size: 1.25rem;
         }
     }
-  };
+    `;
 
+const PageFooter = styled.nav`
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1.5rem;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    `;
 
-const ProjectInfo = (props: {projectInfo: {headline: string, intro: string, technologies: string[], explanation: string[], outcomes: string[]}}) => {
-    const {headline, intro, technologies, explanation, outcomes} = props.projectInfo;
+const FooterLink = styled(Link)<{ $alignRight?: boolean }>`
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    margin-left: ${props => props.$alignRight ? 'auto' : '0'};
+    text-align: ${props => props.$alignRight ? 'right' : 'left'};
+    color: ${colours.white};
+    text-decoration: none;
+
+    span {
+        font-size: 0.85rem;
+        color: ${colours.lightgrey};
+    }
+
+    strong {
+        font-size: 1.1rem;
+        font-weight: 600;
+    }
+
+    &:hover strong,
+    &:focus strong {
+        color: ${colours.mid};
+    }
+    `;
+
+const reveal: Variants = {
+    hidden: { opacity: 0, y: 12 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+};
+
+const staggerList: Variants = {
+    hidden: {},
+    visible: { transition: { staggerChildren: 0.06 } },
+};
+
+// turns any URLs in an outcome into links
+const withLinks = (text: string) =>
+    text.split(/(https?:\/\/\S+)/).map((part, i) =>
+        /^https?:\/\//.test(part)
+            ? <a key={i} href={part} target="_blank" rel="noopener noreferrer">{part}</a>
+            : part
+    );
+
+type ProjectInfoProps = {
+    projectInfo: { headline: string, intro: string, technologies: string[], explanation: string[], outcomes: string[] },
+    image?: string,
+    context?: string,
+    next?: { name: string, url: string },
+};
+
+const ProjectInfo = ({ projectInfo, image, context, next }: ProjectInfoProps) => {
+    const { headline, intro, technologies, explanation, outcomes } = projectInfo;
     return (
-            <Background backgroundCol={colours.black}>
-                <Headline>{headline}</Headline>
-                <Intro>{intro}</Intro>
+        <Background backgroundCol={colours.black}>
+            <Page>
+                <BackLink to="/projects">← All projects</BackLink>
+                <HeaderGrid>
+                    <motion.header variants={reveal} initial="hidden" animate="visible">
+                        {context && <Eyebrow>{context}</Eyebrow>}
+                        <Headline>{headline}</Headline>
+                        <Intro>{intro}</Intro>
+                    </motion.header>
+                    {image && <ProjectImage src={image} alt=""/>}
+                </HeaderGrid>
 
-                <Outcomes>
-                    <motion.div
-                        initial="offscreen"
-                        whileInView="onscreen"
-                        viewport={{ once: true, amount: 0.1 }}
-                        variants={BounceFromBelowVariants}
-                        >
-                        <ContentBox background={colours.white}>
-                            <OutcomesHeader>Successes & Outcomes</OutcomesHeader>
-                            <OutcomesList>
-                                {outcomes.map((x:string) => <OutcomesListItem>{x}</OutcomesListItem>)}
-                            </OutcomesList>
-                        </ContentBox>
-                    </motion.div>
+                <SectionHeading>Successes & outcomes</SectionHeading>
+                <Outcomes variants={staggerList} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.1 }}>
+                    {outcomes.map((outcome: string, i: number) => (
+                        <Outcome key={i} variants={reveal}>
+                            <FaCheckCircle aria-hidden="true"/>
+                            <span>{withLinks(outcome)}</span>
+                        </Outcome>
+                    ))}
                 </Outcomes>
 
-                <TechnologiesHeader>Technologies</TechnologiesHeader>
-                <TechnologiesList>
-                    {technologies.map((x:string) => <TechnologiesListItem>{x}</TechnologiesListItem>)}
-                </TechnologiesList>
-            
-                <ExplanationText>
-                    <ExplanationHeader>Deep Dive</ExplanationHeader>
-                    {explanation.map((para:string) => <p>{para}</p>)}
-                </ExplanationText>
+                <Body>
+                    <Aside>
+                        <AsideCard>
+                            <AsideHeading>Technologies</AsideHeading>
+                            <TechnologiesList>
+                                {technologies.map((tech: string, i: number) => <TechnologiesListItem key={i}>{tech}</TechnologiesListItem>)}
+                            </TechnologiesList>
+                        </AsideCard>
+                    </Aside>
+                    <Prose>
+                        <SectionHeading>Deep dive</SectionHeading>
+                        {explanation.map((para: string, i: number) => <p key={i}>{para}</p>)}
+                    </Prose>
+                </Body>
 
-            </Background>
-        )
-    };
+                <PageFooter aria-label="Project navigation">
+                    <FooterLink to="/projects">
+                        <span>Back to</span>
+                        <strong>All projects</strong>
+                    </FooterLink>
+                    {next &&
+                        <FooterLink to={`/projects/${next.url}`} $alignRight>
+                            <span>Next project</span>
+                            <strong>{next.name} →</strong>
+                        </FooterLink>
+                    }
+                </PageFooter>
+            </Page>
+        </Background>
+    )
+};
 
 export default ProjectInfo;

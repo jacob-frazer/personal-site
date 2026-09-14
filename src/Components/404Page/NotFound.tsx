@@ -27,9 +27,8 @@ const RobotImage = styled.img`
 const Return404 = styled(Link)`
     color: ${colours.white};
     font-size: 1.5rem;
-    padding: 0.5rem;
+    padding: 0.5rem 1rem;
     font-weight: 400;
-    letter-spacing: 2px;
     text-decoration: none;
     border: 1px solid white;
     `;
@@ -40,19 +39,19 @@ class NotFound extends React.Component<{projects?:boolean}>{
         <>
             <Background backgroundCol={colours.black} height="100vh">
                 <RobotImage src="/images/404/broken-robot.png" alt="broken robot image"/>
-                <BasicText fontCol={colours.white} fontSize='4rem' padding='4rem' fontWeight='500' letterSpacing='2px'>404.</BasicText>
+                <BasicText fontCol={colours.white} fontSize='4rem' padding='4rem' fontWeight='700' letterSpacing='normal'>404.</BasicText>
                 {
-                    this.props.projects ? 
-                    <BasicText fontCol={colours.white} fontSize='1.5rem' padding='5rem' fontWeight='400' letterSpacing='2px'>
+                    this.props.projects ?
+                    <BasicText fontCol={colours.white} fontSize='1.5rem' padding='5rem' fontWeight='400' letterSpacing='normal'>
                         Sorry, I haven't worked on a project with that name. Maybe one day!
                     </BasicText>
                     :
-                    <BasicText fontCol={colours.white} fontSize='1.5rem' padding='5rem' fontWeight='400' letterSpacing='2px'>
+                    <BasicText fontCol={colours.white} fontSize='1.5rem' padding='5rem' fontWeight='400' letterSpacing='normal'>
                         Sorry, that page doesn't exist.
                     </BasicText>
                 }
                 <Return404 to="/">Take me back <strong>home</strong></Return404>
-                
+
             </Background>
         </>
       )
